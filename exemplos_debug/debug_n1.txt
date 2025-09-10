@@ -1,0 +1,62 @@
+Modo teste2
+ - Board: 7x7
+[Ordering] MAX=Deterministic, MIN=Deterministic, shuffle_ties_only=1
+ - Jogo: 1
+[Quiescence] MAX=off, MIN=off
+[MAX]First AI controled move : (1, 4)
+****[MIN] Best move selected: (0,5) -5
+****[MAX] Best move selected: (0,4) -3
+****[MIN] Best move selected: (1,5) -5
+****[MAX] Best move selected: (2,5) -1
+****[MIN] Best move selected: (3,6) -2
+****[MAX] Best move selected: (4,6) 1
+****[MIN] Best move selected: (5,6) 0
+****[MAX] Best move selected: (6,6) 2
+****[MIN] Best move selected: (6,5) 0
+****[MAX] Best move selected: (6,4) 1
+****[MIN] Best move selected: (5,5) -1
+****[MAX] Best move selected: (4,4) 2
+****[MIN] Best move selected: (4,5) 2
+****[MAX] Best move selected: (5,4) 5
+****[MIN] Best move selected: (6,3) 3
+****[MAX] Best move selected: (5,3) 5
+****[MIN] Best move selected: (4,3) 4
+****[MAX] Best move selected: (5,2) 7
+****[MIN] Best move selected: (4,2) 5
+****[MAX] Best move selected: (5,1) 7
+****[MIN] Best move selected: (4,1) 3
+****[MAX] Best move selected: (3,0) 4
+****[MIN] Best move selected: (2,0) 1
+****[MAX] Best move selected: (1,0) 2
+****[MIN] Best move selected: (0,0) 1
+****[MAX] Best move selected: (0,1) 2
+****[MIN] Best move selected: (0,2) 1
+****[MAX] Best move selected: (1,1) 3
+****[MIN] Best move selected: (2,2) 0
+****[MAX] Best move selected: (3,3) 5
+****[MIN] Best move selected: (3,2) -893
+****[MAX] Best move selected: (2,1) -893
+****[MIN] Best move selected: (1,2) -894
+****[MAX] Best move selected: (0,3) -895
+****[MIN] Best move selected: (1,3) -896
+****[MAX] Best move selected: (2,3) -897
+****[MIN] Best move selected: (3,4) -898
+****[MAX] Best move selected: (3,5) -899
+****[MIN] Best move selected: (2,6) -998
+****[MAX] Best move selected: (1,6) -999
+****[MIN] Immediate win found at root: (0,6) -999
+Rounds : (41)
+=== Ordering Quality (P1/MAX AI) ===
+[order] MAX-to-move nodes=267 cutoffs=183 avgCutIdx=0 firstChildCut=100%
+[order] MIN-to-move nodes=67 cutoffs=0
+=== Ordering Quality (P2/MIN AI) ===
+[order] MAX-to-move nodes=71 cutoffs=0
+[order] MIN-to-move nodes=302 cutoffs=222 avgCutIdx=0 firstChildCut=100%
+[Visited] lookups=1752 hits=38 inserts=1714 hit_rate=2.16895%
+Vitória do Jogador 2!
+
+tempo jogo: 0.0203351
+
+Vitórias AI 1: 0
+Vitórias AI 2: 1
+tempo total: 0.020342
