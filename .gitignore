@@ -2,5 +2,8 @@
 build/
 Docs/
 Doxygen/
+
 AI_legacy/
 .DS_Store
+
+Doxyfile
