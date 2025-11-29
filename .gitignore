@@ -1,0 +1,5 @@
+# Ignorar diretórios de build e documentação gerada
+build/
+Docs/
+Doxygen/
+.DS_Store
