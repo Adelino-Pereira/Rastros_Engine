@@ -35,6 +35,7 @@ Board::Board() {
 
 // Construtor com dimensões: cria tabuleiro rows x cols com marcador na posição padrão.
 Board::Board(int r, int c) : rows(r), cols(c) {
+    std::cout << "intBoard\n";
     grid = std::vector<std::vector<int>>(rows, std::vector<int>(cols, 1));
     int row_coord = rows / 2 - 1;
     int col_coord = (cols % 2 == 0) ? cols / 2 : cols / 2 + 1;
