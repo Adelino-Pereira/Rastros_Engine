@@ -98,24 +98,8 @@ void AI::reset_ordering_stats() {
 
 // para debug estatístico da ordenação de sucessores
 void AI::print_ordering_stats() const {
-    auto printOne = [&](const char* label, const OrderingStats& s){
-        auto& out = LogMsgs::out();
-        out << "[order] " << label << " nodes=" << s.nodes
-            << " cutoffs=" << s.cutoffs;
-        if (s.cutoffs) {
-            double avg_cut = double(s.cutoff_idx_sum) / double(s.cutoffs);
-            double pct_first = 100.0 * double(s.cutoff_first_child) / double(s.cutoffs);
-            out << " avgCutIdx=" << avg_cut
-                << " firstChildCut=" << pct_first << "%";
-        }
-        if (s.no_cutoff_nodes) {
-            double avg_best = double(s.best_idx_sum) / double(s.no_cutoff_nodes);
-            out << " avgBestIdx(no-cut)=" << avg_best;
-        }
-        out << "\n";
-    };
-    printOne("MAX-to-move", ord_max_);
-    printOne("MIN-to-move", ord_min_);
+    LogMsgs::AI::log_ordering_stats("MAX-to-move", ord_max_);
+    LogMsgs::AI::log_ordering_stats("MIN-to-move", ord_min_);
 }
 
 

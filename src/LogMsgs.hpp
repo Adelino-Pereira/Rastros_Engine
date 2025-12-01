@@ -6,14 +6,16 @@
 #include <vector>
 #include <utility>
 
+struct OrderingStats;
+
 namespace LogMsgs {
 // Stream configurável (por defeito std::cout)
 void set_stream(std::ostream& os);
 std::ostream& out();
 
 namespace AI {
-// Helpers específicos da AI (formato mantido)
-void log_algo_tag(const std::string& tag); // "alg:minimax_opt", etc.
+// Helpers específicos da AI 
+void log_algo_tag(const std::string& tag);
 void log_first_move(const std::pair<int,int>& mv);
 void log_root_moves(const std::pair<int,int>& pos,
                     const std::vector<std::pair<int,int>>& moves,
@@ -28,6 +30,7 @@ void log_best_move(const std::string& player,
                    int score,
                    int depth_limit,
                    int actual_depth);
+void log_ordering_stats(const char* label, const OrderingStats& s);
 } // namespace AI
 
 } // namespace LogMsgs

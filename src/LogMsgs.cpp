@@ -1,4 +1,5 @@
 #include "LogMsgs.hpp"
+#include "AI.hpp"
 #include <iostream>
 #include <iomanip>
 
@@ -61,6 +62,23 @@ void log_best_move(const std::string& player,
         out() << " -> " << actual_depth;
     }
     out() << "] ";
+}
+
+void log_ordering_stats(const char* label, const OrderingStats& s) {
+    auto& o = out();
+    o << "[order] " << label << " nodes=" << s.nodes
+      << " cutoffs=" << s.cutoffs;
+    if (s.cutoffs) {
+        double avg_idx = double(s.cutoff_idx_sum) / double(s.cutoffs);
+        double frac_first = double(s.cutoff_first_child) / double(s.cutoffs);
+        o << " avgCutoffIdx=" << avg_idx
+          << " fracFirst=" << frac_first;
+    }
+    if (s.no_cutoff_nodes) {
+        double avg_best = double(s.best_idx_sum) / double(s.no_cutoff_nodes);
+        o << " avgBestIdx(no-cut)=" << avg_best;
+    }
+    o << "\n";
 }
 } // namespace AI
 
