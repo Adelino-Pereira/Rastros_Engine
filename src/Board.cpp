@@ -43,6 +43,7 @@ Board::Board() {
 
 // Construtor com dimensões: cria tabuleiro rows x cols com marcador na posição padrão.
 Board::Board(int r, int c) : rows(r), cols(c) {
+    std::cout << "bitsetboard\n";
     words_per_row = (cols + 63) / 64;
     grid_bits.assign(rows * words_per_row, ~std::uint64_t{0}); // tudo livre
 
@@ -187,7 +188,6 @@ int Board::get_winner() const {
     // 6 -> (variante) idem acima, mas distinguindo tipo de vitória para análise
 
     if (!is_terminal()) return 0;
-
     if (marker == std::make_pair(rows-1, 0)) return 1;  // Player 1 wins
     if (marker == std::make_pair(0,cols-1)) return 2;  // Player 2 wins
 
