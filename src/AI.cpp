@@ -327,11 +327,10 @@ std::pair<int, int> AI::choose_move(Board& board, int depth_override, int rounds
             int r = start.first + dr[i];
             int c = start.second + dc[i];
 
-            if (r >= 0 && r < board.get_rows() && c >= 0 && c < board.get_cols() &&
-                board.grid_ref()[r][c] == 1) {
+        if (r >= 0 && r < board.get_rows() && c >= 0 && c < board.get_cols()) {
 
                 int dist_to_goal = std::max(std::abs(goal_r - r), std::abs(goal_c - c));
-                if (dist_to_goal <= 1) continue;
+                if (!board.is_cell_free(r, c)) continue;
 
                 initial_moves.emplace_back(r, c);
             }

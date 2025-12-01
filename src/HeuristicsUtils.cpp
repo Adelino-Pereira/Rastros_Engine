@@ -89,13 +89,18 @@ int h_distance(const Board& board, std::pair<int, int> pos, bool is_max) {
 
 int count_unplayables(const Board& board) {
     int count = 0;
-    for (const auto& row : board.grid_ref()) {
-        for (int cell : row) {
-            if (cell == 0) count++;
+    for (int r = 0; r < board.get_rows(); ++r) {
+        for (int c = 0; c < board.get_cols(); ++c) {
+            // 0 used to mean "blocked"
+            if (!board.is_cell_free(r, c)) {
+                ++count;
+            }
         }
     }
     return count;
 }
+
+
 
 
 int parity_heuristic(const Board& board, bool is_max,int path_val,int o_path_val) {
@@ -139,13 +144,13 @@ int h_diag_block_goal(const Board& b) {
     int score = 0; // MAX-perspective: + is bad for MAX, - is bad for MIN
 
     // MAX diagonal blocked? Penalize MAX unless MAX wins next.
-    const auto& g = b.grid_ref();
-    if (in_bounds(rMax, cMax) && g[rMax][cMax] == 0) {
+   // const auto& g = b.grid_ref();
+    if (in_bounds(rMax, cMax) && !b.is_cell_free(rMax, cMax)) {
         if (!max_can_win_next) score -= P;
     }
 
     // MIN diagonal blocked? Penalize MIN unless MIN wins next.
-    if (in_bounds(rMin, cMin) && g[rMin][cMin] == 0) {
+    if (in_bounds(rMin, cMin) && !b.is_cell_free(rMin, cMin)) {
         if (!min_can_win_next) score += P;
     }
 

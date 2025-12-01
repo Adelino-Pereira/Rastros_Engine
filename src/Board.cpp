@@ -25,21 +25,33 @@
 // Construtor por omissão: cria um tabuleiro 7x7 com o marcador na posição inicial
 // (usado em testes e instâncias rápidas sem parâmetros).
 Board::Board() {
-    grid = std::vector<std::vector<int>>(rows, std::vector<int>(cols, 1));
+    rows = 7;
+    cols = 7;
+
+    // calcula quantas words de 64 bits por linha
+    words_per_row = (cols + 63) / 64;
+    grid_bits.assign(rows * words_per_row, ~std::uint64_t{0}); // tudo livre (1)
+
     marker = {rows / 2 - 1, cols / 2 + 1};
-    grid[marker.first][marker.second] = 0;
+    set_free(marker.first, marker.second, false); // bloqueia célula do marcador
+
     current_player = true;
     init_zobrist();
     recompute_hash();
 }
 
+
 // Construtor com dimensões: cria tabuleiro rows x cols com marcador na posição padrão.
 Board::Board(int r, int c) : rows(r), cols(c) {
-    grid = std::vector<std::vector<int>>(rows, std::vector<int>(cols, 1));
+    words_per_row = (cols + 63) / 64;
+    grid_bits.assign(rows * words_per_row, ~std::uint64_t{0}); // tudo livre
+
     int row_coord = rows / 2 - 1;
     int col_coord = (cols % 2 == 0) ? cols / 2 : cols / 2 + 1;
     marker = {row_coord, col_coord};
-    grid[marker.first][marker.second] = 0;
+
+    set_free(marker.first, marker.second, false); // bloqueia posição inicial
+
     current_player = true;
     init_zobrist();
     recompute_hash();
@@ -47,34 +59,86 @@ Board::Board(int r, int c) : rows(r), cols(c) {
 
 // Construtor que permite saltar o posicionamento/bloqueio inicial (para estados carregados).
 Board::Board(int r, int c, bool skip_initial_marker) : rows(r), cols(c) {
-    grid = std::vector<std::vector<int>>(rows, std::vector<int>(cols, 1));
+    words_per_row = (cols + 63) / 64;
+    grid_bits.assign(rows * words_per_row, ~std::uint64_t{0}); // tudo livre
+
     if (!skip_initial_marker) {
         int row_coord = rows / 2 - 1;
         int col_coord = (cols % 2 == 0) ? cols / 2 : cols / 2 + 1;
         marker = {row_coord, col_coord};
-        grid[marker.first][marker.second] = 0;
+        set_free(marker.first, marker.second, false);
     } else {
         marker = {0, 0};
+        // não bloqueia automaticamente (útil para estados carregados)
     }
+
     current_player = true;
     init_zobrist();
     recompute_hash();
 }
+
+//helpers para bitboard
+bool Board::is_free(int r, int c) const {
+    if (!is_inside(r, c)) return false;
+
+    std::size_t idx = bit_index(r, c);
+
+    // Defesa extra: se algo estiver mal com words_per_row ou grid_bits,
+    // evita-se crash e ficas com um ponto de debug claro.
+    if (idx >= grid_bits.size()) {
+        std::cerr << "[Board::is_free] Out-of-bounds index: idx=" << idx
+                  << " size=" << grid_bits.size()
+                  << " (r=" << r << ", c=" << c
+                  << ", rows=" << rows << ", cols=" << cols
+                  << ", words_per_row=" << words_per_row << ")\n";
+        return false; // trata como célula bloqueada em caso de erro
+    }
+
+    std::uint64_t mask = bit_mask(c);
+    return (grid_bits[idx] & mask) != 0; // 1 = livre
+}
+
+void Board::set_free(int r, int c, bool free) {
+    if (!is_inside(r, c)) return;
+
+    std::size_t idx = bit_index(r, c);
+    if (idx >= grid_bits.size()) {
+        std::cerr << "[Board::set_free] Out-of-bounds index: idx=" << idx
+                  << " size=" << grid_bits.size()
+                  << " (r=" << r << ", c=" << c
+                  << ", rows=" << rows << ", cols=" << cols
+                  << ", words_per_row=" << words_per_row << ")\n";
+        return;
+    }
+
+    std::uint64_t mask = bit_mask(c);
+    if (free) {
+        grid_bits[idx] |= mask;   // põe bit a 1
+    } else {
+        grid_bits[idx] &= ~mask;  // põe bit a 0
+    }
+}
+
+
+
+
 
 // ============================================================================
 // REGRAS DE MOVIMENTO E TRANSIÇÕES DE ESTADO
 // ============================================================================
 
 std::vector<std::pair<int, int>> Board::get_valid_moves() const {
-    // Retorna todas as jogadas válidas a partir da posição atual do marcador.
     std::vector<std::pair<int, int>> moves;
     int r = marker.first, c = marker.second;
-    // 8 direções (ortogonais + diagonais)
-    int dirs[8][2] = {{-1,0},{1,0},{0,-1},{0,1},{-1,-1},{-1,1},{1,-1},{1,1}};
+
+    int dirs[8][2] = {
+        {-1,0},{1,0},{0,-1},{0,1},
+        {-1,-1},{-1,1},{1,-1},{1,1}
+    };
+
     for (auto& d : dirs) {
         int nr = r + d[0], nc = c + d[1];
-        // Dentro dos limites e casa livre?
-        if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && grid[nr][nc] == 1) {
+        if (is_inside(nr, nc) && is_free(nr, nc)) {
             moves.emplace_back(nr, nc);
         }
     }
@@ -82,15 +146,25 @@ std::vector<std::pair<int, int>> Board::get_valid_moves() const {
 }
 
 
+
 void Board::make_move(std::pair<int, int> move) {
-    int old_state = grid[marker.first][marker.second] ? 1 : 0;
-    hash_value ^= zobrist_table[marker.first][marker.second][old_state];
-    grid[marker.first][marker.second] = 0;
-    hash_value ^= zobrist_table[marker.first][marker.second][0];
+    // Atualiza hash da célula anterior do marcador
+    int old_r = marker.first;
+    int old_c = marker.second;
+
+    int old_state = is_free(old_r, old_c) ? 1 : 0;
+    hash_value ^= zobrist_table[old_r][old_c][old_state];
+
+    // Bloqueia a célula anterior do marcador
+    set_free(old_r, old_c, false);
+    hash_value ^= zobrist_table[old_r][old_c][0];
+
+    // Atualiza o marcador na hash
     hash_value ^= hash_marker_component();
     marker = move;
     hash_value ^= hash_marker_component();
 }
+
 
 
 
@@ -134,6 +208,11 @@ bool Board::current_player_is_human() const {
     return !current_player; // humano é o Jogador 2.
 }
 
+bool Board::is_cell_free(int r, int c) const {
+    if (!is_inside(r, c)) return false;
+    return is_free(r, c);
+}
+
 
 //nota:mudar nome das variáveis h1 e h5 que perderam sentido
 Board::ReachabilityResult Board::compute_reachability() const {
@@ -174,16 +253,15 @@ Board::ReachabilityResult Board::compute_reachability() const {
         auto [pos, dist] = q.front(); q.pop();
         int r = pos.first, c = pos.second;
         count++;
-        // Se atingiu o objetivo de MAX, atualiza h1
+
         if (r == goal_r_max && c == goal_c_max) h1 = std::min(h1, dist);
-        // Se atingiu o objetivo de MIN, atualiza h5
         if (r == goal_r_min && c == goal_c_min) h5 = std::min(h5, dist);
 
-        // Explora vizinhos válidos
         for (auto& d : dirs) {
             int nr = r + d[0], nc = c + d[1];
-            if (nr >= 0 && nr < rows && nc >= 0 && nc < cols &&
-                grid[nr][nc] == 1 && !visited[nr][nc]) {
+            if (is_inside(nr, nc) &&
+                is_free(nr, nc) &&
+                !visited[nr][nc]) {
                 visited[nr][nc] = true;
                 q.push({{nr, nc}, dist + 1});
             }
@@ -206,14 +284,16 @@ Board::ReachabilityResult Board::compute_reachability() const {
 void Board::reset_board(int r, int c, bool block_initial) {
     rows = r;
     cols = c;
-    grid.assign(rows, std::vector<int>(cols, 1));
+
+    words_per_row = (cols + 63) / 64;
+    grid_bits.assign(rows * words_per_row, ~std::uint64_t{0}); // tudo livre
 
     int row_coord = rows / 2 - 1;
     int col_coord = (cols % 2 == 0) ? cols / 2 : cols / 2 + 1;
     marker = { row_coord, col_coord };
 
     if (block_initial) {
-        grid[marker.first][marker.second] = 0;
+        set_free(marker.first, marker.second, false);
     }
 
     current_player = true;
@@ -222,25 +302,25 @@ void Board::reset_board(int r, int c, bool block_initial) {
 }
 
 void Board::set_marker_pos(int r, int c, bool also_block_here) {
-    if (r >= 0 && r < rows && c >= 0 && c < cols) {
-        hash_value ^= hash_marker_component();
-        marker = { r, c };
-        hash_value ^= hash_marker_component();
-        if (also_block_here && grid[r][c] == 1) {
-            hash_value ^= zobrist_table[r][c][1];
-            grid[r][c] = 0;
-            hash_value ^= zobrist_table[r][c][0];
-        }
+    if (!is_inside(r, c)) return;
+
+    hash_value ^= hash_marker_component();
+    marker = { r, c };
+    hash_value ^= hash_marker_component();
+
+    if (also_block_here && is_free(r, c)) {
+        hash_value ^= zobrist_table[r][c][1];
+        set_free(r, c, false);
+        hash_value ^= zobrist_table[r][c][0];
     }
 }
 
 void Board::block_cell(int r, int c) {
-    if (r >= 0 && r < rows && c >= 0 && c < cols) {
-        if (grid[r][c] == 1) {
-            hash_value ^= zobrist_table[r][c][1];
-            grid[r][c] = 0;
-            hash_value ^= zobrist_table[r][c][0];
-        }
+    if (!is_inside(r, c)) return;
+    if (is_free(r, c)) {
+        hash_value ^= zobrist_table[r][c][1];
+        set_free(r, c, false);
+        hash_value ^= zobrist_table[r][c][0];
     }
 }
 
@@ -248,10 +328,18 @@ void Board::set_current_player_from_int(int player) {
     current_player = (player == 1);
 }
 
+//zobrist hashing helpers
 void Board::init_zobrist() {
-    zobrist_table.assign(rows, std::vector<std::array<uint64_t,2>>(cols));
-    std::mt19937_64 gen(0xBADC0FFEEULL ^ (static_cast<uint64_t>(rows) << 32) ^ static_cast<uint64_t>(cols));
-    std::uniform_int_distribution<uint64_t> dist;
+    zobrist_table.assign(rows,
+        std::vector<std::array<std::uint64_t,2>>(cols));
+
+    std::mt19937_64 gen(
+        0xBADC0FFEEULL ^
+        (static_cast<std::uint64_t>(rows) << 32) ^
+        static_cast<std::uint64_t>(cols)
+    );
+
+    std::uniform_int_distribution<std::uint64_t> dist;
     for (int r = 0; r < rows; ++r) {
         for (int c = 0; c < cols; ++c) {
             zobrist_table[r][c][0] = dist(gen);
@@ -261,8 +349,10 @@ void Board::init_zobrist() {
     hash_value = 0;
 }
 
-uint64_t Board::hash_marker_component() const {
-    uint64_t h = (static_cast<uint64_t>(marker.first) << 32) ^ static_cast<uint64_t>(marker.second);
+std::uint64_t Board::hash_marker_component() const {
+    std::uint64_t h =
+        (static_cast<std::uint64_t>(marker.first) << 32) ^
+        static_cast<std::uint64_t>(marker.second);
     h ^= zobrist_marker_magic;
     return h;
 }
@@ -271,7 +361,7 @@ void Board::recompute_hash() {
     hash_value = 0;
     for (int r = 0; r < rows; ++r) {
         for (int c = 0; c < cols; ++c) {
-            int cell = grid[r][c] ? 1 : 0;
+            int cell = is_free(r, c) ? 1 : 0;
             hash_value ^= zobrist_table[r][c][cell];
         }
     }
@@ -279,17 +369,30 @@ void Board::recompute_hash() {
 }
 
 std::vector<std::vector<int>> Board::get_grid() const {
-    // Devolve uma cópia da grelha (por valor) para consumo em JS/WASM.
-    // NOTA: poder-se-ia otimizar com vistas (views) se necessário.
-    //std::cout << "[C++] get_grid() returning size: " << grid.size() << std::endl;
-    return grid;
+    std::vector<std::vector<int>> out(rows, std::vector<int>(cols, 0));
+    for (int r = 0; r < rows; ++r) {
+        for (int c = 0; c < cols; ++c) {
+            out[r][c] = is_free(r, c) ? 1 : 0;
+        }
+    }
+    return out;
 }
 
-//getter para iluminar as jogadas válidas no tabuleiro
+std::vector<int> Board::get_flat_grid() const {
+    std::vector<int> flat;
+    flat.reserve(static_cast<size_t>(rows * cols));
+    for (int r = 0; r < rows; ++r) {
+        for (int c = 0; c < cols; ++c) {
+            flat.push_back(is_free(r, c) ? 1 : 0);
+        }
+    }
+    return flat;
+}
+
 std::vector<int> Board::get_flat_valid_moves() const {
     auto moves = get_valid_moves();
     std::vector<int> flat;
-    flat.reserve(static_cast<size_t>(moves.size() * 2));
+    flat.reserve(moves.size() * 2);
     for (const auto& mv : moves) {
         flat.push_back(mv.first);
         flat.push_back(mv.second);
@@ -297,18 +400,11 @@ std::vector<int> Board::get_flat_valid_moves() const {
     return flat;
 }
 
-std::vector<int> Board::get_flat_grid() const {
-    std::vector<int> flat;
-    flat.reserve(static_cast<size_t>(rows * cols));
-    for (const auto& row : grid) {
-        flat.insert(flat.end(), row.begin(), row.end());
-    }
-    return flat;
+std::vector<int> Board::get_marker_flat() const {
+    return { marker.first, marker.second };
 }
 
-std::vector<int> Board::get_marker_flat() const {
-    return {marker.first, marker.second};
-}
+
 
 
 

@@ -113,24 +113,30 @@ void GameController::print_board() const {
         std::cout << r << "|";
         for (int c = 0; c < board.get_cols(); ++c) {
             auto mk = board.get_marker();
-            if (mk.first == r && mk.second == c)
+            if (mk.first == r && mk.second == c) {
                 std::cout << "M "; // posição do marcador
-            else if (board.grid_ref()[r][c] == 0)
+            }
+            // antes: else if (board.grid_ref()[r][c] == 0)
+            else if (!board.is_cell_free(r, c)) {
                 std::cout << "· "; // casa bloqueada/visitada
-            else
+            } else {
                 std::cout << "1 "; // casa livre
+            }
         }
         std::cout << "\n";
     }
+
     std::cout << "  ";
     for (int c = 0; c < board.get_cols()*2-1; ++c)
         std::cout << "-";
     std::cout << "\n";
+
     std::cout << "  ";
     for (int c = 0; c < board.get_cols(); ++c)
         std::cout << c << " ";
     std::cout << "\n";
 }
+
 
 void GameController::handle_terminal_state() {
     auto mk = board.get_marker();
