@@ -45,6 +45,8 @@ static std::vector<std::string> strip_new_flags(int argc, char* argv[]) {
     for (int i = 0; i < argc; ++i) {
         std::string a = argv[i];
         if (a == "-d" || a == "--depth" ||
+            a == "-d1" || a == "--depth1" ||
+            a == "-d2" || a == "--depth2" ||
             a == "-md" || a == "--max-depth" ||
             a == "-g" || a == "--games" ||
             a == "-r" || a == "--row" ||
@@ -58,6 +60,8 @@ static std::vector<std::string> strip_new_flags(int argc, char* argv[]) {
         }
         // also skip --depth=, --max-depth=, etc.
         if (a.rfind("--depth=", 0) == 0 ||
+            a.rfind("--depth1=", 0) == 0 ||
+            a.rfind("--depth2=", 0) == 0 ||
             a.rfind("--max-depth=", 0) == 0 ||
             a.rfind("--games=", 0) == 0 ||
             a.rfind("--row=", 0) == 0 ||
@@ -181,10 +185,22 @@ static void apply_quiescence(TestController& controller, const QuiescenceConfig&
 
 static void apply_depth_overrides(TestController& controller,
                                   const std::optional<int>& depthFlag,
-                                  const std::optional<int>& maxDepthFlag) {
-    int start = depthFlag.value_or(controller.get_start_depth());
-    int max   = maxDepthFlag.value_or(controller.get_max_depth());
-    controller.set_depth_limits(start, max);
+                                  const std::optional<int>& maxDepthFlag,
+                                  const std::optional<int>& depthFlag1,
+                                  const std::optional<int>& depthFlag2,
+                                  const std::optional<int>& maxDepthFlag1,
+                                  const std::optional<int>& maxDepthFlag2) {
+    int startGlobal = depthFlag.value_or(controller.get_start_depth());
+    int maxGlobal   = maxDepthFlag.value_or(controller.get_max_depth());
+    controller.set_depth_limits(startGlobal, maxGlobal);
+
+    int start1 = depthFlag1.value_or(startGlobal);
+    int start2 = depthFlag2.value_or(startGlobal);
+    int max1   = maxDepthFlag1.value_or(maxGlobal);
+    int max2   = maxDepthFlag2.value_or(maxGlobal);
+
+    controller.set_depth_limits_p1(start1, max1);
+    controller.set_depth_limits_p2(start2, max2);
 }
 
 // Executa um jogo de teste com temporização e devolve true se a AI1 venceu
@@ -194,12 +210,16 @@ static bool run_ai_game(Factory&& makeController,
                         const OrderingConfig& ordCfg,
                         const QuiescenceConfig& qCfg,
                         const std::optional<int>& depthFlag,
-                        const std::optional<int>& maxDepthFlag) {
+                        const std::optional<int>& maxDepthFlag,
+                        const std::optional<int>& depthFlag1,
+                        const std::optional<int>& depthFlag2,
+                        const std::optional<int>& maxDepthFlag1,
+                        const std::optional<int>& maxDepthFlag2) {
     auto t1 = std::chrono::high_resolution_clock::now();
     TestController controller = makeController();
     apply_ordering(controller, ordCfg);
     apply_quiescence(controller, qCfg);
-    apply_depth_overrides(controller, depthFlag, maxDepthFlag);
+    apply_depth_overrides(controller, depthFlag, maxDepthFlag, depthFlag1, depthFlag2, maxDepthFlag1, maxDepthFlag2);
 
     bool win = controller.run(runMode);
     auto t2 = std::chrono::high_resolution_clock::now();
@@ -221,6 +241,10 @@ int main(int argc, char* argv[]) {
 
     auto depthFlag    = get_flag_int(argc, argv, "-d",  "--depth");
     auto maxDepthFlag = get_flag_int(argc, argv, "-md", "--max-depth");
+    auto depthFlag1   = get_flag_int(argc, argv, "-d1", "--depth1");
+    auto depthFlag2   = get_flag_int(argc, argv, "-d2", "--depth2");
+    auto maxDepthFlag1= get_flag_int(argc, argv, "-md1","--max-depth1");
+    auto maxDepthFlag2= get_flag_int(argc, argv, "-md2","--max-depth2");
     auto gamesFlag    = get_flag_int(argc, argv, "-g",  "--games");
     auto rowFlag      = get_flag_int(argc, argv, "-r","--row");
     auto colFlag      = get_flag_int(argc, argv, "-c","--col");
@@ -229,7 +253,9 @@ int main(int argc, char* argv[]) {
     auto heurFlagP2   = get_flag_str(argc, argv, "-h2", "--heur2");
 
     if (depthFlag && !maxDepthFlag) maxDepthFlag = depthFlag;
-
+    if (depthFlag1 && !maxDepthFlag1) maxDepthFlag1 = depthFlag1;
+    if (depthFlag2 && !maxDepthFlag2) maxDepthFlag2 = depthFlag2;
+    
     if (heurFlagBoth) {
         combo_p1 = combo_p2 = parse_combo(*heurFlagBoth, combo_p1);
     }
@@ -391,7 +417,11 @@ int main(int argc, char* argv[]) {
                 ordCfg,
                 qCfg,
                 depthFlag,
-                maxDepthFlag
+                maxDepthFlag,
+                depthFlag1,
+                depthFlag2,
+                maxDepthFlag1,
+                maxDepthFlag2
             );
             if (win) AI1_victory++;
             else AI2_victory++;
@@ -427,7 +457,11 @@ int main(int argc, char* argv[]) {
                 ordCfg,
                 qCfg,
                 depthFlag,
-                maxDepthFlag
+                maxDepthFlag,
+                depthFlag1,
+                depthFlag2,
+                maxDepthFlag1,
+                maxDepthFlag2
             );
             if (win) AI1_victory++;
             else AI2_victory++;

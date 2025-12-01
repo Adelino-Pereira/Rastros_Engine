@@ -13,6 +13,8 @@
 
 #include "AI.hpp"
 #include "HeuristicsUtils.hpp"
+#include "Heuristic1.hpp"
+#include "Heuristic2.hpp"
 #include "LogMsgs.hpp"
 #include <cmath>
 #include <algorithm>
@@ -182,94 +184,47 @@ int AI::rounds() { return s_rounds; }
 // ----------------------------------------------------------------------------
 void AI::register_heuristics() {
     heuristic_levels[1] = [](const Board& b, bool is_max) {
-        //std::cout<<"level: "<<0<<"\n";
-           auto reach = b.compute_reachability();
-            int Dmax = reach.h1;
-            int Dmin = reach.h5;
-            AI temp(is_max, 10);
-        return Dmax+Dmin;
-
+        return heuristic1_combo(b, is_max, HeuristicCombo::C);
     };
 
     heuristic_levels[2] = [](const Board& b, bool is_max) {
-           auto reach = b.compute_reachability();
-            int Dmax = reach.h1;
-            int Dmin = reach.h5;
-        return Dmax+Dmin;
+        return heuristic1_combo(b, is_max, HeuristicCombo::C);
 
     };
 
     heuristic_levels[3] = [](const Board& b, bool is_max) {
-           auto reach = b.compute_reachability();
-            int Dmax = reach.h1;
-            int Dmin = reach.h5;
-        return Dmax+Dmin;
+        return heuristic1_combo(b, is_max, HeuristicCombo::C);
 
     };
 
     heuristic_levels[4] = [](const Board& b, bool is_max) {
-           auto reach = b.compute_reachability();
-            int Dmax = reach.h1;
-            int Dmin = reach.h5;
-            int AvCels = available_choices(b,is_max);
-        return Dmax+Dmin+AvCels;
+        return heuristic1_combo(b, is_max, HeuristicCombo::E);
     };
 
     heuristic_levels[5] = [](const Board& b, bool is_max) {
-
-        int AvCels = available_choices(b,is_max);
- 
-        return AvCels;
+        return heuristic1_combo(b, is_max, HeuristicCombo::F);
     };
 
     heuristic_levels[6] = [](const Board& b, bool is_max) {
-            auto reach = b.compute_reachability();
-
-            int Dmax = reach.h1;
-            int Dmin = reach.h5;
-
-        int AvCels = available_choices(b,is_max);
-        return Dmax+Dmin+AvCels;
+        return heuristic1_combo(b, is_max, HeuristicCombo::E);
     
     };
 
     heuristic_levels[7] = [](const Board& b, bool is_max) {
             auto reach = b.compute_reachability();
 
-            int Dmax = reach.h1;
-            int Dmin = reach.h5;
+            int Dmax =  heuristic1_combo(b, is_max, HeuristicCombo::A);
+            int Dmin =  heuristic1_combo(b, is_max, HeuristicCombo::B);
 
             return is_max = true ? Dmax : Dmin;
     };
 
     heuristic_levels[8] = [](const Board& b, bool is_max) {
-            auto reach = b.compute_reachability();
-
-            int Dmax = reach.h1;
-            int Dmin = reach.h5;
-
-            return Dmax+Dmin;
+        return heuristic1_combo(b, is_max, HeuristicCombo::C);
     };
 
     heuristic_levels[9] = [](const Board& b, bool is_max) {
-        auto reach = b.compute_reachability();
-
-        int Dmax = reach.h1;
-        int Dmin = reach.h5;
-
-        int Par = 0;
-        if (std::abs(Dmax) == 900 && std::abs(Dmin) == 900) {
-            Par = (reach.reachable_count % 2 == 0)
-                 ? (is_max ? 200 : -200)
-                 : (is_max ? -200 : 200);
-
-        }
-
-        int AvCels = available_choices(b,is_max);
-
-        int BlkDiag = h_diag_block_goal(b);
-
-        return Dmax+Dmin+Par+BlkDiag+AvCels;
+        return heuristic1_combo(b, is_max, HeuristicCombo::F);
 
     };
 

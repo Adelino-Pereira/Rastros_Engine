@@ -35,6 +35,8 @@ public:
                           int max_plies = 4, int swing_delta = 2, int low_mob = 2);
 
     void set_depth_limits(int start, int max);
+    void set_depth_limits_p1(int start, int max);
+    void set_depth_limits_p2(int start, int max);
     int get_start_depth() const { return start_depth; }
     int get_max_depth() const { return max_depth; }
     int get_rounds() const { return rounds; }
@@ -44,6 +46,10 @@ private:
     int rounds = 0;
     int start_depth = 9;
     int max_depth = 15;
+    int start_depth_p1 = 9;
+    int max_depth_p1 = 15;
+    int start_depth_p2 = 9;
+    int max_depth_p2 = 15;
     bool winner = false;
     std::pair<int, int>  first_move;
     HeuristicCombo combo_p1;
@@ -59,6 +65,7 @@ private:
     void play_ai_vs_ai_turn_mode1();
     void play_ai_vs_ai_turn_mode2();
     int compute_depth() const;
+    int compute_depth_for_player(bool is_max) const;
     std::pair<int, int> select_ai_move(bool allow_first_override);
     bool handle_terminal_state();
 };

@@ -76,17 +76,10 @@ public:
 
     uint64_t get_hash() const { return hash_value; }
     std::pair<int, int> get_marker() const; // return marker;
-    std::vector<int> get_marker_flat() const; // [r,c]
+    std::vector<std::vector<int>> get_grid() const;
     int get_rows() const { return rows; }
     int get_cols() const { return cols; }
     const std::vector<std::vector<int>>& grid_ref() const { return grid; }
-
-    //added for wasm
-    std::vector<std::vector<int>> get_grid() const;
-    std::vector<int> get_flat_valid_moves() const;
-    // Versão achatada do grid para consumo simples em bindings/tests
-    std::vector<int> get_flat_grid() const;
-  
 
     int get_winner() const;
 
@@ -101,36 +94,33 @@ public:
 
     // Helpers para lidar com posições a partir do JS
     // ------------------------------------------------------------------------
-    // Estes métodos auxiliam a UI em React/Vite (via WASM) para reconfigurar
-    // rapidamente o tabuleiro (ex.: trocar dimensões, carregar puzzles, etc.).
+    //métodos para auxilia a UI a reconfigurar rapidamente o tabuleiro
     
-    /**
-     * Reinicia o tabuleiro para dimensões (r x c).
-     * @param r Linhas; @param c Colunas.
-     * @param block_initial Se true, bloqueia também a célula inicial do marcador.
-     */
+    //Reinicia o tabuleiro para dimensões (r x c).
+    //Se true, bloqueia também a célula inicial do marcador.
     void reset_board(int r, int c, bool block_initial = true);
-    /**
-     * Define a posição do marcador.
-     * @param r Linha; @param c Coluna.
-     * @param also_block_here Se true, bloqueia também essa célula.
-     * Útil para reconstruir estados ou injetar posições de puzzle.
-     */
+
+    // Define a posição do marcador.
+    // Se true, bloqueia também essa célula.
+    // Útil para reconstruir estados ou injetar posições de puzzle.
+
     void set_marker_pos(int r, int c, bool also_block_here = false);
-    /**
-     * Bloqueia explicitamente a célula (r,c).
-     * Útil para carregar estados/puzzles em que certas casas já estão
-     *       ocupadas/visitadas.
-     */
+    
+    // Bloqueia explicitamente a célula (r,c).
+    // Útil para carregar estados/puzzles em que certas casas já estão
+    // ocupadas/visitadas.
     void block_cell(int r, int c);
-        /**
-     * Define o jogador atual a partir de inteiro vindo da UI.
-     * @param player Valor 1 (Jogador 1/MAX) ou 2 (Jogador 2/MIN).
-     * Internamente converte para bool conforme a convenção do motor.
-     */
+
+    // Define o jogador atual a partir de inteiro vindo da UI.
+    // @param player Valor 1 (Jogador 1/MAX) ou 2 (Jogador 2/MIN).
+    // Internamente converte para bool conforme a convenção do motor.
     void set_current_player_from_int(int player); // 1 ou 2
 
-
+    //getters para WASM/JS - devolvem arrays "flat" (1D) para facilitar o consumo na UI
+    
+    std::vector<int> get_flat_valid_moves() const;
+    std::vector<int> get_flat_grid() const;
+    std::vector<int> get_marker_flat() const; // [r,c]
 
 private:
     int rows = 7;

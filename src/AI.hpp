@@ -231,6 +231,7 @@ private:
     int prunes = 0;
     int debug_level = 0;
 
+    //minimax + 2 versões para testes comparativos (sem alafa-béta e sem TT)
     int minimax(Board board, bool is_max, int depth, int alpha, int beta, int max_depth, int player_search);
     int minimax_noTT(Board board, bool is_max, int depth, int alpha, int beta, int max_depth, int player_search);
     int minimax_no_pruning(Board board, bool is_max, int depth, int max_depth, int player_search);

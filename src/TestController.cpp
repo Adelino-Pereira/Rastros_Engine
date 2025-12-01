@@ -56,6 +56,16 @@ void TestController::configure_quiescence(bool max_on, bool min_on,
     ai_player_2.set_quiescence(min_on, max_plies, swing_delta, low_mob);
 }
 
+void TestController::set_depth_limits_p1(int start, int max) {
+    start_depth_p1 = start;
+    max_depth_p1 = max;
+}
+
+void TestController::set_depth_limits_p2(int start, int max) {
+    start_depth_p2 = start;
+    max_depth_p2 = max;
+}
+
 
 
 void TestController::configure_ordering(OrderingPolicy pMax,
@@ -124,6 +134,10 @@ bool TestController::run(int mode) {
 void TestController::set_depth_limits(int start, int max) {
     start_depth = start;
     max_depth = max;
+    start_depth_p1 = start;
+    max_depth_p1 = max;
+    start_depth_p2 = start;
+    max_depth_p2 = max;
 }
 
 void TestController::play_ai_turn() {
@@ -132,8 +146,8 @@ void TestController::play_ai_turn() {
     std::pair<int, int> move;
 
     auto& ai = board.current_player_is_max() ? ai_player : ai_player_2;
-    int depth = std::min(start_depth + rounds / 5, max_depth); // aumento gradual da profundidade
-    move = ai.choose_move(board,depth,rounds);
+    int depth = compute_depth_for_player(board.current_player_is_max());
+    move = ai.choose_move(board, depth, rounds);
     board.make_move(move);
 
 }
@@ -200,6 +214,14 @@ int TestController::compute_depth() const {
     return std::max(depth, start_depth);
 }
 
+int TestController::compute_depth_for_player(bool is_max) const {
+    int s = is_max ? start_depth_p1 : start_depth_p2;
+    int m = is_max ? max_depth_p1 : max_depth_p2;
+    int depth = std::min(s + rounds / 5, m);
+    depth = (depth % 2 == 0) ? depth - 1 : depth; // força ímpar
+    return std::max(depth, s);
+}
+
 std::pair<int, int> TestController::select_ai_move(bool allow_first_override) {
     auto& ai = board.current_player_is_max() ? ai_player : ai_player_2;
     if (allow_first_override && rounds == 0) {
@@ -213,6 +235,6 @@ std::pair<int, int> TestController::select_ai_move(bool allow_first_override) {
         }
         if (!moves.empty()) return moves.front(); // fallback seguro se a jogada forçada não for válida
     }
-    int depth = compute_depth();
+    int depth = compute_depth_for_player(board.current_player_is_max());
     return ai.choose_move(board, depth, rounds);
 }

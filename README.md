@@ -196,23 +196,26 @@ Exemplos de saídas de debug podem ser consultados na pasta [exemplos_debug](exe
 Para correr testes diretamente com argumentos na linha de comandos, usas-se o seguinte modelo:
 
 ```
-./Rastros <MODO> <DEBUG> [FLAGS] [ARGS_POSICIONAIS]
+./Rastros <MODO> <DEBUG> [ARGS_POSICIONAIS] [FLAGS] 
 ```
 
 Como já se viu, o modo de teste pode ser "2" ou "3" e o nível de debug entre 0 e 5.
-Os [ARGS_POSICIONAIS] e [FLAGS] podem trocar de ordem desde que se mantenham agrupados.
 
 Os argumentos como flags disponíveis são.
 
 ```
--d/--depth        //Profundidade de procura - default 9
--md/--maxdepth    //Profundidade máxima de procura - default 15
--g/--games        //Número de Jogos de um torneio - default 100
--r/--row          //Número de linhas do tabuleiro - default 7
--c/--col          //Número de colunas do tabuleiro - default 7
--h1/heur1         //Heurística usada por MAX/P1 - default G
--h2/heur2         //Heurística usada por MIN/P2 - default G
--h/--Heur         //Heurístca usada por ambos os jogadores - default G
+-d/--depth          //Profundidade de procura (ambos os jogadores) - default 9
+-d1/--depth1        //Profundidade de procura (jogador 1) - default 9
+-d2/--depth2        //Profundidade de procura (jogador 2) - default 9
+-md/--maxdepth      //Profundidade máxima de procura (ambos os jogadores) - default 15
+-md1/--maxdepth1    //Profundidade máxima de procura (jogador 1) - default 15
+-md2/--maxdepth2    //Profundidade máxima de procura (jogador 2) - default 15
+-g/--games          //Número de Jogos de um torneio - default 100
+-r/--row            //Número de linhas do tabuleiro - default 7
+-c/--col            //Número de colunas do tabuleiro - default 7
+-h1/heur1           //Heurística usada por MAX/P1 - default G
+-h2/heur2           //Heurística usada por MIN/P2 - default G
+-h/--Heur           //Heurístca usada por ambos os jogadores - default G
 ```
 
 Exemplos de execução de um torneio de 50 jogos com profundidade mínima de 5 e máxima de 9 com ambas as IAs com a combinação heurística C para ambas as IAs num tabuleiro 8x8:
