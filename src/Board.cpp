@@ -313,6 +313,40 @@ std::vector<int> Board::get_marker_flat() const {
 
 
 
+Board::MoveUndo Board::apply_move(const Move& mv) {
+    MoveUndo u;
+
+    // Guardar estado anterior
+    u.old_r = marker.first;
+    u.old_c = marker.second;
+    u.old_cell_value   = grid[marker.first][marker.second]; // 0 ou 1
+    u.old_current_player = current_player;
+    u.old_hash = hash_value;
+
+    // Aplicar o movimento normal
+    make_move(mv);        // atualiza grid[old_r][old_c], marker e hash
+    switch_player();      // muda o jogador da vez
+
+    return u;
+}
+
+void Board::undo_move(const MoveUndo& u) {
+    // Restaurar jogador
+    current_player = u.old_current_player;
+
+    // Restaurar posição do marcador
+    marker.first  = u.old_r;
+    marker.second = u.old_c;
+
+    // Restaurar célula antiga do marcador
+    grid[u.old_r][u.old_c] = u.old_cell_value;
+
+    // Restaurar hash
+    hash_value = u.old_hash;
+}
+
+
+
 // ============================================================================
 // NOTAS - > a fazer
 // ----------------------------------------------------------------------------

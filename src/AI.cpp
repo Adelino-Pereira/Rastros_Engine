@@ -464,7 +464,7 @@ std::pair<int, int> AI::choose_move(Board& board, int depth_override, int rounds
 // // via quiescence search caso esteja ativa. (não está a ser utilizada)
 // // - Ordenação de jogadas para melhorar eficácia dos cortes.
 // // ----------------------------------------------------------------------------
-int AI::minimax(Board board, bool is_max, int depth, int alpha, int beta, int max_depth, int player_search) {
+int AI::minimax(Board& board, bool is_max, int depth, int alpha, int beta, int max_depth, int player_search) {
     last_max_depth_reached = std::max(last_max_depth_reached, depth);
 
     CompactStateKey key = compact_state_key(board, is_max, player_search);
@@ -593,12 +593,15 @@ int AI::minimax(Board board, bool is_max, int depth, int alpha, int beta, int ma
     bool expanded_child = false;
 
     for (const auto& ms : successors) {
-        Board tmp = board;
-        tmp.make_move(ms.move);
+        // Board tmp = board;
+        // tmp.make_move(ms.move);
+        Board::MoveUndo undo = board.apply_move(ms.move);
 
-        int score = minimax(tmp, !is_max, depth + 1, alpha, beta, max_depth, player_search);
+
+        int score = minimax(board, !is_max, depth + 1, alpha, beta, max_depth, player_search);
         int adj_score = adjust_terminal_score(score, depth);
         score = adj_score; // corrigir esta atribuição
+        board.undo_move(undo);
         expanded_child = true;
 
         if (debug_level >= 2 && depth <= 1 && debug_level < 3) {
