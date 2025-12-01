@@ -86,14 +86,14 @@ bool Board::is_free(int r, int c) const {
 
     // Defesa extra: se algo estiver mal com words_per_row ou grid_bits,
     // evita-se crash e ficas com um ponto de debug claro.
-    if (idx >= grid_bits.size()) {
-        std::cerr << "[Board::is_free] Out-of-bounds index: idx=" << idx
-                  << " size=" << grid_bits.size()
-                  << " (r=" << r << ", c=" << c
-                  << ", rows=" << rows << ", cols=" << cols
-                  << ", words_per_row=" << words_per_row << ")\n";
-        return false; // trata como célula bloqueada em caso de erro
-    }
+    // if (idx >= grid_bits.size()) {
+    //     std::cerr << "[Board::is_free] Out-of-bounds index: idx=" << idx
+    //               << " size=" << grid_bits.size()
+    //               << " (r=" << r << ", c=" << c
+    //               << ", rows=" << rows << ", cols=" << cols
+    //               << ", words_per_row=" << words_per_row << ")\n";
+    //     return false; // trata como célula bloqueada em caso de erro
+    // }
 
     std::uint64_t mask = bit_mask(c);
     return (grid_bits[idx] & mask) != 0; // 1 = livre
@@ -103,14 +103,14 @@ void Board::set_free(int r, int c, bool free) {
     if (!is_inside(r, c)) return;
 
     std::size_t idx = bit_index(r, c);
-    if (idx >= grid_bits.size()) {
-        std::cerr << "[Board::set_free] Out-of-bounds index: idx=" << idx
-                  << " size=" << grid_bits.size()
-                  << " (r=" << r << ", c=" << c
-                  << ", rows=" << rows << ", cols=" << cols
-                  << ", words_per_row=" << words_per_row << ")\n";
-        return;
-    }
+    // if (idx >= grid_bits.size()) {
+    //     std::cerr << "[Board::set_free] Out-of-bounds index: idx=" << idx
+    //               << " size=" << grid_bits.size()
+    //               << " (r=" << r << ", c=" << c
+    //               << ", rows=" << rows << ", cols=" << cols
+    //               << ", words_per_row=" << words_per_row << ")\n";
+    //     return;
+    // }
 
     std::uint64_t mask = bit_mask(c);
     if (free) {

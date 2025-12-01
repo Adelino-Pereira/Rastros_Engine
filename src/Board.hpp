@@ -155,8 +155,8 @@ private:
         return std::uint64_t{1} << (c & 63); // c % 64
     }
 
-    bool is_free(int r, int c) const;
-    void set_free(int r, int c, bool free);
+    inline bool is_free(int r, int c) const;
+    inline void set_free(int r, int c, bool free);
 
     // -----------------------------------------------------------------
     // Zobrist hashing
