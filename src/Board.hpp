@@ -46,6 +46,16 @@ public:
         int reachable_count; // nº de casas alcançáveis
     };
 
+    struct MoveUndo {
+        int old_r, old_c;
+        int new_r, new_c;
+        bool old_cell_free;
+        bool old_current_player;
+        std::uint64_t old_hash;
+    };
+
+    MoveUndo apply_move(const std::pair<int,int>& mv);
+    void undo_move(const MoveUndo& u);
 
     /**
      * Construtor por omissão.
@@ -128,6 +138,7 @@ private:
     std::pair<int, int> marker;
     bool current_player = true; // true para J1, false para J2
     std::vector<std::vector<int>> grid;
+    using Move = std::pair<int,int>;
 
 
     // Representação compacta da grelha:

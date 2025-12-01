@@ -397,12 +397,14 @@ std::pair<int, int> AI::choose_move(Board& board, int depth_override, int rounds
     // const int dash = std::max(0, depth_used - 1);
 
     for (const auto& ms : rootSuccessors) {
-        Board tmp = board;
-        tmp.make_move(ms.move);
+        //Board tmp = board;
+        //tmp.make_move(ms.move);
+        Board::MoveUndo undo = board.apply_move(ms.move);
+       
 
         // Atalho: se o sucessor é terminal e é vitória para quem acabou de jogar, retorna já.
-        if (tmp.is_terminal()) {
-            int v = adjust_terminal_score(evaluate_terminal(tmp, /*perspetiva do sucessor*/ !is_max),
+        if (board.is_terminal()) {
+            int v = adjust_terminal_score(evaluate_terminal(board, /*perspetiva do sucessor*/ !is_max),
                                           /*depth*/ 1);
             if ((is_max && v > 0) || (!is_max && v < 0)) {
                 if (debug_level == 1) {
@@ -424,7 +426,8 @@ std::pair<int, int> AI::choose_move(Board& board, int depth_override, int rounds
 
 
         
-        int score = run_minimax(tmp, /*child_is_max=*/!is_max, depth_used, player_search);
+        int score = run_minimax(board, /*child_is_max=*/!is_max, depth_used, player_search);
+        board.undo_move(undo);
 
         if (debug_level >= 2) {
             bool last_root_child = (&ms == &rootSuccessors.back());
@@ -592,10 +595,13 @@ int AI::minimax(Board board, bool is_max, int depth, int alpha, int beta, int ma
     bool expanded_child = false;
 
     for (const auto& ms : successors) {
-        Board tmp = board;
-        tmp.make_move(ms.move);
+        //Board tmp = board;
+        //tmp.make_move(ms.move);
+        Board::MoveUndo undo = board.apply_move(ms.move);
+        
 
-        int score = minimax(tmp, !is_max, depth + 1, alpha, beta, max_depth, player_search);
+        int score = minimax(board, !is_max, depth + 1, alpha, beta, max_depth, player_search);
+        board.undo_move(undo);
         int adj_score = adjust_terminal_score(score, depth);
         score = adj_score; // corrigir esta atribuição
         expanded_child = true;
