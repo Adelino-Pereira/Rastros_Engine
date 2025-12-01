@@ -13,8 +13,6 @@
 
 #include "AI.hpp"
 #include "HeuristicsUtils.hpp"
-#include "Heuristic1.hpp"
-#include "Heuristic2.hpp"
 #include "LogMsgs.hpp"
 #include <cmath>
 #include <algorithm>
@@ -184,47 +182,44 @@ int AI::rounds() { return s_rounds; }
 // ----------------------------------------------------------------------------
 void AI::register_heuristics() {
     heuristic_levels[1] = [](const Board& b, bool is_max) {
-        return heuristic1_combo(b, is_max, HeuristicCombo::C);
+        return heuristic_combo_score(b, is_max, HeuristicCombo::C);
     };
 
     heuristic_levels[2] = [](const Board& b, bool is_max) {
-        return heuristic1_combo(b, is_max, HeuristicCombo::C);
+        return heuristic_combo_score(b, is_max, HeuristicCombo::C);
 
     };
 
     heuristic_levels[3] = [](const Board& b, bool is_max) {
-        return heuristic1_combo(b, is_max, HeuristicCombo::C);
+        return heuristic_combo_score(b, is_max, HeuristicCombo::C);
 
     };
 
     heuristic_levels[4] = [](const Board& b, bool is_max) {
-        return heuristic1_combo(b, is_max, HeuristicCombo::E);
+        return heuristic_combo_score(b, is_max, HeuristicCombo::E);
     };
 
     heuristic_levels[5] = [](const Board& b, bool is_max) {
-        return heuristic1_combo(b, is_max, HeuristicCombo::F);
+        return heuristic_combo_score(b, is_max, HeuristicCombo::F);
     };
 
     heuristic_levels[6] = [](const Board& b, bool is_max) {
-        return heuristic1_combo(b, is_max, HeuristicCombo::E);
+        return heuristic_combo_score(b, is_max, HeuristicCombo::E);
     
     };
 
     heuristic_levels[7] = [](const Board& b, bool is_max) {
-            auto reach = b.compute_reachability();
-
-            int Dmax =  heuristic1_combo(b, is_max, HeuristicCombo::A);
-            int Dmin =  heuristic1_combo(b, is_max, HeuristicCombo::B);
-
-            return is_max = true ? Dmax : Dmin;
+            int Dmax =  heuristic_combo_score(b, is_max, HeuristicCombo::A);
+            int Dmin =  heuristic_combo_score(b, is_max, HeuristicCombo::B);
+            return is_max ? Dmax : Dmin;
     };
 
     heuristic_levels[8] = [](const Board& b, bool is_max) {
-        return heuristic1_combo(b, is_max, HeuristicCombo::C);
+        return heuristic_combo_score(b, is_max, HeuristicCombo::C);
     };
 
     heuristic_levels[9] = [](const Board& b, bool is_max) {
-        return heuristic1_combo(b, is_max, HeuristicCombo::F);
+        return heuristic_combo_score(b, is_max, HeuristicCombo::F);
 
     };
 

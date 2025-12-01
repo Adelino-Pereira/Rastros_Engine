@@ -15,7 +15,7 @@ export EM_CACHE="$EM_CACHE_DIR"
 
 # Compile using Emscripten
 em++ \
-  bindings.cpp Board.cpp AI.cpp Heuristic1.cpp Heuristic2.cpp HeuristicsUtils.cpp LogMsgs.cpp \
+  bindings.cpp Board.cpp AI.cpp HeuristicsUtils.cpp LogMsgs.cpp \
   -o "$OUTPUT_DIR/game.js" \
   -s MODULARIZE=1 \
   -s EXPORT_NAME="createGameModule" \

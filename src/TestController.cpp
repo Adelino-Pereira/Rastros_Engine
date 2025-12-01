@@ -4,18 +4,17 @@
 #include <utility>
 #include <stdexcept>
 #include <algorithm>
-#include "Heuristic1.hpp"
-#include "Heuristic2.hpp"
+#include "HeuristicsUtils.hpp"
 #include "AI.hpp"
 #include "LogMsgs.hpp"
 
 TestController::TestController(const std::string& mode, int rows, int cols,std::pair<int, int>  first_move, int debug,
                                HeuristicCombo combo_p1, HeuristicCombo combo_p2)
     : ai_player(true, max_depth,
-                [combo_p1](const Board& b, bool is_max){ return heuristic1_combo(b, is_max, combo_p1); },
+                [combo_p1](const Board& b, bool is_max){ return heuristic_combo_score(b, is_max, combo_p1); },
                 debug),
       ai_player_2(false, max_depth,
-                [combo_p2](const Board& b, bool is_max){ return heuristic2_combo(b, is_max, combo_p2); },
+                [combo_p2](const Board& b, bool is_max){ return heuristic_combo_score(b, is_max, combo_p2); },
                 debug),
       mode(mode),
       rounds(0),
@@ -33,10 +32,10 @@ TestController::TestController(const std::string& mode, int rows, int cols,std::
 TestController::TestController(const std::string& mode, int rows, int cols, int debug,
                                HeuristicCombo combo_p1, HeuristicCombo combo_p2)
     : ai_player(true, max_depth,
-                [combo_p1](const Board& b, bool is_max){ return heuristic1_combo(b, is_max, combo_p1); },
+                [combo_p1](const Board& b, bool is_max){ return heuristic_combo_score(b, is_max, combo_p1); },
                 debug),
       ai_player_2(false, max_depth,
-                [combo_p2](const Board& b, bool is_max){ return heuristic2_combo(b, is_max, combo_p2); },
+                [combo_p2](const Board& b, bool is_max){ return heuristic_combo_score(b, is_max, combo_p2); },
                 debug),
       mode(mode),
       rounds(0),

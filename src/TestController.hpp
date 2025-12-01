@@ -1,7 +1,7 @@
 #pragma once
 #include "Board.hpp"
 #include "AI.hpp"
-#include "Heuristic1.hpp"
+#include "HeuristicsUtils.hpp"
 #include <string>
 #include <vector>
 #include <utility>

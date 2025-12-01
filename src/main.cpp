@@ -10,8 +10,7 @@
 #include <vector>
 #include <functional>
 #include <cctype>
-#include "Heuristic1.hpp"
-#include "Heuristic2.hpp"
+#include "HeuristicsUtils.hpp"
 #include "LogMsgs.hpp"
 
 
@@ -236,8 +235,8 @@ int main(int argc, char* argv[]) {
     std::string mode;
     std::string main_choice;
     int debug = 0;
-    HeuristicCombo combo_p1 = HeuristicCombo::G; // default -> Heuristic1 combo A
-    HeuristicCombo combo_p2 = HeuristicCombo::G; // default -> Heuristic2 combo C
+    HeuristicCombo combo_p1 = HeuristicCombo::G; // default combo
+    HeuristicCombo combo_p2 = HeuristicCombo::G; // default combo
 
     auto depthFlag    = get_flag_int(argc, argv, "-d",  "--depth");
     auto maxDepthFlag = get_flag_int(argc, argv, "-md", "--max-depth");

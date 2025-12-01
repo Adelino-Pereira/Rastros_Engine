@@ -12,8 +12,6 @@ set(SOURCES
   AI.cpp
   GameController.cpp
   TestController.cpp
-  Heuristic1.cpp
-  Heuristic2.cpp
   HeuristicsUtils.cpp
 )
 add_executable(Rastros ${SOURCES})
@@ -42,7 +40,7 @@ if(BUILD_TESTS)
     # reuse engine sources
     LogMsgs.cpp
     Board.cpp AI.cpp GameController.cpp TestController.cpp
-    Heuristic1.cpp Heuristic2.cpp HeuristicsUtils.cpp
+    HeuristicsUtils.cpp
   )
   target_include_directories(BoardTests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
   target_compile_definitions(BoardTests PRIVATE RASTROS_TESTS=1)
@@ -55,7 +53,7 @@ if(BUILD_TESTS)
     # reuse engine sources
     LogMsgs.cpp
     Board.cpp AI.cpp GameController.cpp TestController.cpp
-    Heuristic1.cpp Heuristic2.cpp HeuristicsUtils.cpp
+    HeuristicsUtils.cpp
   )
   target_include_directories(AITests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
   target_compile_definitions(AITests PRIVATE RASTROS_TESTS=1)
@@ -67,7 +65,7 @@ if(BUILD_TESTS)
     # reuse engine sources
     LogMsgs.cpp
     Board.cpp AI.cpp GameController.cpp TestController.cpp
-    Heuristic1.cpp Heuristic2.cpp HeuristicsUtils.cpp
+    HeuristicsUtils.cpp
   )
   target_include_directories(IntegrationTests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
   target_compile_definitions(IntegrationTests PRIVATE RASTROS_TESTS=1)
