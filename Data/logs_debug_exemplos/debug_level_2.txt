@@ -1,847 +1,926 @@
 [heur] P1=G P2=G
 Modo teste2
  - Board: 7x7
-intBoard
 [Ordering] MAX=Deterministic, MIN=ShuffleAll, shuffle_ties_only=1
  - Jogo: 1
-intBoard
 [Quiescence] MAX=off, MIN=off
 [heur] P1=G P2=G
 alg:minimax_opt
 
-(2,5)->(2, 6), (3, 5), (1, 5), (1, 6), (3, 4), (3, 6), (1, 4), 
+(3,5)->(4, 4), (3, 6), (2, 6), (2, 5), (3, 4), (4, 5), (4, 6), 
 depth: 9
-├── MIN trying move to: (2,6)
-RS (3,6) -> 2
-RS (3,5) -> 2
-RS (1,5) -> -998
-RS (1,6) -> -998
-├── score for: (2,6)-> 2
-├── MIN trying move to: (3,5)
-RS (4,6) -> 1
-RS (2,6) -> -996
-RS (3,4) -> 1
-RS (4,5) -> 1
-RS (3,6) -> -994
-RS (4,4) -> 1
-├── score for: (3,5)-> 1
-├── MIN trying move to: (1,5)
-RS (2,6) -> -996
-RS (0,5) -> -998
-RS (0,6) -> -999
-RS (1,4) -> 40
-RS (1,6) -> -998
-RS (0,4) -> 40
-├── score for: (1,5)-> 40
-├── MIN trying move to: (1,6)
-RS (0,5) -> -998
-RS (0,6) -> -999
-RS (2,6) -> 1
-RS (1,5) -> -998
-├── score for: (1,6)-> 1
-├── MIN trying move to: (3,4)
-RS (2,3) -> 0
-RS (4,4) -> 0
-RS (3,3) -> 0
-RS (4,5) -> 0
-RS (4,3) -> 0
-RS (3,5) -> 1
-├── score for: (3,4)-> 1
-├── MIN trying move to: (3,6)
-RS (4,5) -> 0
-RS (3,5) -> -994
-RS (4,6) -> 1
-RS (2,6) -> 1
-├── score for: (3,6)-> 1
-└── MIN trying move to: (1,4)
-RS (0,4) -> -996
-RS (1,5) -> -998
-RS (1,3) -> 0
-RS (2,3) -> 0
-RS (0,3) -> 1
-RS (0,5) -> -998
-└── score for: (1,4)-> 1
-****[MIN] Best move selected: (3,5) 1 [depth: 9] [0.7921 s]
-(3,5)->(4, 4), (3, 4), (4, 5), (4, 6), (3, 6), (2, 6), 
-depth: 9
-├── MAX trying move to: (4,4)
-RS (4,5) -> 4
-RS (3,4) -> 3
-RS (5,5) -> 3
-RS (3,3) -> 2
-RS (5,4) -> 2
-RS (4,3) -> 2
-RS (5,3) -> 2
-├── score for: (4,4)-> 2
-├── MAX trying move to: (3,4)
-RS (4,5) -> 3
-RS (2,3) -> 3
-RS (4,4) -> 3
-RS (3,3) -> 2
-RS (4,3) -> 3
-├── score for: (3,4)-> 2
-├── MAX trying move to: (4,5)
-RS (3,6) -> 3
-RS (4,6) -> 3
-RS (5,6) -> 3
-RS (3,4) -> 3
-RS (5,5) -> 3
-RS (4,4) -> 3
-RS (5,4) -> 3
-├── score for: (4,5)-> 3
-├── MAX trying move to: (4,6)
-RS (3,6) -> 3
-RS (5,6) -> 3
-RS (4,5) -> 3
-RS (5,5) -> 3
-├── score for: (4,6)-> 3
-├── MAX trying move to: (3,6)
-RS (2,6) -> -997
-RS (4,6) -> -993
-RS (4,5) -> -993
-├── score for: (3,6)-> -997
-└── MAX trying move to: (2,6)
-RS (1,6) -> -997
-RS (1,5) -> -160
-RS (3,6) -> -200
-└── score for: (2,6)-> -997
-****[MAX] Best move selected: (4,5) 3 [depth: 9] [0.2655 s]
-(4,5)->(5, 6), (3, 6), (3, 4), (4, 6), (4, 4), (5, 4), (5, 5), 
-depth: 9
-├── MIN trying move to: (5,6)
-RS (4,6) -> -994
-RS (6,5) -> -992
-RS (5,5) -> -992
-RS (6,6) -> 1
-├── score for: (5,6)-> 1
-├── MIN trying move to: (3,6)
-RS (4,6) -> 2
-RS (2,6) -> -996
-├── score for: (3,6)-> 2
-├── MIN trying move to: (3,4)
-RS (4,3) -> -1
-RS (3,3) -> -1
-RS (4,4) -> -1
-RS (2,3) -> 0
-├── score for: (3,4)-> 0
-├── MIN trying move to: (4,6)
-RS (5,6) -> 3
-RS (3,6) -> 0
-RS (5,5) -> 3
-├── score for: (4,6)-> 3
 ├── MIN trying move to: (4,4)
-RS (3,3) -> -1
-RS (5,3) -> -1
-RS (5,5) -> -5
-RS (3,4) -> -1
-RS (5,4) -> -5
 RS (4,3) -> -1
-├── score for: (4,4)-> -1
-├── MIN trying move to: (5,4)
-RS (5,3) -> -1
-RS (6,3) -> -1
-RS (4,4) -> 0
-RS (6,5) -> 1
+RS (4,5) -> 0
+RS (3,4) -> -2
+RS (5,5) -> -1
+RS (3,3) -> 0
+RS (5,3) -> 0
+RS (5,4) -> 0
+├── score for: (4,4)-> 0
+├── MIN trying move to: (3,6)
+RS (2,6) -> -1
+RS (4,6) -> 1
+RS (4,5) -> 1
+RS (2,5) -> -996
+├── score for: (3,6)-> 1
+├── MIN trying move to: (2,6)
+RS (1,5) -> -998
+RS (3,6) -> 1
+RS (1,6) -> 1
+RS (2,5) -> -996
+├── score for: (2,6)-> 1
+├── MIN trying move to: (2,5)
+RS (1,6) -> -998
+RS (3,4) -> 0
+RS (2,6) -> -996
+RS (1,4) -> -994
+RS (3,6) -> -996
+RS (1,5) -> -998
+├── score for: (2,5)-> 0
+├── MIN trying move to: (3,4)
+RS (3,3) -> -1
+RS (2,5) -> 1
+RS (2,3) -> 1
+RS (4,4) -> 1
 RS (4,3) -> 1
-RS (5,5) -> -5
-RS (6,4) -> 1
-├── score for: (5,4)-> 1
-└── MIN trying move to: (5,5)
-RS (6,4) -> 0
-RS (5,4) -> 1
-RS (6,5) -> 1
-RS (4,6) -> -994
-RS (6,6) -> 1
-RS (5,6) -> -992
+RS (4,5) -> 1
+├── score for: (3,4)-> 1
+├── MIN trying move to: (4,5)
+RS (5,6) -> 0
 RS (4,4) -> 0
-└── score for: (5,5)-> 1
-****[MIN] Best move selected: (4,4) -1 [depth: 9] [0.6542 s]
-(4,4)->(5, 3), (5, 4), (4, 3), (3, 3), (5, 5), (3, 4), 
+RS (5,5) -> -3
+RS (3,6) -> 0
+RS (5,4) -> 0
+RS (4,6) -> 0
+RS (3,4) -> 0
+├── score for: (4,5)-> 0
+└── MIN trying move to: (4,6)
+RS (5,5) -> 0
+RS (5,6) -> 0
+RS (4,5) -> 0
+RS (3,6) -> -2
+└── score for: (4,6)-> 0
+****[MIN] Best move selected: (4,4) 0 [depth: 9] [0.7853 s]
+(4,4)->(5, 3), (5, 4), (4, 3), (3, 3), (5, 5), (3, 4), (4, 5), 
 depth: 9
 ├── MAX trying move to: (5,3)
-RS (5,4) -> 4
-RS (4,3) -> 3
-RS (6,4) -> 4
+RS (4,3) -> 1
+RS (5,4) -> 1
+RS (6,4) -> 1
 RS (4,2) -> 1
 RS (5,2) -> 1
 RS (6,3) -> 994
 RS (6,2) -> 1
 ├── score for: (5,3)-> 1
 ├── MAX trying move to: (5,4)
-RS (5,5) -> 4
-RS (6,5) -> -5
-RS (6,4) -> 3
-RS (4,3) -> -5
+RS (4,5) -> 3
+RS (5,5) -> 3
+RS (6,5) -> 2
+RS (4,3) -> 1
 RS (5,3) -> 1
+RS (6,4) -> 3
 RS (6,3) -> 1
-├── score for: (5,4)-> -5
+├── score for: (5,4)-> 1
 ├── MAX trying move to: (4,3)
-RS (3,4) -> 1
+RS (3,4) -> 3
 RS (3,2) -> 1
 RS (3,3) -> 1
 RS (5,4) -> 1
-RS (5,3) -> 5
-RS (4,2) -> 4
-RS (5,2) -> 1
-├── score for: (4,3)-> 1
-├── MAX trying move to: (3,3)
-RS (2,3) -> 4
-RS (2,2) -> 2
-RS (3,4) -> 2
-RS (3,2) -> 2
-RS (4,3) -> 2
-RS (4,2) -> 2
-├── score for: (3,3)-> 2
-├── MAX trying move to: (5,5)
-RS (4,6) -> 4
-RS (5,6) -> 4
-RS (6,6) -> -5
-RS (6,5) -> 3
-RS (5,4) -> -5
-RS (6,4) -> 1
-├── score for: (5,5)-> -5
-└── MAX trying move to: (3,4)
-RS (2,3) -> 4
-RS (3,3) -> 2
-RS (4,3) -> 1
-└── score for: (3,4)-> 1
-****[MAX] Best move selected: (3,3) 2 [depth: 9] [0.2004 s]
-(3,3)->(4, 2), (2, 3), (3, 2), (4, 3), (2, 2), (3, 4), 
-depth: 9
-├── MIN trying move to: (4,2)
-RS (5,1) -> -41
-RS (5,3) -> -2
-RS (4,1) -> -2
-RS (5,2) -> -2
-RS (3,1) -> -2
-RS (3,2) -> -2
-RS (4,3) -> -2
-├── score for: (4,2)-> -2
-├── MIN trying move to: (2,3)
-RS (3,2) -> -2
-RS (1,3) -> -899
-RS (1,2) -> 1
-RS (2,2) -> 1
-RS (3,4) -> 1
-RS (1,4) -> -993
-├── score for: (2,3)-> 1
-├── MIN trying move to: (3,2)
-RS (4,3) -> -1
-RS (4,2) -> -1
-RS (2,2) -> 1
-RS (2,3) -> -2
-RS (3,1) -> 0
-RS (2,1) -> 1
-RS (4,1) -> 1
-├── score for: (3,2)-> 1
-├── MIN trying move to: (4,3)
-RS (5,4) -> -5
-RS (3,4) -> 0
-RS (5,2) -> 0
 RS (4,2) -> 0
-RS (5,3) -> 0
-RS (3,2) -> 0
-├── score for: (4,3)-> 0
-├── MIN trying move to: (2,2)
-RS (2,1) -> -3
-RS (1,3) -> 0
-RS (1,1) -> 0
-RS (1,2) -> -5
-RS (3,2) -> 0
-RS (2,3) -> 0
-RS (3,1) -> 0
-├── score for: (2,2)-> 0
-└── MIN trying move to: (3,4)
-RS (2,3) -> 0
-RS (4,3) -> 0
-└── score for: (3,4)-> 0
-****[MIN] Best move selected: (4,2) -2 [depth: 9] [0.4449 s]
-(4,2)->(5, 1), (5, 2), (4, 1), (5, 3), (3, 1), (4, 3), (3, 2), 
-depth: 9
-├── MAX trying move to: (5,1)
-RS (4,1) -> -40
-RS (4,0) -> -38
-RS (5,2) -> -39
-RS (6,2) -> -39
-RS (5,0) -> 998
-RS (6,1) -> 998
-RS (6,0) -> 999
-├── score for: (5,1)-> -40
-├── MAX trying move to: (5,2)
-RS (4,3) -> 5
-RS (4,1) -> 993
-RS (5,3) -> 0
-RS (6,3) -> -1
-RS (5,1) -> 998
-RS (6,2) -> 996
-RS (6,1) -> 998
-├── score for: (5,2)-> -1
-├── MAX trying move to: (4,1)
-RS (3,2) -> 0
-RS (3,1) -> 0
-RS (3,0) -> -1
-RS (4,0) -> 996
-RS (5,2) -> 993
-RS (5,1) -> 998
-RS (5,0) -> 998
-├── score for: (4,1)-> -1
-├── MAX trying move to: (5,3)
-RS (4,3) -> 992
-RS (5,4) -> 4
-RS (6,4) -> 4
+RS (5,3) -> 5
 RS (5,2) -> 0
-RS (6,3) -> 994
-RS (6,2) -> 1
-├── score for: (5,3)-> 0
-├── MAX trying move to: (3,1)
+├── score for: (4,3)-> 0
+├── MAX trying move to: (3,3)
+RS (3,4) -> 3
+RS (2,3) -> 2
 RS (2,2) -> 2
-RS (3,2) -> 992
-RS (2,1) -> 2
-RS (2,0) -> 0
-RS (4,1) -> 0
-RS (3,0) -> 994
-RS (4,0) -> 2
-├── score for: (3,1)-> 0
+RS (4,3) -> 1
+RS (3,2) -> 1
+RS (4,2) -> 1
+├── score for: (3,3)-> 1
+├── MAX trying move to: (5,5)
+RS (4,6) -> 3
+RS (5,6) -> 3
+RS (4,5) -> 3
+RS (6,6) -> 2
+RS (5,4) -> 2
+RS (6,5) -> 3
+RS (6,4) -> 2
+├── score for: (5,5)-> 2
+├── MAX trying move to: (3,4)
+RS (2,5) -> -993
+RS (4,5) -> -993
+RS (2,3) -> -41
+RS (3,3) -> -40
+RS (4,3) -> -46
+├── score for: (3,4)-> -993
+└── MAX trying move to: (4,5)
+RS (3,6) -> 3
+RS (4,6) -> 3
+RS (5,6) -> 3
+RS (3,4) -> 2
+RS (5,5) -> 3
+RS (5,4) -> 2
+└── score for: (4,5)-> 2
+****[MAX] Best move selected: (5,5) 2 [depth: 9] [0.3008 s]
+(5,5)->(6, 4), (5, 4), (6, 5), (6, 6), (5, 6), (4, 6), (4, 5), 
+depth: 9
+├── MIN trying move to: (6,4)
+RS (6,3) -> -1
+RS (5,3) -> -1
+RS (5,4) -> -1
+RS (6,5) -> -1
+├── score for: (6,4)-> -1
+├── MIN trying move to: (5,4)
+RS (5,3) -> -1
+RS (4,5) -> 0
+RS (6,5) -> -3
+RS (6,3) -> 0
+RS (6,4) -> 0
+RS (4,3) -> 0
+├── score for: (5,4)-> 0
+├── MIN trying move to: (6,5)
+RS (5,4) -> -5
+RS (6,4) -> -1
+RS (5,6) -> -1
+RS (6,6) -> 1
+├── score for: (6,5)-> 1
+├── MIN trying move to: (6,6)
+RS (5,6) -> -5
+RS (6,5) -> 0
+├── score for: (6,6)-> 0
+├── MIN trying move to: (5,6)
+RS (4,5) -> -992
+RS (6,5) -> -998
+RS (6,6) -> 0
+RS (4,6) -> 1
+├── score for: (5,6)-> 1
+├── MIN trying move to: (4,6)
+RS (4,5) -> -5
+RS (5,6) -> 1
+RS (3,6) -> 1
+├── score for: (4,6)-> 1
+└── MIN trying move to: (4,5)
+RS (4,6) -> -5
+RS (3,6) -> -994
+RS (5,4) -> -1
+RS (3,4) -> -899
+RS (5,6) -> -992
+└── score for: (4,5)-> -1
+****[MIN] Best move selected: (6,4) -1 [depth: 9] [0.3807 s]
+(6,4)->(6, 3), (5, 3), (5, 4), (6, 5), 
+depth: 9
+├── MAX trying move to: (6,3)
+RS (5,4) -> 3
+RS (5,3) -> 994
+RS (5,2) -> 1
+RS (6,2) -> 1
+├── score for: (6,3)-> 1
+├── MAX trying move to: (5,3)
+RS (5,4) -> 3
+RS (4,3) -> 2
+RS (6,3) -> 994
+RS (5,2) -> 2
+RS (4,2) -> 3
+RS (6,2) -> 2
+├── score for: (5,3)-> 2
+├── MAX trying move to: (5,4)
+RS (6,5) -> -3
+RS (4,5) -> -5
+RS (4,3) -> 1
+RS (5,3) -> 1
+RS (6,3) -> -1
+├── score for: (5,4)-> -5
+└── MAX trying move to: (6,5)
+RS (6,6) -> -3
+RS (5,6) -> 3
+RS (5,4) -> 0
+└── score for: (6,5)-> -3
+****[MAX] Best move selected: (5,3) 2 [depth: 9] [0.0961 s]
+(5,3)->(6, 3), (6, 2), (5, 4), (5, 2), (4, 3), (4, 2), 
+depth: 9
+├── MIN trying move to: (6,3)
+RS (5,4) -> -6
+RS (5,2) -> -2
+RS (6,2) -> 995
+├── score for: (6,3)-> 995
+├── MIN trying move to: (6,2)
+RS (5,2) -> -4
+RS (5,1) -> -4
+RS (6,3) -> 0
+RS (6,1) -> 0
+├── score for: (6,2)-> 0
+├── MIN trying move to: (5,4)
+RS (4,3) -> -1
+RS (6,5) -> -1
+RS (6,3) -> -1
+RS (4,5) -> -1
+├── score for: (5,4)-> -1
+├── MIN trying move to: (5,2)
+RS (4,3) -> -1
+RS (6,1) -> -1
+RS (4,2) -> -1
+RS (4,1) -> -1
+RS (5,1) -> -3
+RS (6,3) -> -1
+RS (6,2) -> -4
+├── score for: (5,2)-> -1
+├── MIN trying move to: (4,3)
+RS (3,4) -> -992
+RS (5,2) -> -1
+RS (4,2) -> -1
+RS (5,4) -> -1
+RS (3,3) -> -1
+RS (3,2) -> -1
+├── score for: (4,3)-> -1
+└── MIN trying move to: (4,2)
+RS (3,3) -> -1
+RS (5,2) -> -1
+RS (5,1) -> -34
+RS (4,1) -> -1
+RS (3,2) -> -1
+RS (4,3) -> -1
+RS (3,1) -> -1
+└── score for: (4,2)-> -1
+****[MIN] Best move selected: (5,4) -1 [depth: 9] [0.4438 s]
+(5,4)->(6, 3), (4, 3), (4, 5), (6, 5), 
+depth: 9
+├── MAX trying move to: (6,3)
+RS (5,2) -> 996
+RS (6,2) -> 2
+├── score for: (6,3)-> 2
 ├── MAX trying move to: (4,3)
 RS (3,4) -> 1
-RS (3,2) -> 1
-RS (5,4) -> 5
-RS (5,3) -> 899
-RS (5,2) -> 5
-├── score for: (4,3)-> 1
-└── MAX trying move to: (3,2)
-RS (2,3) -> 3
-RS (2,2) -> 4
-RS (2,1) -> 5
-RS (3,1) -> 899
-RS (4,3) -> 5
+RS (3,3) -> 1
+RS (3,2) -> 0
+RS (4,2) -> 858
+RS (5,2) -> 996
+├── score for: (4,3)-> 0
+├── MAX trying move to: (4,5)
+RS (4,6) -> 996
+RS (5,6) -> 0
+RS (3,6) -> 1
+RS (3,4) -> 0
+├── score for: (4,5)-> 0
+└── MAX trying move to: (6,5)
+RS (6,6) -> -3
+RS (5,6) -> 998
+└── score for: (6,5)-> -3
+****[MAX] Best move selected: (6,3) 2 [depth: 9] [0.0700 s]
+(6,3)->(6, 2), (5, 2), 
+depth: 9
+├── MIN trying move to: (6,2)
+RS (5,1) -> -41
+RS (5,2) -> -2
+RS (6,1) -> -1
+├── score for: (6,2)-> -1
+└── MIN trying move to: (5,2)
+RS (4,3) -> -1
+RS (5,1) -> -36
+RS (6,1) -> -34
 RS (4,1) -> -1
-└── score for: (3,2)-> -1
-****[MAX] Best move selected: (4,3) 1 [depth: 9] [0.2161 s]
-(4,3)->(5, 3), (5, 2), (3, 2), (5, 4), (3, 4), 
+RS (4,2) -> -1
+RS (6,2) -> 997
+└── score for: (5,2)-> 997
+****[MIN] Best move selected: (6,2) -1 [depth: 9] [0.1706 s]
+(6,2)->(6, 1), (5, 1), (5, 2), 
 depth: 9
-├── MIN trying move to: (5,3)
-RS (5,2) -> 993
-RS (6,2) -> 993
-RS (6,4) -> 992
-RS (5,4) -> 992
-RS (6,3) -> 993
-├── score for: (5,3)-> 993
-├── MIN trying move to: (5,2)
-RS (4,1) -> -2
-RS (6,3) -> 5
-RS (6,2) -> -5
-RS (5,1) -> -32
-RS (5,3) -> 5
-RS (6,1) -> -5
-├── score for: (5,2)-> 5
-├── MIN trying move to: (3,2)
-RS (2,1) -> -3
-RS (3,1) -> -3
-RS (2,3) -> -998
-RS (4,1) -> -2
-RS (2,2) -> 0
-├── score for: (3,2)-> 0
-├── MIN trying move to: (5,4)
-RS (6,3) -> -2
-RS (6,4) -> -5
-RS (6,5) -> 4
-RS (5,3) -> 4
-RS (5,5) -> 4
-├── score for: (5,4)-> 4
-└── MIN trying move to: (3,4)
-RS (2,3) -> 0
-└── score for: (3,4)-> 0
-****[MIN] Best move selected: (3,2) 0 [depth: 9] [0.1785 s]
-(3,2)->(4, 1), (3, 1), (2, 1), (2, 2), (2, 3), 
+├── MAX trying move to: (6,1)
+RS (5,2) -> 1
+RS (5,1) -> 998
+RS (5,0) -> 998
+RS (6,0) -> 999
+├── score for: (6,1)-> 1
+├── MAX trying move to: (5,1)
+RS (4,2) -> -39
+RS (5,2) -> 996
+RS (4,1) -> -40
+RS (4,0) -> -40
+RS (6,1) -> 998
+RS (5,0) -> 998
+RS (6,0) -> 999
+├── score for: (5,1)-> -40
+└── MAX trying move to: (5,2)
+RS (4,3) -> 1
+RS (4,2) -> 1
+RS (4,1) -> 1
+RS (5,1) -> 998
+RS (6,1) -> 998
+└── score for: (5,2)-> 1
+****[MAX] Best move selected: (6,1) 1 [depth: 9] [0.0828 s]
+(6,1)->(6, 0), (5, 0), (5, 1), (5, 2), 
 depth: 9
+├── MIN trying move to: (6,0)
+├── score for: (6,0)-> 1000
+├── MIN trying move to: (5,0)
+RS (5,1) -> -936
+RS (4,0) -> -2
+RS (4,1) -> -2
+RS (6,0) -> 999
+├── score for: (5,0)-> 999
+├── MIN trying move to: (5,1)
+RS (4,1) -> -43
+RS (4,0) -> -42
+RS (5,0) -> -936
+RS (4,2) -> -42
+RS (5,2) -> -42
+RS (6,0) -> 999
+├── score for: (5,1)-> 999
+└── MIN trying move to: (5,2)
+RS (4,3) -> -1
+RS (4,2) -> -1
+RS (5,1) -> -5
+RS (4,1) -> -1
+└── score for: (5,2)-> -1
+****[MIN] Best move selected: (5,2) -1 [depth: 9] [0.1964 s]
+(5,2)->(5, 1), (4, 1), (4, 2), (4, 3), 
+depth: 11
+├── MAX trying move to: (5,1)
+RS (4,2) -> -40
+RS (4,1) -> -41
+RS (4,0) -> -41
+RS (5,0) -> 998
+RS (6,0) -> 999
+├── score for: (5,1)-> -41
 ├── MAX trying move to: (4,1)
+RS (3,2) -> 0
 RS (3,1) -> 0
+RS (4,2) -> 995
 RS (3,0) -> -1
 RS (4,0) -> 996
-RS (5,0) -> 998
-RS (5,2) -> 993
 RS (5,1) -> 998
+RS (5,0) -> 998
 ├── score for: (4,1)-> -1
-├── MAX trying move to: (3,1)
-RS (2,2) -> 7
-RS (2,1) -> 7
-RS (2,0) -> -2
-RS (3,0) -> 994
-RS (4,0) -> 2
-RS (4,1) -> 0
-├── score for: (3,1)-> -2
-├── MAX trying move to: (2,1)
-RS (1,2) -> 7
-RS (2,2) -> 8
-RS (1,1) -> 6
-RS (1,0) -> 0
-RS (3,1) -> 992
-RS (2,0) -> 8
-RS (3,0) -> 899
-├── score for: (2,1)-> 0
-├── MAX trying move to: (2,2)
-RS (1,3) -> 6
-RS (2,3) -> 6
-RS (1,2) -> 7
-RS (1,1) -> 7
-RS (2,1) -> 8
-RS (3,1) -> 899
-├── score for: (2,2)-> 6
-└── MAX trying move to: (2,3)
-RS (1,4) -> 2
-RS (1,3) -> 3
-RS (1,2) -> 7
-RS (2,2) -> 6
-RS (3,4) -> -999
-└── score for: (2,3)-> -999
-****[MAX] Best move selected: (2,2) 6 [depth: 9] [0.1040 s]
-(2,2)->(2, 3), (2, 1), (3, 1), (1, 1), (1, 3), (1, 2), 
-depth: 9
-├── MIN trying move to: (2,3)
-RS (1,2) -> -9
-RS (3,4) -> 999
-RS (1,3) -> 934
-RS (1,4) -> 200
-├── score for: (2,3)-> 999
-├── MIN trying move to: (2,1)
-RS (1,0) -> -8
+├── MAX trying move to: (4,2)
+RS (4,3) -> 0
+RS (3,3) -> 0
+RS (3,2) -> -1
 RS (3,1) -> -1
-RS (1,1) -> -6
-RS (1,2) -> -8
-RS (2,0) -> -8
-RS (3,0) -> -1
-├── score for: (2,1)-> -1
-├── MIN trying move to: (3,1)
-RS (2,0) -> -5
-RS (4,1) -> 993
-RS (2,1) -> 0
-RS (3,0) -> 993
-RS (4,0) -> 993
-├── score for: (3,1)-> 993
-├── MIN trying move to: (1,1)
-RS (0,1) -> -9
-RS (2,0) -> -6
-RS (0,0) -> -6
-RS (2,1) -> -6
-RS (0,2) -> -8
-RS (1,2) -> -8
-RS (1,0) -> -7
-├── score for: (1,1)-> -6
-├── MIN trying move to: (1,3)
-RS (0,4) -> -994
-RS (1,4) -> -994
-RS (0,3) -> -994
-RS (0,2) -> 5
-RS (2,3) -> 4
-RS (1,2) -> 4
-├── score for: (1,3)-> 5
-└── MIN trying move to: (1,2)
-RS (1,1) -> -8
-RS (2,3) -> -998
-RS (2,1) -> -8
-RS (0,2) -> -992
-RS (0,1) -> 6
-RS (1,3) -> -899
-RS (0,3) -> -899
-└── score for: (1,2)-> 6
-****[MIN] Best move selected: (1,1) -6 [depth: 9] [0.1069 s]
-(1,1)->(2, 0), (1, 0), (2, 1), (0, 0), (1, 2), (0, 1), (0, 2), 
-depth: 11
-├── MAX trying move to: (2,0)
-RS (1,0) -> 7
-RS (2,1) -> 992
-RS (3,1) -> 990
-RS (3,0) -> 990
-├── score for: (2,0)-> 7
-├── MAX trying move to: (1,0)
-RS (0,0) -> -8
-RS (0,1) -> 998
-RS (2,1) -> 2
-RS (2,0) -> -8
-├── score for: (1,0)-> -8
-├── MAX trying move to: (2,1)
-RS (1,2) -> -991
-RS (1,0) -> 899
-RS (2,0) -> 992
-RS (3,0) -> 992
-RS (3,1) -> 992
-├── score for: (2,1)-> -991
-├── MAX trying move to: (0,0)
-RS (0,1) -> 8
-RS (1,0) -> 8
-├── score for: (0,0)-> 8
-├── MAX trying move to: (1,2)
-RS (2,3) -> 998
-RS (1,3) -> -993
-RS (0,3) -> -993
-RS (0,2) -> -991
-RS (0,1) -> 8
-RS (2,1) -> -933
-├── score for: (1,2)-> -993
-├── MAX trying move to: (0,1)
-RS (0,2) -> -991
-RS (1,2) -> -991
-RS (0,0) -> 8
-RS (1,0) -> -991
-├── score for: (0,1)-> -991
-└── MAX trying move to: (0,2)
-RS (1,3) -> -993
-RS (0,3) -> -993
-RS (1,2) -> -991
-RS (0,1) -> -240
-└── score for: (0,2)-> -993
-****[MAX] Best move selected: (0,0) 8 [depth: 11] [0.0526 s]
-(0,0)->(0, 1), (1, 0), 
-depth: 11
-├── MIN trying move to: (0,1)
-RS (1,0) -> -1
-RS (0,2) -> -990
-RS (1,2) -> -990
-├── score for: (0,1)-> -1
-└── MIN trying move to: (1,0)
-RS (2,0) -> 991
-RS (2,1) -> 991
-RS (0,1) -> 991
-└── score for: (1,0)-> 991
-****[MIN] Best move selected: (0,1) -1 [depth: 11] [0.0529 s]
-(0,1)->(1, 0), (1, 2), (0, 2), 
-depth: 11
-├── MAX trying move to: (1,0)
-RS (2,1) -> 990
-RS (2,0) -> 0
-├── score for: (1,0)-> 0
-├── MAX trying move to: (1,2)
-RS (0,3) -> -993
-RS (2,3) -> -993
-RS (1,3) -> -993
-RS (0,2) -> -993
-RS (2,1) -> -991
-├── score for: (1,2)-> -993
-└── MAX trying move to: (0,2)
-RS (0,3) -> -993
-RS (1,3) -> -993
-RS (1,2) -> -993
-└── score for: (0,2)-> -993
-****[MAX] Best move selected: (1,0) 0 [depth: 11] [0.0243 s]
-(1,0)->(2, 0), (2, 1), 
-depth: 11
-├── MIN trying move to: (2,0)
-RS (3,1) -> -7
-RS (3,0) -> -7
-RS (2,1) -> -8
-├── score for: (2,0)-> -7
-└── MIN trying move to: (2,1)
-RS (2,0) -> 991
-RS (3,1) -> 991
-RS (3,0) -> 859
-RS (1,2) -> 991
-└── score for: (2,1)-> 991
-****[MIN] Best move selected: (2,0) -7 [depth: 11] [0.0414 s]
-(2,0)->(3, 1), (3, 0), (2, 1), 
-depth: 11
-├── MAX trying move to: (3,1)
-RS (2,1) -> 990
-RS (3,0) -> 994
-RS (4,0) -> 0
-RS (4,1) -> -7
-├── score for: (3,1)-> -7
-├── MAX trying move to: (3,0)
-RS (2,1) -> 990
-RS (3,1) -> 994
-RS (4,1) -> -7
-RS (4,0) -> 0
-├── score for: (3,0)-> -7
-└── MAX trying move to: (2,1)
-RS (1,2) -> -993
-RS (3,0) -> 990
-RS (3,1) -> 990
-└── score for: (2,1)-> -993
-****[MAX] Best move selected: (3,1) -7 [depth: 11] [0.0313 s]
-(3,1)->(4, 1), (2, 1), (3, 0), (4, 0), 
-depth: 11
-├── MIN trying move to: (4,1)
-RS (4,0) -> -200
-RS (5,1) -> -33
-RS (5,2) -> -7
-RS (3,0) -> -8
-RS (5,0) -> -8
-├── score for: (4,1)-> -7
-├── MIN trying move to: (2,1)
-RS (3,0) -> 991
-RS (1,2) -> 991
-├── score for: (2,1)-> 991
-├── MIN trying move to: (3,0)
-RS (2,1) -> -990
-RS (4,1) -> 993
-RS (4,0) -> 995
-├── score for: (3,0)-> 995
-└── MIN trying move to: (4,0)
-RS (3,0) -> -990
-RS (5,1) -> -35
-RS (4,1) -> -200
-RS (5,0) -> -8
-└── score for: (4,0)-> -8
-****[MIN] Best move selected: (4,0) -8 [depth: 11] [0.0698 s]
-(4,0)->(5, 0), (5, 1), (4, 1), (3, 0), 
-depth: 11
-├── MAX trying move to: (5,0)
-RS (4,1) -> 855
+RS (4,1) -> 995
 RS (5,1) -> 998
-RS (6,1) -> 998
-RS (6,0) -> 999
-├── score for: (5,0)-> 855
+├── score for: (4,2)-> -1
+└── MAX trying move to: (4,3)
+RS (3,4) -> 2
+RS (3,3) -> 0
+RS (3,2) -> 0
+RS (4,2) -> 0
+└── score for: (4,3)-> 0
+****[MAX] Best move selected: (4,3) 0 [depth: 11] [0.7707 s]
+(4,3)->(4, 2), (3, 2), (3, 4), (3, 3), 
+depth: 11
+├── MIN trying move to: (4,2)
+RS (4,1) -> -4
+RS (5,1) -> -4
+RS (3,1) -> -2
+RS (3,3) -> -2
+RS (3,2) -> -2
+├── score for: (4,2)-> -2
+├── MIN trying move to: (3,2)
+RS (2,2) -> -7
+RS (4,2) -> -7
+RS (2,3) -> -4
+RS (4,1) -> -2
+RS (3,1) -> -2
+RS (3,3) -> -2
+RS (2,1) -> -2
+├── score for: (3,2)-> -2
+├── MIN trying move to: (3,4)
+RS (3,3) -> -2
+RS (2,3) -> 0
+RS (2,5) -> 0
+RS (4,5) -> 0
+├── score for: (3,4)-> 0
+└── MIN trying move to: (3,3)
+RS (4,2) -> -2
+RS (3,2) -> -2
+RS (2,2) -> -2
+RS (3,4) -> -2
+RS (2,3) -> -2
+└── score for: (3,3)-> -2
+****[MIN] Best move selected: (4,2) -2 [depth: 11] [1.2084 s]
+(4,2)->(5, 1), (4, 1), (3, 1), (3, 2), (3, 3), 
+depth: 11
 ├── MAX trying move to: (5,1)
-RS (4,1) -> 996
-RS (5,2) -> -32
-RS (6,2) -> -34
+RS (4,1) -> -42
+RS (4,0) -> -42
 RS (5,0) -> 998
-RS (6,1) -> 998
 RS (6,0) -> 999
-├── score for: (5,1)-> -34
+├── score for: (5,1)-> -42
 ├── MAX trying move to: (4,1)
-RS (3,0) -> -8
-RS (5,2) -> 994
-RS (5,1) -> 998
+RS (3,2) -> -1
+RS (3,1) -> -3
+RS (3,0) -> -3
+RS (4,0) -> 996
 RS (5,0) -> 998
-├── score for: (4,1)-> -8
-└── MAX trying move to: (3,0)
-RS (2,1) -> -991
-RS (4,1) -> 996
-└── score for: (3,0)-> -991
-****[MAX] Best move selected: (5,0) 855 [depth: 11] [0.0197 s]
-(5,0)->(4, 1), (6, 0), (6, 1), (5, 1), 
+RS (5,1) -> 998
+├── score for: (4,1)-> -3
+├── MAX trying move to: (3,1)
+RS (2,2) -> 1
+RS (3,2) -> 994
+RS (2,1) -> 0
+RS (2,0) -> 0
+RS (4,1) -> 995
+RS (3,0) -> 994
+RS (4,0) -> 995
+├── score for: (3,1)-> 0
+├── MAX trying move to: (3,2)
+RS (2,3) -> -5
+RS (3,3) -> -5
+RS (2,2) -> -4
+RS (2,1) -> -5
+RS (3,1) -> 994
+RS (4,1) -> 995
+├── score for: (3,2)-> -5
+└── MAX trying move to: (3,3)
+RS (3,4) -> 2
+RS (2,3) -> 2
+RS (2,2) -> -1
+RS (3,2) -> -1
+└── score for: (3,3)-> -1
+****[MAX] Best move selected: (3,1) 0 [depth: 11] [0.5087 s]
+(3,1)->(2, 1), (3, 2), (3, 0), (4, 0), (2, 0), (4, 1), (2, 2), 
+depth: 11
+├── MIN trying move to: (2,1)
+RS (1,0) -> -4
+RS (2,0) -> -4
+RS (1,2) -> -4
+RS (3,0) -> -3
+RS (3,2) -> -4
+RS (2,2) -> -4
+RS (1,1) -> -3
+├── score for: (2,1)-> -3
+├── MIN trying move to: (3,2)
+RS (4,1) -> 995
+RS (2,1) -> -4
+RS (2,2) -> 991
+RS (2,3) -> 993
+RS (3,3) -> 993
+├── score for: (3,2)-> 995
+├── MIN trying move to: (3,0)
+RS (4,1) -> -896
+RS (4,0) -> 995
+RS (2,0) -> 993
+RS (2,1) -> 993
+├── score for: (3,0)-> 995
+├── MIN trying move to: (4,0)
+RS (4,1) -> -897
+RS (5,0) -> 996
+RS (3,0) -> 993
+RS (5,1) -> 996
+├── score for: (4,0)-> 996
+├── MIN trying move to: (2,0)
+RS (1,1) -> -6
+RS (1,0) -> -6
+RS (3,0) -> 993
+RS (2,1) -> 993
+├── score for: (2,0)-> 993
+├── MIN trying move to: (4,1)
+RS (4,0) -> -897
+RS (5,1) -> 996
+RS (3,2) -> 992
+RS (3,0) -> 991
+RS (5,0) -> 996
+├── score for: (4,1)-> 996
+└── MIN trying move to: (2,2)
+RS (2,1) -> 3
+RS (1,1) -> 2
+RS (1,3) -> 3
+RS (3,2) -> -1
+RS (1,2) -> 3
+RS (3,3) -> 2
+RS (2,3) -> 3
+└── score for: (2,2)-> 3
+****[MIN] Best move selected: (2,1) -3 [depth: 11] [0.4592 s]
+(2,1)->(3, 0), (2, 0), (1, 0), (3, 2), (1, 1), (2, 2), (1, 2), 
+depth: 11
+├── MAX trying move to: (3,0)
+RS (2,0) -> -1
+RS (4,1) -> 995
+RS (4,0) -> 995
+├── score for: (3,0)-> -1
+├── MAX trying move to: (2,0)
+RS (1,0) -> -5
+RS (1,1) -> -6
+RS (3,0) -> 994
+├── score for: (2,0)-> -6
+├── MAX trying move to: (1,0)
+RS (0,1) -> 990
+RS (0,0) -> -1
+RS (1,1) -> 992
+RS (2,0) -> 993
+├── score for: (1,0)-> -1
+├── MAX trying move to: (3,2)
+RS (2,3) -> -9
+RS (3,3) -> -200
+RS (2,2) -> -200
+RS (4,1) -> 995
+├── score for: (3,2)-> -200
+├── MAX trying move to: (1,1)
+RS (0,2) -> -1
+RS (0,1) -> 990
+RS (1,2) -> -1
+RS (2,2) -> -4
+RS (0,0) -> 0
+RS (1,0) -> 992
+RS (2,0) -> 993
+├── score for: (1,1)-> -4
+├── MAX trying move to: (2,2)
+RS (1,3) -> -7
+RS (2,3) -> -7
+RS (1,2) -> -3
+RS (3,3) -> -200
+RS (1,1) -> -5
+RS (3,2) -> 994
+├── score for: (2,2)-> -200
+└── MAX trying move to: (1,2)
+RS (0,3) -> -6
+RS (0,2) -> -6
+RS (1,3) -> -7
+RS (0,1) -> -5
+RS (2,3) -> -6
+RS (2,2) -> -3
+RS (1,1) -> -3
+└── score for: (1,2)-> -7
+****[MAX] Best move selected: (3,0) -1 [depth: 11] [0.2900 s]
+(3,0)->(4, 1), (4, 0), (2, 0), 
 depth: 11
 ├── MIN trying move to: (4,1)
-RS (3,0) -> -990
-RS (5,2) -> -896
-RS (5,1) -> 856
-├── score for: (4,1)-> 856
-├── MIN trying move to: (6,0)
-├── score for: (6,0)-> 1000
-├── MIN trying move to: (6,1)
-RS (5,2) -> -7
-RS (6,0) -> 999
-RS (6,2) -> 993
-RS (5,1) -> 991
-├── score for: (6,1)-> 999
-└── MIN trying move to: (5,1)
-RS (5,2) -> -936
-RS (6,2) -> -48
-RS (6,0) -> 999
-RS (4,1) -> 991
-RS (6,1) -> 993
-└── score for: (5,1)-> 999
-****[MIN] Best move selected: (4,1) 856 [depth: 11] [0.0216 s]
-(4,1)->(5, 1), (5, 2), (3, 0), 
+RS (3,2) -> -899
+RS (5,0) -> 996
+RS (5,1) -> 996
+RS (4,0) -> 997
+├── score for: (4,1)-> 997
+├── MIN trying move to: (4,0)
+RS (5,1) -> 996
+RS (5,0) -> 996
+RS (4,1) -> 993
+├── score for: (4,0)-> 996
+└── MIN trying move to: (2,0)
+RS (1,0) -> -5
+RS (1,1) -> -5
+└── score for: (2,0)-> -5
+****[MIN] Best move selected: (2,0) -5 [depth: 11] [0.1114 s]
+(2,0)->(1, 0), (1, 1), 
 depth: 11
-├── MAX trying move to: (5,1)
-RS (5,2) -> 857
-RS (6,2) -> 857
-RS (6,1) -> 998
-RS (6,0) -> 999
-├── score for: (5,1)-> 857
-├── MAX trying move to: (5,2)
-RS (6,3) -> -896
-RS (5,3) -> -896
-RS (6,2) -> 996
-RS (5,1) -> 998
-RS (6,1) -> 998
-├── score for: (5,2)-> -896
-└── MAX trying move to: (3,0)
-RS (2,1) -> -991
-└── score for: (3,0)-> -991
-****[MAX] Best move selected: (5,1) 857 [depth: 11] [0.0093 s]
-(5,1)->(5, 2), (6, 1), (6, 0), (6, 2), 
+├── MAX trying move to: (1,0)
+RS (0,1) -> 0
+RS (1,1) -> 0
+RS (0,0) -> -1
+├── score for: (1,0)-> -1
+└── MAX trying move to: (1,1)
+RS (0,2) -> -1
+RS (1,0) -> 0
+RS (0,0) -> 0
+RS (0,1) -> -5
+RS (1,2) -> -1
+RS (2,2) -> -5
+└── score for: (1,1)-> -5
+****[MAX] Best move selected: (1,0) -1 [depth: 11] [0.1075 s]
+(1,0)->(1, 1), (0, 0), (0, 1), 
 depth: 11
-├── MIN trying move to: (5,2)
-RS (6,1) -> -936
-RS (6,2) -> -936
-RS (6,3) -> 858
-RS (5,3) -> 858
-├── score for: (5,2)-> 858
-├── MIN trying move to: (6,1)
-RS (6,2) -> -936
-RS (6,0) -> 999
-RS (5,2) -> -936
-├── score for: (6,1)-> 999
-├── MIN trying move to: (6,0)
-├── score for: (6,0)-> 1000
-└── MIN trying move to: (6,2)
-RS (5,2) -> -936
-RS (6,3) -> 858
-RS (5,3) -> 858
-RS (6,1) -> -936
-└── score for: (6,2)-> 858
-****[MIN] Best move selected: (5,2) 858 [depth: 11] [0.0097 s]
-(5,2)->(6, 1), (6, 2), (6, 3), (5, 3), 
+├── MIN trying move to: (1,1)
+RS (0,1) -> -998
+RS (2,2) -> -899
+RS (1,2) -> -897
+RS (0,2) -> -897
+RS (0,0) -> -6
+├── score for: (1,1)-> -6
+├── MIN trying move to: (0,0)
+RS (1,1) -> -6
+RS (0,1) -> -6
+├── score for: (0,0)-> -6
+└── MIN trying move to: (0,1)
+RS (0,0) -> -6
+RS (1,1) -> -6
+RS (0,2) -> -6
+RS (1,2) -> -6
+└── score for: (0,1)-> -6
+****[MIN] Best move selected: (1,1) -6 [depth: 11] [0.1388 s]
+(1,1)->(2, 2), (0, 0), (1, 2), (0, 1), (0, 2), 
+depth: 11
+├── MAX trying move to: (2,2)
+RS (1,3) -> -859
+RS (2,3) -> -859
+RS (1,2) -> -895
+RS (3,3) -> -898
+RS (3,2) -> 994
+├── score for: (2,2)-> -898
+├── MAX trying move to: (0,0)
+RS (0,1) -> -5
+├── score for: (0,0)-> -5
+├── MAX trying move to: (1,2)
+RS (0,3) -> -200
+RS (0,2) -> -859
+RS (0,1) -> 998
+RS (1,3) -> -895
+RS (2,3) -> -895
+RS (2,2) -> -895
+├── score for: (1,2)-> -895
+├── MAX trying move to: (0,1)
+RS (0,2) -> -200
+RS (1,2) -> -895
+RS (0,0) -> -999
+├── score for: (0,1)-> -999
+└── MAX trying move to: (0,2)
+RS (0,3) -> -200
+RS (1,3) -> -859
+RS (1,2) -> -859
+RS (0,1) -> 998
+└── score for: (0,2)-> -859
+****[MAX] Best move selected: (0,0) -5 [depth: 11] [0.1128 s]
+(0,0)->(0, 1), 
+depth: 11
+└── MIN trying move to: (0,1)
+RS (0,2) -> -897
+RS (1,2) -> -897
+└── score for: (0,1)-> -897
+****[MIN] Best move selected: (0,1) -897 [depth: 11] [0.0233 s]
+(0,1)->(1, 2), (0, 2), 
 depth: 13
-├── MAX trying move to: (6,1)
-RS (6,2) -> -938
-RS (6,0) -> 999
-├── score for: (6,1)-> -938
-├── MAX trying move to: (6,2)
-RS (6,3) -> -939
-RS (5,3) -> -939
-RS (6,1) -> 998
-├── score for: (6,2)-> -939
-├── MAX trying move to: (6,3)
-RS (5,4) -> 989
-RS (6,4) -> 989
-RS (5,3) -> 996
-RS (6,2) -> 997
-├── score for: (6,3)-> 989
-└── MAX trying move to: (5,3)
-RS (6,4) -> 989
-RS (5,4) -> 989
-RS (6,3) -> 996
-RS (6,2) -> 997
-└── score for: (5,3)-> 989
-****[MAX] Best move selected: (6,3) 989 [depth: 13] [0.0151 s]
-(6,3)->(6, 4), (5, 4), (5, 3), (6, 2), 
+├── MAX trying move to: (1,2)
+RS (0,3) -> -897
+RS (0,2) -> -897
+RS (1,3) -> -897
+RS (2,3) -> -897
+RS (2,2) -> -896
+├── score for: (1,2)-> -897
+└── MAX trying move to: (0,2)
+RS (0,3) -> -897
+RS (1,3) -> -897
+RS (1,2) -> -897
+└── score for: (0,2)-> -897
+****[MAX] Best move selected: (1,2) -897 [depth: 13] [0.0448 s]
+(1,2)->(2, 2), (2, 3), (1, 3), (0, 2), (0, 3), 
 depth: 13
-├── MIN trying move to: (6,4)
-RS (5,4) -> -990
-RS (5,5) -> -200
-RS (5,3) -> -896
-RS (6,5) -> 990
-├── score for: (6,4)-> 990
-├── MIN trying move to: (5,4)
-RS (5,3) -> -938
-RS (6,5) -> 990
-RS (6,4) -> -990
-RS (5,5) -> 990
-├── score for: (5,4)-> 990
-├── MIN trying move to: (5,3)
-RS (5,4) -> -938
-RS (6,2) -> 997
-RS (6,4) -> 995
-├── score for: (5,3)-> 997
-└── MIN trying move to: (6,2)
-RS (6,1) -> 998
-RS (5,3) -> 993
-└── score for: (6,2)-> 998
-****[MIN] Best move selected: (6,4) 990 [depth: 13] [0.0148 s]
-(6,4)->(5, 3), (5, 4), (6, 5), (5, 5), 
+├── MIN trying move to: (2,2)
+RS (3,3) -> -988
+RS (1,3) -> -988
+RS (2,3) -> -990
+RS (3,2) -> -899
+├── score for: (2,2)-> -899
+├── MIN trying move to: (2,3)
+RS (3,4) -> -992
+RS (1,4) -> -990
+RS (2,2) -> -988
+RS (1,3) -> -988
+RS (3,3) -> -988
+RS (3,2) -> -899
+├── score for: (2,3)-> -899
+├── MIN trying move to: (1,3)
+RS (2,3) -> -992
+RS (0,4) -> -988
+RS (0,3) -> -988
+RS (0,2) -> -898
+RS (2,2) -> -988
+RS (1,4) -> -899
+├── score for: (1,3)-> -898
+├── MIN trying move to: (0,2)
+RS (0,3) -> -988
+RS (1,3) -> -899
+├── score for: (0,2)-> -899
+└── MIN trying move to: (0,3)
+RS (0,2) -> -898
+RS (1,4) -> -988
+RS (0,4) -> -898
+RS (1,3) -> -898
+└── score for: (0,3)-> -898
+****[MIN] Best move selected: (2,2) -899 [depth: 13] [0.1391 s]
+(2,2)->(3, 2), (3, 3), (2, 3), (1, 3), 
 depth: 13
-├── MAX trying move to: (5,3)
-RS (5,4) -> -989
-RS (6,2) -> 997
-├── score for: (5,3)-> -989
-├── MAX trying move to: (5,4)
-RS (5,5) -> -991
-RS (6,5) -> -991
-RS (5,3) -> 996
-├── score for: (5,4)-> -991
-├── MAX trying move to: (6,5)
-RS (5,6) -> 992
-RS (5,5) -> 994
-RS (6,6) -> 991
-RS (5,4) -> 995
-├── score for: (6,5)-> 991
-└── MAX trying move to: (5,5)
-RS (4,6) -> 991
-RS (5,6) -> 992
-RS (6,6) -> -200
-RS (6,5) -> 994
-RS (5,4) -> 995
-└── score for: (5,5)-> -200
-****[MAX] Best move selected: (6,5) 991 [depth: 13] [0.0084 s]
-(6,5)->(6, 6), (5, 4), (5, 6), (5, 5), 
+├── MAX trying move to: (3,2)
+RS (2,3) -> -898
+RS (3,3) -> -991
+RS (4,1) -> 995
+├── score for: (3,2)-> -991
+├── MAX trying move to: (3,3)
+RS (3,4) -> -989
+RS (2,3) -> 993
+RS (3,2) -> 994
+├── score for: (3,3)-> -989
+├── MAX trying move to: (2,3)
+RS (1,4) -> -993
+RS (1,3) -> -993
+RS (3,4) -> 992
+RS (3,3) -> 993
+RS (3,2) -> 994
+├── score for: (2,3)-> -993
+└── MAX trying move to: (1,3)
+RS (0,4) -> -995
+RS (1,4) -> 990
+RS (0,2) -> -993
+RS (0,3) -> -995
+RS (2,3) -> -991
+└── score for: (1,3)-> -995
+****[MAX] Best move selected: (3,3) -989 [depth: 13] [0.0229 s]
+(3,3)->(2, 3), (3, 4), (3, 2), 
 depth: 13
-├── MIN trying move to: (6,6)
-RS (5,5) -> -992
-RS (5,6) -> 992
-├── score for: (6,6)-> 992
-├── MIN trying move to: (5,4)
-RS (5,5) -> -994
-RS (5,3) -> 996
-├── score for: (5,4)-> 996
-├── MIN trying move to: (5,6)
-RS (5,5) -> -998
-RS (4,6) -> -994
-RS (6,6) -> 993
-├── score for: (5,6)-> 993
-└── MIN trying move to: (5,5)
-RS (5,4) -> 995
-RS (6,6) -> -992
-RS (5,6) -> -998
-RS (4,6) -> 991
-└── score for: (5,5)-> 995
-****[MIN] Best move selected: (6,6) 992 [depth: 13] [0.0070 s]
-(6,6)->(5, 5), (5, 6), 
+├── MIN trying move to: (2,3)
+RS (3,4) -> -992
+RS (3,2) -> 995
+RS (1,4) -> 993
+RS (1,3) -> 991
+├── score for: (2,3)-> 995
+├── MIN trying move to: (3,4)
+RS (2,5) -> -992
+RS (2,3) -> -992
+RS (4,5) -> -990
+├── score for: (3,4)-> -990
+└── MIN trying move to: (3,2)
+RS (4,1) -> 995
+RS (2,3) -> 993
+└── score for: (3,2)-> 995
+****[MIN] Best move selected: (3,4) -990 [depth: 13] [0.0254 s]
+(3,4)->(2, 3), (2, 5), (4, 5), 
 depth: 13
-├── MAX trying move to: (5,5)
-RS (4,6) -> 998
-RS (5,6) -> -993
-RS (5,4) -> 995
-├── score for: (5,5)-> -993
-└── MAX trying move to: (5,6)
-RS (4,6) -> 993
-RS (5,5) -> 994
-└── score for: (5,6)-> 993
-****[MAX] Best move selected: (5,6) 993 [depth: 13] [0.0029 s]
-(5,6)->(4, 6), (5, 5), 
+├── MAX trying move to: (2,3)
+RS (1,4) -> -993
+RS (1,3) -> -991
+RS (3,2) -> 994
+├── score for: (2,3)-> -993
+├── MAX trying move to: (2,5)
+RS (1,6) -> 938
+RS (3,6) -> 994
+RS (2,6) -> -993
+RS (1,5) -> -993
+RS (1,4) -> -991
+├── score for: (2,5)-> -993
+└── MAX trying move to: (4,5)
+RS (3,6) -> -991
+RS (4,6) -> 996
+RS (5,6) -> -991
+└── score for: (4,5)-> -991
+****[MAX] Best move selected: (4,5) -991 [depth: 13] [0.0117 s]
+(4,5)->(4, 6), (5, 6), (3, 6), 
 depth: 13
 ├── MIN trying move to: (4,6)
-RS (3,6) -> -996
-RS (5,5) -> 994
-├── score for: (4,6)-> 994
-└── MIN trying move to: (5,5)
-RS (5,4) -> 995
-RS (4,6) -> -994
-└── score for: (5,5)-> 995
-****[MIN] Best move selected: (4,6) 994 [depth: 13] [0.0020 s]
-(4,6)->(5, 5), (3, 6), 
+RS (5,6) -> 997
+RS (3,6) -> 993
+├── score for: (4,6)-> 997
+├── MIN trying move to: (5,6)
+RS (6,5) -> -998
+RS (6,6) -> -998
+RS (4,6) -> -990
+├── score for: (5,6)-> -990
+└── MIN trying move to: (3,6)
+RS (2,5) -> -996
+RS (2,6) -> -992
+RS (4,6) -> -996
+└── score for: (3,6)-> -992
+****[MIN] Best move selected: (3,6) -992 [depth: 13] [0.0124 s]
+(3,6)->(4, 6), (2, 5), (2, 6), 
 depth: 13
-├── MAX trying move to: (5,5)
-RS (5,4) -> 995
-├── score for: (5,5)-> 995
-└── MAX trying move to: (3,6)
+├── MAX trying move to: (4,6)
+RS (5,6) -> -997
+├── score for: (4,6)-> -997
+├── MAX trying move to: (2,5)
+RS (1,6) -> 938
 RS (2,6) -> -997
-└── score for: (3,6)-> -997
-****[MAX] Best move selected: (5,5) 995 [depth: 13] [0.0014 s]
-(5,5)->(5, 4), 
+RS (1,5) -> -995
+RS (1,4) -> -991
+├── score for: (2,5)-> -997
+└── MAX trying move to: (2,6)
+RS (1,6) -> -989
+RS (1,5) -> -993
+RS (2,5) -> -993
+└── score for: (2,6)-> -993
+****[MAX] Best move selected: (2,6) -993 [depth: 13] [0.0048 s]
+(2,6)->(1, 5), (2, 5), (1, 6), 
 depth: 13
-└── MIN trying move to: (5,4)
-RS (5,3) -> 996
-└── score for: (5,4)-> 996
-****[MIN] Best move selected: (5,4) 996 [depth: 13 -> 5] [0.0001 s]
-(5,4)->(5, 3), 
+├── MIN trying move to: (1,5)
+RS (1,4) -> -996
+RS (0,5) -> -998
+RS (0,6) -> -999
+RS (1,6) -> -998
+RS (0,4) -> -994
+RS (2,5) -> -996
+├── score for: (1,5)-> -994
+├── MIN trying move to: (2,5)
+RS (1,5) -> -998
+RS (1,4) -> -994
+RS (1,6) -> -998
+├── score for: (2,5)-> -994
+└── MIN trying move to: (1,6)
+RS (0,6) -> -999
+RS (2,5) -> -990
+RS (1,5) -> -998
+RS (0,5) -> -998
+└── score for: (1,6)-> -990
+****[MIN] Best move selected: (1,5) -994 [depth: 13] [0.0043 s]
+(1,5)->(1, 4), (0, 4), (2, 5), (0, 5), (1, 6), (0, 6), 
 depth: 13
-└── MAX trying move to: (5,3)
-RS (6,2) -> 997
-└── score for: (5,3)-> 997
-****[MAX] Best move selected: (5,3) 997 [depth: 13 -> 4] [0.0000 s]
-(5,3)->(6, 2), 
+├── MAX trying move to: (1,4)
+RS (2,5) -> -997
+RS (0,5) -> -995
+RS (0,4) -> 991
+RS (0,3) -> -997
+RS (1,3) -> -993
+RS (2,3) -> 993
+├── score for: (1,4)-> -997
+├── MAX trying move to: (0,4)
+RS (0,5) -> -995
+RS (1,4) -> -995
+RS (0,3) -> -991
+RS (1,3) -> -995
+├── score for: (0,4)-> -995
+├── MAX trying move to: (2,5)
+RS (1,6) -> -997
+RS (1,4) -> -993
+├── score for: (2,5)-> -997
+├── MAX trying move to: (0,5)
+RS (0,6) -> -999
+RS (1,6) -> -993
+RS (1,4) -> -993
+RS (0,4) -> -993
+├── score for: (0,5)-> -999
+├── MAX trying move to: (1,6)
+RS (0,6) -> -999
+RS (0,5) -> -997
+RS (2,5) -> -995
+├── score for: (1,6)-> -999
+└── MAX trying move to: (0,6)
+└── score for: (0,6)-> -1000
+****[MAX] Best move selected: (0,4) -995 [depth: 13] [0.0022 s]
+(0,4)->(1, 4), (0, 3), (1, 3), (0, 5), 
 depth: 13
-└── MIN trying move to: (6,2)
-RS (6,1) -> 998
-└── score for: (6,2)-> 998
-****[MIN] Best move selected: (6,2) 998 [depth: 13 -> 3] [0.0000 s]
-(6,2)->(6, 1), 
+├── MIN trying move to: (1,4)
+RS (1,3) -> 993
+RS (0,3) -> 991
+RS (0,5) -> -998
+RS (2,3) -> 993
+RS (2,5) -> -996
+├── score for: (1,4)-> 993
+├── MIN trying move to: (0,3)
+RS (1,4) -> -996
+RS (1,3) -> -998
+RS (0,2) -> -992
+├── score for: (0,3)-> -992
+├── MIN trying move to: (1,3)
+RS (0,3) -> -998
+RS (1,4) -> -996
+RS (0,2) -> -994
+RS (2,3) -> -994
+├── score for: (1,3)-> -994
+└── MIN trying move to: (0,5)
+RS (0,6) -> -999
+RS (1,6) -> -998
+RS (1,4) -> -996
+└── score for: (0,5)-> -996
+****[MIN] Best move selected: (0,5) -996 [depth: 13] [0.0012 s]
+(0,5)->(1, 4), (1, 6), (0, 6), 
 depth: 15
-└── MAX trying move to: (6,1)
-RS (6,0) -> 999
-└── score for: (6,1)-> 999
-****[MAX] Best move selected: (6,1) 999 [depth: 15 -> 2] [0.0000 s]
-(6,1)->(6, 0), 
+├── MAX trying move to: (1,4)
+RS (2,5) -> -997
+RS (0,3) -> -997
+RS (1,3) -> -993
+RS (2,3) -> 993
+├── score for: (1,4)-> -997
+├── MAX trying move to: (1,6)
+RS (0,6) -> -999
+RS (2,5) -> -995
+├── score for: (1,6)-> -999
+└── MAX trying move to: (0,6)
+└── score for: (0,6)-> -1000
+****[MAX] Best move selected: (1,4) -997 [depth: 15 -> 12] [0.0005 s]
+(1,4)->(2, 5), (1, 3), (0, 3), (2, 3), 
 depth: 15
-└── MIN trying move to: (6,0)
-└── score for: (6,0)-> 1000
-****[MIN] Best move selected: (6,0) 1000 [depth: 15 -> 1] [0.0000 s]
-Rounds : (31)
+├── MIN trying move to: (2,5)
+RS (1,6) -> -998
+├── score for: (2,5)-> -998
+├── MIN trying move to: (1,3)
+RS (2,3) -> 993
+RS (0,2) -> -998
+RS (0,3) -> -998
+├── score for: (1,3)-> 993
+├── MIN trying move to: (0,3)
+RS (1,3) -> -998
+RS (0,2) -> 991
+├── score for: (0,3)-> 991
+└── MIN trying move to: (2,3)
+RS (1,3) -> 997
+RS (3,2) -> 996
+└── score for: (2,3)-> 997
+****[MIN] Best move selected: (2,5) -998 [depth: 15 -> 10] [0.0004 s]
+(2,5)->(1, 6), 
+depth: 15
+└── MAX trying move to: (1,6)
+RS (0,6) -> -999
+└── score for: (1,6)-> -999
+****[MAX] Best move selected: (1,6) -999 [depth: 15 -> 2] [0.0000 s]
+(1,6)->(0, 6), 
+depth: 15
+Rounds : (33)
 === Ordering Quality (P1/MAX AI) ===
-[order] MAX-to-move nodes=29386 cutoffs=17859 avgCutoffIdx=0.1366 fracFirst=0.9176
-[order] MIN-to-move nodes=17479 cutoffs=11158 avgCutoffIdx=0.2587 fracFirst=0.8214
+[order] MAX-to-move nodes=80862 cutoffs=51845 avgCutoffIdx=0.1338 fracFirst=0.9157
+[order] MIN-to-move nodes=50574 cutoffs=31798 avgCutoffIdx=0.2709 fracFirst=0.8229
 === Ordering Quality (P2/MIN AI) ===
-[order] MAX-to-move nodes=29672 cutoffs=15956 avgCutoffIdx=0.9056 fracFirst=0.5249
-[order] MIN-to-move nodes=69442 cutoffs=49598 avgCutoffIdx=0.4938 fracFirst=0.7024
-[Visited] lookups=317436 hits=20050 inserts=298110 hit_rate=6.3162%
-Vitória do Jogador 1!
+[order] MAX-to-move nodes=63211 cutoffs=35602 avgCutoffIdx=0.6897 fracFirst=0.5927
+[order] MIN-to-move nodes=137161 cutoffs=93922 avgCutoffIdx=0.5058 fracFirst=0.6858
+[Visited] lookups=690814 hits=43067 inserts=649281 hit_rate=6.2342%
+Vitória do Jogador 2!
 
-tempo jogo: 3.3734
+tempo jogo: 6.5911
 
-Vitórias AI 1: 1
-Vitórias AI 2: 0
-tempo total: 3.3734
+Vitórias AI 1: 0
+Vitórias AI 2: 1
+tempo total: 6.5911
