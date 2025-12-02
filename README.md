@@ -128,7 +128,7 @@ Em '2' é possível carregar um tabuleiro num estado específico através de um 
 0,6
 ```
 
-O ficheiro pode ser fabricado manualmente ou pode-se utilizar o script python game_reg_to_list.py para transformar um registo de jogo, descarregado no final de uma partida na aplicação web, num ficheiro TXT compatível.
+O ficheiro pode ser fabricado manualmente ou pode-se utilizar o script python [gameRegParser.py](PythonTools/gameRegParser.py) para transformar um registo de jogo, descarregado no final de uma partida na aplicação web, num ficheiro CSV compatível. Do mesmo modo pode-se usar [debugLogParser.py](PythonTools/debugLogParser.py) para converter um ou mais jogos de um ficheiro emitido como log em nível 1 de debug.([instruções de utilização aqui](PythonTools/README.md))
 
 Do mesmo modo pode-se utilizar o script test_log_2_cli_txt.py para converter um log de jogo(s) de teste, obtido em nível de debug 1, para o formato compatível com a CLI.
 
@@ -196,7 +196,7 @@ Exemplos de saídas de debug podem ser consultados na pasta [exemplos_debug](exe
 Para correr testes diretamente com argumentos na linha de comandos, usas-se o seguinte modelo:
 
 ```
-./Rastros <MODO> <DEBUG> [ARGS_POSICIONAIS] [FLAGS] 
+./Rastros <MODO> <DEBUG> [ARGS_POSICIONAIS] [FLAGS]
 ```
 
 Como já se viu, o modo de teste pode ser "2" ou "3" e o nível de debug entre 0 e 5.
