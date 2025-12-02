@@ -344,6 +344,8 @@ int main(int argc, char* argv[]) {
             std::cin >> target_ply;
 
             Board board(rows, cols, false);
+            //Board board(rows, cols); 
+            
 
             std::ifstream file(path);
             if (!file) {
@@ -352,28 +354,19 @@ int main(int argc, char* argv[]) {
             }
 
             std::string line;
-            std::getline(file, line);
-
-            board.make_move({2, 4});
-
             int move_count = 0;
+            // Cada linha contém "row,col" (inteiros) na ordem das jogadas.
+            // A primeira linha deve ser a jogada imediatamente após o marcador
+            // inicial (tipicamente a casa cima-direita do centro).
             while (move_count < target_ply && std::getline(file, line)) {
+                if (line.empty()) continue;
                 std::stringstream ss(line);
-                std::string ply_str, player, move_str, score;
+                std::string rStr, cStr;
+                if (!std::getline(ss, rStr, ',')) continue;
+                if (!std::getline(ss, cStr, ',')) continue;
 
-                std::getline(ss, ply_str, ',');
-                std::getline(ss, player, ',');
-                std::getline(ss, move_str, ',');
-                std::getline(ss, score, ',');
-
-                if (move_str.length() < 2) continue;
-
-                int col = move_str[0] - 'a';
-                int row = rows - (move_str[1] - '0');
-
-                std::cout << "(" << move_str[0] << move_str[1] << ") ->";
-                std::cout << "(" << row << "," << col << ")\n";
-
+                int row = std::stoi(rStr);
+                int col = std::stoi(cStr);
                 board.make_move({row, col});
                 move_count++;
             }

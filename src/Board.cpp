@@ -22,20 +22,8 @@
 #include <limits>
 #include <random>
 
-// Construtor por omissão: cria um tabuleiro 7x7 com o marcador na posição inicial
-// (usado em testes e instâncias rápidas sem parâmetros).
-Board::Board() {
-    grid = std::vector<std::vector<int>>(rows, std::vector<int>(cols, 1));
-    marker = {rows / 2 - 1, cols / 2 + 1};
-    grid[marker.first][marker.second] = 0;
-    current_player = true;
-    init_zobrist();
-    recompute_hash();
-}
-
 // Construtor com dimensões: cria tabuleiro rows x cols com marcador na posição padrão.
 Board::Board(int r, int c) : rows(r), cols(c) {
-    std::cout << "intBoard\n";
     grid = std::vector<std::vector<int>>(rows, std::vector<int>(cols, 1));
     int row_coord = rows / 2 - 1;
     int col_coord = (cols % 2 == 0) ? cols / 2 : cols / 2 + 1;

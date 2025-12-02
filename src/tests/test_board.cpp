@@ -7,13 +7,13 @@ static void place_marker(Board& b, int r, int c, bool block_here=true) {
 }
 
 TEST(BoardBasics, StartsWithSomeValidMoves) {
-  Board b; // default 7x7 per implementation
+  Board b(7,7);
   auto moves = b.get_valid_moves();
   EXPECT_FALSE(moves.empty()) << "Marker should have valid moves at start";
 }
 
 TEST(BoardBasics, MakeMoveBlocksPreviousAndUpdatesMarker) {
-  Board b;
+  Board b(7,7);
   auto start = b.get_marker();
   auto moves = b.get_valid_moves();
   ASSERT_FALSE(moves.empty());

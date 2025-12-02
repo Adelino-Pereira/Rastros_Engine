@@ -26,7 +26,6 @@ EMSCRIPTEN_BINDINGS(rastros_module) {
 
     
     class_<Board>("Board")
-        .constructor<>()
         .constructor<int, int>()
         .function("getFlatGrid", &Board::get_flat_grid)
         .function("getFlatValidMoves", &Board::get_flat_valid_moves)

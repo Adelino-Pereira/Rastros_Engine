@@ -49,12 +49,6 @@ public:
     MoveUndo apply_move(const Move& mv);
     void undo_move(const MoveUndo& u);
 
-    /**
-     * Construtor por omissão.
-     * Inicializa um tabuleiro com dimensões padrão e posiciona o marcador
-     * numa célula inicial, bloqueando-a conforme a regra do jogo.
-     */
-    Board();
     /** 
      * Construtor com dimensões explícitas.
      * @param rows Número de linhas.
