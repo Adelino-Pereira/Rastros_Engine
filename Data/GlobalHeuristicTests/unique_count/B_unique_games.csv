@@ -1,0 +1,11 @@
+file,path,total_games,unique_games,duplicate_games,unique_ratio,error
+Bd-Ad_s_7_100-1.txt,/Users/adelinopereira/Documents/LEI/3_ano/2_semestre/PEI_21184/Rastros_ult/cpp/build/tourn_test/d7_100j/B/Bd-Ad_s_7_100-1.txt,100,96,4,0.9600,
+Bd-Bd_s_7_100-1.txt,/Users/adelinopereira/Documents/LEI/3_ano/2_semestre/PEI_21184/Rastros_ult/cpp/build/tourn_test/d7_100j/B/Bd-Bd_s_7_100-1.txt,100,96,4,0.9600,
+Bd-Cd_s_7_100-1.txt,/Users/adelinopereira/Documents/LEI/3_ano/2_semestre/PEI_21184/Rastros_ult/cpp/build/tourn_test/d7_100j/B/Bd-Cd_s_7_100-1.txt,100,95,5,0.9500,
+Bd-Dd_s_7_100-1.txt,/Users/adelinopereira/Documents/LEI/3_ano/2_semestre/PEI_21184/Rastros_ult/cpp/build/tourn_test/d7_100j/B/Bd-Dd_s_7_100-1.txt,100,97,3,0.9700,
+Bd-Ed_s_7_100-1.txt,/Users/adelinopereira/Documents/LEI/3_ano/2_semestre/PEI_21184/Rastros_ult/cpp/build/tourn_test/d7_100j/B/Bd-Ed_s_7_100-1.txt,100,77,23,0.7700,
+Bd-Fd_s_7_100-1.txt,/Users/adelinopereira/Documents/LEI/3_ano/2_semestre/PEI_21184/Rastros_ult/cpp/build/tourn_test/d7_100j/B/Bd-Fd_s_7_100-1.txt,100,90,10,0.9000,
+Bd-Gd_s_7_100-1.txt,/Users/adelinopereira/Documents/LEI/3_ano/2_semestre/PEI_21184/Rastros_ult/cpp/build/tourn_test/d7_100j/B/Bd-Gd_s_7_100-1.txt,100,84,16,0.8400,
+Bd-Hd_s_7_100-1.txt,/Users/adelinopereira/Documents/LEI/3_ano/2_semestre/PEI_21184/Rastros_ult/cpp/build/tourn_test/d7_100j/B/Bd-Hd_s_7_100-1.txt,100,77,23,0.7700,
+Bd-Id_s_7_100-1.txt,/Users/adelinopereira/Documents/LEI/3_ano/2_semestre/PEI_21184/Rastros_ult/cpp/build/tourn_test/d7_100j/B/Bd-Id_s_7_100-1.txt,100,82,18,0.8200,
+Bd-Jd_s_7_100-1.txt,/Users/adelinopereira/Documents/LEI/3_ano/2_semestre/PEI_21184/Rastros_ult/cpp/build/tourn_test/d7_100j/B/Bd-Jd_s_7_100-1.txt,100,95,5,0.9500,

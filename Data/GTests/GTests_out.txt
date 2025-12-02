@@ -1,0 +1,70 @@
+      Start  1: Board:BoardBasics.StartsWithSomeValidMoves
+ 1/31 Test  #1: Board:BoardBasics.StartsWithSomeValidMoves ......................................................   Passed    0.01 sec
+      Start  2: Board:BoardBasics.MakeMoveBlocksPreviousAndUpdatesMarker
+ 2/31 Test  #2: Board:BoardBasics.MakeMoveBlocksPreviousAndUpdatesMarker ........................................   Passed    0.01 sec
+      Start  3: Board:BoardTerminal.ReachingEitherGoalEndsGame
+ 3/31 Test  #3: Board:BoardTerminal.ReachingEitherGoalEndsGame ..................................................   Passed    0.01 sec
+      Start  4: Board:BoardHeuristics.ShortestPathSignsPerSpec
+ 4/31 Test  #4: Board:BoardHeuristics.ShortestPathSignsPerSpec ..................................................   Passed    0.01 sec
+      Start  5: Board:BoardReachability.ComputesBothGoalDistancesAndCount
+ 5/31 Test  #5: Board:BoardReachability.ComputesBothGoalDistancesAndCount .......................................   Passed    0.01 sec
+      Start  6: AI:AIChoice.PrefersImmediateWinForMax
+ 6/31 Test  #6: AI:AIChoice.PrefersImmediateWinForMax ...........................................................   Passed    0.02 sec
+      Start  7: AI:AIChoice.GreedyPickReducesMaxDistanceAtDepth0
+ 7/31 Test  #7: AI:AIChoice.GreedyPickReducesMaxDistanceAtDepth0 ................................................   Passed    0.01 sec
+      Start  8: AI:AIHeuristic.DistanceNonNegativeForBothPlayers
+ 8/31 Test  #8: AI:AIHeuristic.DistanceNonNegativeForBothPlayers ................................................   Passed    0.01 sec
+      Start  9: AI:Minimax.Avoids_OpponentImmediateWin_Depth2
+ 9/31 Test  #9: AI:Minimax.Avoids_OpponentImmediateWin_Depth2 ...................................................   Passed    0.01 sec
+      Start 10: AI:Minimax.Takes_WinInTwo_IfExists_Depth2
+10/31 Test #10: AI:Minimax.Takes_WinInTwo_IfExists_Depth2 .......................................................***Skipped   0.01 sec
+      Start 11: AI:Sizes_Extremes_And_Common/AIFirstMoveSizes.FirstMove_NotAdjacentToOppGoal/(5, 5)
+11/31 Test #11: AI:Sizes_Extremes_And_Common/AIFirstMoveSizes.FirstMove_NotAdjacentToOppGoal/(5, 5) .............   Passed    0.01 sec
+      Start 12: AI:Sizes_Extremes_And_Common/AIFirstMoveSizes.FirstMove_NotAdjacentToOppGoal/(5, 11)
+12/31 Test #12: AI:Sizes_Extremes_And_Common/AIFirstMoveSizes.FirstMove_NotAdjacentToOppGoal/(5, 11) ............   Passed    0.01 sec
+      Start 13: AI:Sizes_Extremes_And_Common/AIFirstMoveSizes.FirstMove_NotAdjacentToOppGoal/(11, 5)
+13/31 Test #13: AI:Sizes_Extremes_And_Common/AIFirstMoveSizes.FirstMove_NotAdjacentToOppGoal/(11, 5) ............   Passed    0.01 sec
+      Start 14: AI:Sizes_Extremes_And_Common/AIFirstMoveSizes.FirstMove_NotAdjacentToOppGoal/(7, 7)
+14/31 Test #14: AI:Sizes_Extremes_And_Common/AIFirstMoveSizes.FirstMove_NotAdjacentToOppGoal/(7, 7) .............   Passed    0.01 sec
+      Start 15: AI:Sizes_Extremes_And_Common/AIFirstMoveSizes.FirstMove_NotAdjacentToOppGoal/(9, 9)
+15/31 Test #15: AI:Sizes_Extremes_And_Common/AIFirstMoveSizes.FirstMove_NotAdjacentToOppGoal/(9, 9) .............   Passed    0.01 sec
+      Start 16: AI:Sizes_Extremes_And_Common/AIFirstMoveSizes.FirstMove_NotAdjacentToOppGoal/(11, 11)
+16/31 Test #16: AI:Sizes_Extremes_And_Common/AIFirstMoveSizes.FirstMove_NotAdjacentToOppGoal/(11, 11) ...........   Passed    0.01 sec
+      Start 17: AI:Sizes5to11/BoardSizesSmoke.StartHasValidMoves/(5, 5)
+17/31 Test #17: AI:Sizes5to11/BoardSizesSmoke.StartHasValidMoves/(5, 5) .........................................   Passed    0.01 sec
+      Start 18: AI:Sizes5to11/BoardSizesSmoke.StartHasValidMoves/(6, 6)
+18/31 Test #18: AI:Sizes5to11/BoardSizesSmoke.StartHasValidMoves/(6, 6) .........................................   Passed    0.01 sec
+      Start 19: AI:Sizes5to11/BoardSizesSmoke.StartHasValidMoves/(7, 7)
+19/31 Test #19: AI:Sizes5to11/BoardSizesSmoke.StartHasValidMoves/(7, 7) .........................................   Passed    0.01 sec
+      Start 20: AI:Sizes5to11/BoardSizesSmoke.StartHasValidMoves/(8, 8)
+20/31 Test #20: AI:Sizes5to11/BoardSizesSmoke.StartHasValidMoves/(8, 8) .........................................   Passed    0.01 sec
+      Start 21: AI:Sizes5to11/BoardSizesSmoke.StartHasValidMoves/(9, 9)
+21/31 Test #21: AI:Sizes5to11/BoardSizesSmoke.StartHasValidMoves/(9, 9) .........................................   Passed    0.01 sec
+      Start 22: AI:Sizes5to11/BoardSizesSmoke.StartHasValidMoves/(10, 10)
+22/31 Test #22: AI:Sizes5to11/BoardSizesSmoke.StartHasValidMoves/(10, 10) .......................................   Passed    0.01 sec
+      Start 23: AI:Sizes5to11/BoardSizesSmoke.StartHasValidMoves/(11, 11)
+23/31 Test #23: AI:Sizes5to11/BoardSizesSmoke.StartHasValidMoves/(11, 11) .......................................   Passed    0.01 sec
+      Start 24: Integration:IntegrationDeterminism.WinnerAndSequence_7x7_Depth1
+24/31 Test #24: Integration:IntegrationDeterminism.WinnerAndSequence_7x7_Depth1 .................................   Passed    0.01 sec
+      Start 25: Integration:IntegrationPerf.AvgDecisionTime_Depth1
+25/31 Test #25: Integration:IntegrationPerf.AvgDecisionTime_Depth1 ..............................................***Skipped   0.01 sec
+      Start 26: Integration:Sizes_5_7_11/IntegrationFirstMoveSizes.AIFirstMove_NotAdjacentAndApplied/(5, 5)
+26/31 Test #26: Integration:Sizes_5_7_11/IntegrationFirstMoveSizes.AIFirstMove_NotAdjacentAndApplied/(5, 5) .....   Passed    0.01 sec
+      Start 27: Integration:Sizes_5_7_11/IntegrationFirstMoveSizes.AIFirstMove_NotAdjacentAndApplied/(7, 7)
+27/31 Test #27: Integration:Sizes_5_7_11/IntegrationFirstMoveSizes.AIFirstMove_NotAdjacentAndApplied/(7, 7) .....   Passed    0.01 sec
+      Start 28: Integration:Sizes_5_7_11/IntegrationFirstMoveSizes.AIFirstMove_NotAdjacentAndApplied/(11, 11)
+28/31 Test #28: Integration:Sizes_5_7_11/IntegrationFirstMoveSizes.AIFirstMove_NotAdjacentAndApplied/(11, 11) ...   Passed    0.01 sec
+      Start 29: Integration:Sizes_5_7_11/IntegrationPlayToEndSizes.AIVsAI_TerminatesWithinBound/(5, 5)
+29/31 Test #29: Integration:Sizes_5_7_11/IntegrationPlayToEndSizes.AIVsAI_TerminatesWithinBound/(5, 5) ..........   Passed    0.01 sec
+      Start 30: Integration:Sizes_5_7_11/IntegrationPlayToEndSizes.AIVsAI_TerminatesWithinBound/(7, 7)
+30/31 Test #30: Integration:Sizes_5_7_11/IntegrationPlayToEndSizes.AIVsAI_TerminatesWithinBound/(7, 7) ..........   Passed    0.01 sec
+      Start 31: Integration:Sizes_5_7_11/IntegrationPlayToEndSizes.AIVsAI_TerminatesWithinBound/(11, 11)
+31/31 Test #31: Integration:Sizes_5_7_11/IntegrationPlayToEndSizes.AIVsAI_TerminatesWithinBound/(11, 11) ........   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 31
+
+Total Test time (real) =   0.23 sec
+
+The following tests did not run:
+	 10 - AI:Minimax.Takes_WinInTwo_IfExists_Depth2 (Skipped)
+	 25 - Integration:IntegrationPerf.AvgDecisionTime_Depth1 (Skipped)
