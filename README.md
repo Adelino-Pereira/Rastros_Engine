@@ -191,7 +191,7 @@ Na realização de testes é possível optar por vários níveis de debug:
 - **Nivel 4** - Toda a a informação anterior mais indicação de cortes.
 - **Nivel 5** – Toda a informação anterior mais chaves de estados e entradas e rejeições na TT.
 
-Exemplos de saídas de debug podem ser consultados na pasta [exemplos_debug](exemplos_debug/) neste repositório.
+Exemplos de saídas de debug podem ser consultados na pasta [exemplos_debug](Data/logs_debug_exemplos/) neste repositório.
 
 Para correr testes diretamente com argumentos na linha de comandos, usas-se o seguinte modelo:
 
