@@ -1,0 +1,56 @@
+[heur] P1=G P2=G
+Modo teste2
+ - Board: 7x7
+intBoard
+[Ordering] MAX=Deterministic, MIN=ShuffleAll, shuffle_ties_only=1
+ - Jogo: 1
+intBoard
+[Quiescence] MAX=off, MIN=off
+[heur] P1=G P2=G
+alg:minimax_opt
+
+[MAX]First AI controled move : (3, 5) [0.0000 s]
+****[MIN] Best move selected: (2,5) 0 [depth: 9] [0.7772 s]
+****[MAX] Best move selected: (3,4) 2 [depth: 9] [0.1702 s]
+****[MIN] Best move selected: (4,3) 0 [depth: 9] [0.5755 s]
+****[MAX] Best move selected: (5,3) 1 [depth: 9] [0.2892 s]
+****[MIN] Best move selected: (5,2) -1 [depth: 9] [0.3048 s]
+****[MAX] Best move selected: (4,2) 1 [depth: 9] [0.1604 s]
+****[MIN] Best move selected: (3,1) -2 [depth: 9] [0.2270 s]
+****[MAX] Best move selected: (4,1) 1 [depth: 9] [0.1648 s]
+****[MIN] Best move selected: (3,2) -2 [depth: 9] [0.0702 s]
+****[MAX] Best move selected: (2,1) 0 [depth: 11] [0.0963 s]
+****[MIN] Best move selected: (2,2) -7 [depth: 11] [0.1404 s]
+****[MAX] Best move selected: (1,3) 1 [depth: 11] [0.0343 s]
+****[MIN] Best move selected: (1,4) -8 [depth: 11] [0.0641 s]
+****[MAX] Best move selected: (2,3) -8 [depth: 11] [0.0134 s]
+****[MIN] Best move selected: (3,3) -8 [depth: 11] [0.0100 s]
+****[MAX] Best move selected: (4,4) -8 [depth: 11] [0.0027 s]
+****[MIN] Best move selected: (4,5) -8 [depth: 11] [0.0125 s]
+****[MAX] Best move selected: (5,4) -8 [depth: 11] [0.0053 s]
+****[MIN] Best move selected: (6,5) -990 [depth: 11] [0.0050 s]
+****[MAX] Best move selected: (6,4) -991 [depth: 13] [0.0035 s]
+****[MIN] Best move selected: (5,5) -992 [depth: 13] [0.0016 s]
+****[MAX] Best move selected: (6,6) -993 [depth: 13] [0.0022 s]
+****[MIN] Best move selected: (5,6) -994 [depth: 13] [0.0009 s]
+****[MAX] Best move selected: (4,6) -995 [depth: 13] [0.0008 s]
+****[MIN] Best move selected: (3,6) -996 [depth: 13] [0.0014 s]
+****[MAX] Best move selected: (2,6) -997 [depth: 13] [0.0013 s]
+****[MIN] Best move selected: (1,6) -998 [depth: 13] [0.0041 s]
+****[MAX] Best move selected: (1,5) -999 [depth: 13] [0.0019 s]
+****[MIN] Immediate win found at root: (0,6) -999 [0.0018 s]
+Rounds : (29)
+=== Ordering Quality (P1/MAX AI) ===
+[order] MAX-to-move nodes=29961 cutoffs=19786 avgCutoffIdx=0.1237 fracFirst=0.9239
+[order] MIN-to-move nodes=17397 cutoffs=10008 avgCutoffIdx=0.2605 fracFirst=0.8282
+=== Ordering Quality (P2/MIN AI) ===
+[order] MAX-to-move nodes=28432 cutoffs=15718 avgCutoffIdx=0.8263 fracFirst=0.5473
+[order] MIN-to-move nodes=65694 cutoffs=46346 avgCutoffIdx=0.5100 fracFirst=0.6869
+[Visited] lookups=299701 hits=18652 inserts=281708 hit_rate=6.2235%
+Vitória do Jogador 2!
+
+tempo jogo: 3.1680
+
+Vitórias AI 1: 0
+Vitórias AI 2: 1
+tempo total: 3.1680
