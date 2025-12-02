@@ -20,7 +20,7 @@ const char* heuristic_combo_label(HeuristicCombo combo) {
 
 int heuristic_combo_score(const Board& board, bool is_max, HeuristicCombo combo) {
     auto pos = board.get_marker();
-    Board::ReachabilityResult reach = board.compute_reachability();
+    Board::ReachabilityResult reach = board.compute_distance();
 
     int h1 = reach.h1;
     int h5 = reach.h5;
@@ -112,7 +112,7 @@ int parity_heuristic(const Board& board, bool is_max,int path_val,int o_path_val
 int h_diag_block_goal(const Board& b) {
     if (b.is_terminal()) return 0;
     // Uses your one-BFS reachability to know distances from *current position*
-    auto reach = b.compute_reachability();
+    auto reach = b.compute_distance();
 
     // Whose turn?
     const bool max_to_move = b.current_player_is_max();

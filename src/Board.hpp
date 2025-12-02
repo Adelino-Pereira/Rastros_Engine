@@ -40,10 +40,10 @@ public:
     using Move = std::pair<int,int>;
 
     struct MoveUndo {
-        int old_r, old_c;          // posição antiga do marcador
-        int old_cell_value;        // valor antigo da célula [old_r][old_c] (0 ou 1)
-        bool old_current_player;   // jogador antes do movimento
-        std::uint64_t old_hash;    // hash antes do movimento
+        std::pair<int,int> old_marker; // posição antiga do marcador
+        bool old_cell_free;            // estado (livre/bloqueado) da célula antiga
+        bool old_current_player;       // jogador antes do movimento
+        std::uint64_t old_hash;        // hash antes do movimento
     };
 
     MoveUndo apply_move(const Move& mv);
@@ -101,7 +101,7 @@ public:
         int reachable_count;
     };
 
-    ReachabilityResult compute_reachability() const;
+    ReachabilityResult compute_distance() const;
 
 
     // Helpers para lidar com posições a partir do JS

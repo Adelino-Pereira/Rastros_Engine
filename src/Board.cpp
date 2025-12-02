@@ -137,7 +137,7 @@ bool Board::current_player_is_human() const {
 
 
 //nota:mudar nome das variáveis h1 e h5 que perderam sentido
-Board::ReachabilityResult Board::compute_reachability() const {
+Board::ReachabilityResult Board::compute_distance() const {
 
     // Faz uma pesquisa em largura (BFS) a partir da posição do marcador
     // • h1: distância mínima até ao objetivo de MAX (canto inferior esquerdo)
@@ -315,33 +315,26 @@ std::vector<int> Board::get_marker_flat() const {
 
 Board::MoveUndo Board::apply_move(const Move& mv) {
     MoveUndo u;
-
-    // Guardar estado anterior
-    u.old_r = marker.first;
-    u.old_c = marker.second;
-    u.old_cell_value   = grid[marker.first][marker.second]; // 0 ou 1
+    u.old_marker = marker;
+    u.old_cell_free = (grid[marker.first][marker.second] == 1);
     u.old_current_player = current_player;
     u.old_hash = hash_value;
 
-    // Aplicar o movimento normal
-    make_move(mv);        // atualiza grid[old_r][old_c], marker e hash
-    switch_player();      // muda o jogador da vez
+    make_move(mv);        // atualiza grid/marker/hash
+    switch_player();      // alterna jogador
 
     return u;
 }
 
 void Board::undo_move(const MoveUndo& u) {
-    // Restaurar jogador
+    // Restaurar jogador e marcador
     current_player = u.old_current_player;
+    marker = u.old_marker;
 
-    // Restaurar posição do marcador
-    marker.first  = u.old_r;
-    marker.second = u.old_c;
+    // Restaurar estado da célula antiga do marcador
+    grid[u.old_marker.first][u.old_marker.second] = u.old_cell_free ? 1 : 0;
 
-    // Restaurar célula antiga do marcador
-    grid[u.old_r][u.old_c] = u.old_cell_value;
-
-    // Restaurar hash
+    // Restaurar hash pré-movimento
     hash_value = u.old_hash;
 }
 

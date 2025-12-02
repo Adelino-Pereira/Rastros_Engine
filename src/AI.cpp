@@ -956,7 +956,7 @@ int AI::default_heuristic(const Board& board, bool is_max) {
 
     // std::cout << "rounds:"<< r<<"\n";
 
-    auto reach = board.compute_reachability();
+    auto reach = board.compute_distance();
 
     int Dmax = reach.h1;
     int Dmin = reach.h5;
@@ -1102,9 +1102,12 @@ const std::vector<MoveScore>& AI::ordered_children(Board& board, bool is_max, in
 }
 
 
+
+
+
 //////////////////////////////////////////////////////////////////////////
 
-//quiescence-search -> implementada mas não utilizada, precisa verificação/testes
+//quiescence-search -> implementada mas não activada, precisa verificação/testes
 // ----------------------------------------------------------------------------
 // - (q-search) para reduzir efeito de horizonte.
 // - Extende apenas em posições "ruidosas" (precisam de ser melhor definidas).
@@ -1136,7 +1139,7 @@ int AI::quiescence(Board board, bool is_max, int alpha, int beta, int qdepth, in
     }
 
     // Métrica base para decidir "ruído" (uma só vez)
-    auto reach = board.compute_reachability();
+    auto reach = board.compute_distance();
     int base_h1 = reach.h1;
     int base_h5 = reach.h5;
 
@@ -1212,7 +1215,7 @@ std::vector<std::pair<int,int>> AI::gen_quiescence_moves(const Board& board, boo
         tmp.make_move(mv);
 
         // Reachability após a jogada
-        auto r2 = tmp.compute_reachability();
+        auto r2 = tmp.compute_distance();
         int h1p = r2.h1;
         int h5p = r2.h5;
 
@@ -1236,8 +1239,8 @@ std::vector<std::pair<int,int>> AI::gen_quiescence_moves(const Board& board, boo
     std::stable_sort(noisy.begin(), noisy.end(), [&](const auto& a, const auto& b){
         Board ta = board; ta.make_move(a);
         Board tb = board; tb.make_move(b);
-        auto ra = ta.compute_reachability();
-        auto rb = tb.compute_reachability();
+        auto ra = ta.compute_distance();
+        auto rb = tb.compute_distance();
         int da = (is_max ? -ra.h1 : ra.h1) + (is_max ? rb.h5 : -ra.h5); 
         int db = (is_max ? -rb.h1 : rb.h1) + (is_max ? rb.h5 : -rb.h5);
         return da > db; // best-first leve

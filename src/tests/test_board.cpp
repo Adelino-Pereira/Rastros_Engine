@@ -42,8 +42,8 @@ TEST(BoardHeuristics, ShortestPathSignsPerSpec) {
   Board b(7,7);
   // Put near MAX goal to get small negative distance for for_max=true
   place_marker(b, 5, 1, true); // diagonal to (6,0) is possible
-  // shortest_path_to_goal removido; usa compute_reachability para obter distâncias mínimas
-  auto reach = b.compute_reachability();
+  // shortest_path_to_goal removido; usa compute_distance para obter distâncias mínimas
+  auto reach = b.compute_distance();
   int h_max = reach.h1;
   int h_min = reach.h5;
   // For max, function returns -dist; for min, +dist
@@ -53,7 +53,7 @@ TEST(BoardHeuristics, ShortestPathSignsPerSpec) {
 
 TEST(BoardReachability, ComputesBothGoalDistancesAndCount) {
   Board b(7,7);
-  auto res = b.compute_reachability();
+  auto res = b.compute_distance();
   // We can't assert exact numbers without duplicating BFS here;
   // just verify signs and that count >= 1 (at least the marker cell).
   // res.h1 (for max) uses negative distance or -900 if unreachable,
