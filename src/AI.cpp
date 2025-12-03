@@ -181,52 +181,62 @@ int AI::rounds() { return s_rounds; }
 //   para a heurística "full combo" (default_heuristic) por agora.
 // ----------------------------------------------------------------------------
 void AI::register_heuristics() {
-    heuristic_levels[1] = [](const Board& b, bool is_max) {
-        return heuristic_combo_score(b, is_max, HeuristicCombo::C);
-    };
+        heuristic_levels[1] = [](const Board& b, bool is_max) {
+            // Avalia cada combo na perspetiva correta
+            int Dmax = heuristic_combo_score(b, /*is_max=*/true,  HeuristicCombo::A);
+            int Dmin = heuristic_combo_score(b, /*is_max=*/false, HeuristicCombo::B);
+            return is_max ? Dmax : Dmin;
+        };
 
     heuristic_levels[2] = [](const Board& b, bool is_max) {
-        return heuristic_combo_score(b, is_max, HeuristicCombo::C);
+        int heu1r= heuristic_combo_score(b, is_max, HeuristicCombo::C);
+        //int heur2= heuristic_combo_score(b, is_max, HeuristicCombo::Noise);
+        return heu1r;//+ heur2*2;
 
     };
 
     heuristic_levels[3] = [](const Board& b, bool is_max) {
-        return heuristic_combo_score(b, is_max, HeuristicCombo::C);
+        int heur1 =heuristic_combo_score(b, is_max, HeuristicCombo::F);
+        return heur1;// + heur2b;
 
     };
 
     heuristic_levels[4] = [](const Board& b, bool is_max) {
-        return heuristic_combo_score(b, is_max, HeuristicCombo::E);
+        int heur1= heuristic_combo_score(b, is_max, HeuristicCombo::D);
+       //int heur2= heuristic_combo_score(b, is_max, HeuristicCombo::Noise); 
+        return heur1 ;//+ heur2;
     };
 
     heuristic_levels[5] = [](const Board& b, bool is_max) {
-        return heuristic_combo_score(b, is_max, HeuristicCombo::F);
+        int heu1r= heuristic_combo_score(b, is_max, HeuristicCombo::D);
+        int heur2= heuristic_combo_score(b, is_max, HeuristicCombo::Noise);
+        return heu1r; //+ heur2*2;
     };
 
     heuristic_levels[6] = [](const Board& b, bool is_max) {
-        return heuristic_combo_score(b, is_max, HeuristicCombo::E);
+        return heuristic_combo_score(b, is_max, HeuristicCombo::D);
     
     };
 
     heuristic_levels[7] = [](const Board& b, bool is_max) {
-            int Dmax =  heuristic_combo_score(b, is_max, HeuristicCombo::A);
-            int Dmin =  heuristic_combo_score(b, is_max, HeuristicCombo::B);
-            return is_max ? Dmax : Dmin;
+        return heuristic_combo_score(b, is_max, HeuristicCombo::J);
     };
 
     heuristic_levels[8] = [](const Board& b, bool is_max) {
-        return heuristic_combo_score(b, is_max, HeuristicCombo::C);
+        int heu1r= heuristic_combo_score(b, is_max, HeuristicCombo::H);
+        //int heur2= heuristic_combo_score(b, is_max, HeuristicCombo::Noise);
+        return heu1r ;
     };
 
     heuristic_levels[9] = [](const Board& b, bool is_max) {
-        return heuristic_combo_score(b, is_max, HeuristicCombo::F);
+        return heuristic_combo_score(b, is_max, HeuristicCombo::I);
 
     };
 
     heuristic_levels[10] = [](const Board& b, bool is_max) {
         AI temp(is_max, 10); //profundidade não atua aqui 
         // //std::cout <<"th"<<temp.total_heuristic(b, is_max)<<"\n";
-        return temp.total_heuristic(b, is_max); 
+        return heuristic_combo_score(b, is_max, HeuristicCombo::G);
     };
 
 }
@@ -593,8 +603,7 @@ int AI::minimax(Board& board, bool is_max, int depth, int alpha, int beta, int m
     bool expanded_child = false;
 
     for (const auto& ms : successors) {
-        // Board tmp = board;
-        // tmp.make_move(ms.move);
+
         Board::MoveUndo undo = board.apply_move(ms.move);
 
 

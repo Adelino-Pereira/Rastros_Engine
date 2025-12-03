@@ -14,6 +14,7 @@ const char* heuristic_combo_label(HeuristicCombo combo) {
         case HeuristicCombo::H: return "H";
         case HeuristicCombo::I: return "I";
         case HeuristicCombo::J: return "J";
+        case HeuristicCombo::Noise: return "N";
     }
     return "?";
 }
@@ -56,6 +57,7 @@ int heuristic_combo_score(const Board& board, bool is_max, HeuristicCombo combo)
         case HeuristicCombo::H: return h1 + h5 + h9 + hDiag;
         case HeuristicCombo::I: return h1 + h5 + h8 + h9 + hDiag;
         case HeuristicCombo::J: return h1 + h5 + hDiag;
+        case HeuristicCombo::Noise: return h9;
     }
     return h1 + h5 + h8 + hDiag;
 }

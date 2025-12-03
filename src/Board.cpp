@@ -181,7 +181,7 @@ Board::ReachabilityResult Board::compute_distance() const {
 
     return {
         h1 == 900 ? -900 : -h1,
-        h5 == 900 ?  900 :  h5,
+        h5 == 900 ?  900 : h5,
         count
     };
 }

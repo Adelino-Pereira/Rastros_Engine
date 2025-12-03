@@ -28,7 +28,7 @@ TEST(AIChoice, PrefersImmediateWinForMax) {
   ASSERT_TRUE(has_goal) << "Expected diagonal to MAX goal as a valid move";
 
   AI ai(/*is_max=*/true, /*max_depth=*/1);
-  // depth_override=1, rounds=1 (não é o caso especial da primeira jogada)
+  // depth_override=1, rounds=1 (não é o caso especial da primeira jogada -> jogada restrita sem procura)
   auto chosen = ai.choose_move(b, /*depth_override=*/1, /*rounds=*/1);
 
   EXPECT_EQ(chosen.first, rows-1);

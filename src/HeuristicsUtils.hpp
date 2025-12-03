@@ -5,7 +5,7 @@
 
 // Combos de heurística (reutilizado por IA e controladores)
 enum class HeuristicCombo {
-    A, B, C, D, E, F, G, H, I, J
+    A, B, C, D, E, F, G, H, I, J,Noise
 };
 
 // Etiqueta curta para logging
