@@ -1,0 +1,22 @@
+ply number,player type,move,score
+1,MIN,e3,-1
+2,MAX,e4,1
+3,MIN,f5,0
+4,MAX,g4,2
+5,MIN,g3,1
+6,MAX,g2,4
+7,MIN,f3,3
+8,MAX,e2,5
+9,MIN,f1,3
+10,MAX,e1,5
+11,MIN,d1,3
+12,MAX,c1,6
+13,MIN,d2,4
+14,MAX,d3,898
+15,MIN,c4,898
+16,MAX,c3,994
+17,MIN,b4,995
+18,MAX,b3,996
+19,MIN,a4,997
+20,MAX,a3,998
+21,MIN,b2,999

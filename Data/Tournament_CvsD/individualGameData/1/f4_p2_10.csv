@@ -1,0 +1,6 @@
+ply number,player type,move,score
+1,MAX,f4,
+2,MIN,g5,-4
+3,MAX,f5,-3
+4,MIN,g6,-6
+5,MAX,f7,-5
