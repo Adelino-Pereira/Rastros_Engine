@@ -1,0 +1,82 @@
+Modo teste2
+ - Board: 9x9
+[Ordering] MAX=Deterministic, MIN=Deterministic
+ - Jogo: 1
+[Quiescence] MAX=off, MIN=off
+[MAX]First AI controled move : (2, 3) [0.0000 s]
+****[MIN] Best move selected: (2,4) 0 [depth: 13] [16.0092 s]
+****[MAX] Best move selected: (3,3) 1 [depth: 13] [9.6914 s]
+****[MIN] Best move selected: (4,2) -1 [depth: 13] [12.1331 s]
+****[MAX] Best move selected: (4,1) 1 [depth: 13] [11.9480 s]
+****[MIN] Best move selected: (3,2) -1 [depth: 13] [5.7003 s]
+****[MAX] Best move selected: (4,3) 1 [depth: 13] [3.3174 s]
+****[MIN] Best move selected: (5,3) -1 [depth: 13] [9.1843 s]
+****[MAX] Best move selected: (6,2) 0 [depth: 13] [11.9908 s]
+****[MIN] Best move selected: (5,2) -2 [depth: 13] [6.8299 s]
+****[MAX] Best move selected: (5,1) -1 [depth: 13] [3.2047 s]
+****[MIN] Best move selected: (6,1) -3 [depth: 13] [1.8168 s]
+****[MAX] Best move selected: (7,2) -2 [depth: 13] [5.2936 s]
+****[MIN] Best move selected: (6,3) -4 [depth: 13] [8.4159 s]
+****[MAX] Best move selected: (7,3) -3 [depth: 13] [16.0189 s]
+****[MIN] Best move selected: (7,4) -6 [depth: 13] [8.9196 s]
+****[MAX] Best move selected: (8,5) -4 [depth: 13] [18.2692 s]
+****[MIN] Best move selected: (7,6) -6 [depth: 13] [8.7082 s]
+****[MAX] Best move selected: (8,6) -4 [depth: 13] [21.9247 s]
+****[MIN] Best move selected: (7,7) -6 [depth: 13] [4.1516 s]
+****[MAX] Best move selected: (8,7) -4 [depth: 13] [12.0871 s]
+****[MIN] Best move selected: (8,8) -7 [depth: 13] [0.4599 s]
+****[MAX] Best move selected: (7,8) -6 [depth: 13] [1.5905 s]
+****[MIN] Best move selected: (6,8) -7 [depth: 13] [3.9797 s]
+****[MAX] Best move selected: (6,7) -4 [depth: 13] [7.0162 s]
+****[MIN] Best move selected: (5,8) -7 [depth: 13] [7.1634 s]
+****[MAX] Best move selected: (4,8) -4 [depth: 13] [4.0716 s]
+****[MIN] Best move selected: (3,7) -6 [depth: 13] [4.3692 s]
+****[MAX] Best move selected: (4,7) -2 [depth: 13] [3.2041 s]
+****[MIN] Best move selected: (5,6) -4 [depth: 13] [1.3766 s]
+****[MAX] Best move selected: (4,5) 1 [depth: 13] [0.9609 s]
+****[MIN] Best move selected: (5,5) -1 [depth: 13] [0.3745 s]
+****[MAX] Best move selected: (6,4) 1 [depth: 13] [0.2260 s]
+****[MIN] Best move selected: (6,5) -1 [depth: 13] [0.0500 s]
+****[MAX] Best move selected: (5,4) 1 [depth: 13] [0.1074 s]
+****[MIN] Best move selected: (4,4) 0 [depth: 13] [0.0834 s]
+****[MAX] Best move selected: (3,4) 2 [depth: 13] [0.1512 s]
+****[MIN] Best move selected: (2,5) 1 [depth: 13] [0.3192 s]
+****[MAX] Best move selected: (2,6) 3 [depth: 13] [0.4868 s]
+****[MIN] Best move selected: (1,6) 1 [depth: 13] [0.2099 s]
+****[MAX] Best move selected: (0,5) 2 [depth: 13] [0.2220 s]
+****[MIN] Best move selected: (0,4) -10 [depth: 13] [0.0770 s]
+****[MAX] Best move selected: (1,3) -10 [depth: 13] [0.0428 s]
+****[MIN] Best move selected: (1,2) -10 [depth: 13] [0.0372 s]
+****[MAX] Best move selected: (2,1) -10 [depth: 13] [0.0171 s]
+****[MIN] Best move selected: (1,0) -10 [depth: 13] [0.0078 s]
+****[MAX] Best move selected: (2,0) -10 [depth: 13] [0.0053 s]
+****[MIN] Best move selected: (3,0) -11 [depth: 13] [0.0018 s]
+****[MAX] Best move selected: (4,0) -10 [depth: 13] [0.0013 s]
+****[MIN] Best move selected: (3,1) -988 [depth: 13] [0.0007 s]
+****[MAX] Best move selected: (2,2) -989 [depth: 13] [0.0005 s]
+****[MIN] Best move selected: (1,1) -990 [depth: 13] [0.0005 s]
+****[MAX] Best move selected: (0,0) -991 [depth: 13] [0.0012 s]
+****[MIN] Best move selected: (0,1) -992 [depth: 13] [0.0004 s]
+****[MAX] Best move selected: (0,2) -993 [depth: 13] [0.0004 s]
+****[MIN] Best move selected: (0,3) -994 [depth: 13] [0.0004 s]
+****[MAX] Best move selected: (1,4) -995 [depth: 13] [0.0004 s]
+****[MIN] Best move selected: (1,5) -996 [depth: 13] [0.0005 s]
+****[MAX] Best move selected: (0,6) -997 [depth: 13] [0.0005 s]
+****[MIN] Best move selected: (0,7) -998 [depth: 13] [0.0007 s]
+****[MAX] Best move selected: (1,7) -999 [depth: 13] [0.0007 s]
+****[MIN] Immediate win found at root: (0,8) -999 [0.0000 s]
+Rounds : (61)
+=== Ordering Quality (P1/MAX AI) ===
+[order] MAX-to-move nodes=2340694 cutoffs=1603786 avgCutIdx=0.1138 firstChildCut=92.9391%
+[order] MIN-to-move nodes=1275816 cutoffs=827980 avgCutIdx=0.2818 firstChildCut=80.8946%
+=== Ordering Quality (P2/MIN AI) ===
+[order] MAX-to-move nodes=846050 cutoffs=493637 avgCutIdx=0.2241 firstChildCut=85.1634%
+[order] MIN-to-move nodes=1849421 cutoffs=1355970 avgCutIdx=0.0687 firstChildCut=95.8494%
+[Visited] lookups=12393055 hits=512845 inserts=11888664 hit_rate=4.1382%
+Vitória do Jogador 2!
+
+tempo jogo: 235.4654
+
+Vitórias AI 1: 0
+Vitórias AI 2: 1
+tempo total: 235.4654

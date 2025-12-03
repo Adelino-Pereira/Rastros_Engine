@@ -1,0 +1,41 @@
+Modo teste2
+ - Board: 5x5
+[Ordering] MAX=Deterministic, MIN=Deterministic
+ - Jogo: 1
+[Quiescence] MAX=off, MIN=off
+****[MAX] Best move selected (IDS): (1,2) 43 [depth: 11] [0.5000 s]
+****[MIN] Best move selected (IDS): (0,3) 40 [depth: 11] [0.2399 s]
+****[MAX] Best move selected (IDS): (0,2) 44 [depth: 11] [0.0720 s]
+****[MIN] Best move selected (IDS): (0,1) 42 [depth: 11] [0.0899 s]
+****[MAX] Best move selected (IDS): (0,0) 939 [depth: 11] [0.1368 s]
+****[MIN] Best move selected (IDS): (1,1) 938 [depth: 11] [0.0740 s]
+****[MAX] Best move selected (IDS): (2,1) 939 [depth: 11] [0.0944 s]
+****[MIN] Best move selected (IDS): (2,2) 939 [depth: 11] [0.0519 s]
+****[MAX] Best move selected (IDS): (3,2) 990 [depth: 11] [0.0134 s]
+****[MIN] Best move selected (IDS): (2,3) 991 [depth: 11] [0.0053 s]
+****[MAX] Best move selected (IDS): (3,4) 992 [depth: 11] [0.0024 s]
+****[MIN] Best move selected (IDS): (2,4) 993 [depth: 11] [0.0011 s]
+****[MAX] Best move selected (IDS): (3,3) 994 [depth: 11] [0.0004 s]
+****[MIN] Best move selected (IDS): (4,4) 995 [depth: 11] [0.0006 s]
+****[MAX] Best move selected (IDS): (4,3) 996 [depth: 11] [0.0002 s]
+****[MIN] Best move selected (IDS): (4,2) 997 [depth: 11] [0.0001 s]
+****[MAX] Best move selected (IDS): (3,1) 998 [depth: 11] [0.0002 s]
+****[MIN] Best move selected (IDS): (2,0) 999 [depth: 11] [0.0002 s]
+****[MAX] Immediate win found at root: (1,0) 999 [0.0000 s]
+Rounds : (18)
+=== Ordering Quality (P1/MAX AI) ===
+[order] MAX-to-move nodes=43464 cutoffs=26733 avgCutIdx=0.3595 firstChildCut=78.5134%
+[order] MIN-to-move nodes=39214 cutoffs=22439 avgCutIdx=0.3013 firstChildCut=80.9439%
+=== Ordering Quality (P2/MIN AI) ===
+[order] MAX-to-move nodes=25268 cutoffs=12592 avgCutIdx=0.3731 firstChildCut=78.0098%
+[order] MIN-to-move nodes=29953 cutoffs=20278 avgCutIdx=0.1890 firstChildCut=87.9179%
+[Visited] lookups=267105 hits=27368 inserts=240528 hit_rate=10.2462%
+Sem jogadas válidas. Fim de jogo!
+
+Vitória do Jogador 1!
+
+tempo jogo: 1.3157
+
+Vitórias AI 1: 1
+Vitórias AI 2: 0
+tempo total: 1.3157

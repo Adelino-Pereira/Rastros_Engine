@@ -1,0 +1,45 @@
+Modo teste2
+ - Board: 7x7
+[Ordering] MAX=Deterministic, MIN=Deterministic, shuffle_ties_only=1
+ - Jogo: 1
+[Quiescence] MAX=off, MIN=off
+[MAX]First AI controled move : (2, 3) [0.0000 s]
+****[MIN] Best move selected: (3,3) 1 [depth: 12] [6.0161 s]
+****[MAX] Best move selected: (3,4) 0 [depth: 12] [3.7166 s]
+****[MIN] Best move selected: (4,4) 2 [depth: 12] [1.9885 s]
+****[MAX] Best move selected: (4,5) 0 [depth: 12] [1.0552 s]
+****[MIN] Best move selected: (3,5) 4 [depth: 12] [0.9275 s]
+****[MAX] Best move selected: (2,5) 3 [depth: 12] [0.3456 s]
+****[MIN] Best move selected: (1,6) 5 [depth: 12] [0.4691 s]
+****[MAX] Best move selected: (2,6) 4 [depth: 12] [0.2995 s]
+****[MIN] Best move selected: (3,6) 5 [depth: 12] [0.2029 s]
+****[MAX] Best move selected: (4,6) 3 [depth: 12] [0.1068 s]
+****[MIN] Best move selected: (5,6) 5 [depth: 12] [0.3395 s]
+****[MAX] Best move selected: (6,5) 3 [depth: 12] [0.5230 s]
+****[MIN] Best move selected: (6,6) 6 [depth: 12] [0.4290 s]
+****[MAX] Best move selected: (5,5) 4 [depth: 12] [0.1507 s]
+****[MIN] Best move selected: (5,4) 898 [depth: 12] [0.3329 s]
+****[MAX] Best move selected: (6,4) 898 [depth: 12] [0.5543 s]
+****[MIN] Best move selected: (5,3) 1000 [depth: 12] [0.1541 s]
+****[MAX] Best move selected: (4,2) 1000 [depth: 12] [0.3709 s]
+****[MIN] Best move selected: (3,2) 1000 [depth: 12] [0.2241 s]
+****[MAX] Best move selected: (4,3) 1000 [depth: 12] [0.1484 s]
+****[MIN] Best move selected: (5,2) 1000 [depth: 12] [0.0631 s]
+****[MAX] Best move selected: (6,1) 1000 [depth: 12] [0.1524 s]
+****[MIN] Best move selected: (5,1) 1000 [depth: 12] [0.0895 s]
+****[MAX] Immediate win found at root: (6,0) 999 [0.0000 s]
+Rounds : (24)
+=== Ordering Quality (P1/MAX AI) ===
+[order] MAX-to-move nodes=104523 cutoffs=60278 avgCutIdx=0.2685 firstChildCut=82.5193%
+[order] MIN-to-move nodes=208789 cutoffs=155275 avgCutIdx=0.1010 firstChildCut=93.4220%
+=== Ordering Quality (P2/MIN AI) ===
+[order] MAX-to-move nodes=259614 cutoffs=144391 avgCutIdx=0.1490 firstChildCut=90.8422%
+[order] MIN-to-move nodes=162953 cutoffs=121126 avgCutIdx=0.1955 firstChildCut=86.9590%
+[Visited] lookups=1459031 hits=65914 inserts=1394329 hit_rate=4.5177%
+Vitória do Jogador 1!
+
+tempo jogo: 20.0201
+
+Vitórias AI 1: 1
+Vitórias AI 2: 0
+tempo total: 20.0201

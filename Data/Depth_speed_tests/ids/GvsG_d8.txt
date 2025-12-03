@@ -1,0 +1,47 @@
+Modo teste2
+ - Board: 7x7
+[Ordering] MAX=Deterministic, MIN=Deterministic, shuffle_ties_only=1
+ - Jogo: 1
+[Quiescence] MAX=off, MIN=off
+[MAX]First AI controled move : (3, 3) [0.0000 s]
+****[MIN] Best move selected (IDS): (4,2) 0 [depth: 8] [0.2379 s]
+****[MAX] Best move selected (IDS): (5,2) -2 [depth: 8] [0.1673 s]
+****[MIN] Best move selected (IDS): (6,3) -1 [depth: 8] [0.0890 s]
+****[MAX] Best move selected (IDS): (6,2) -3 [depth: 8] [0.0865 s]
+****[MIN] Best move selected (IDS): (5,3) -2 [depth: 8] [0.0271 s]
+****[MAX] Best move selected (IDS): (4,4) -3 [depth: 8] [0.0837 s]
+****[MIN] Best move selected (IDS): (4,5) -1 [depth: 8] [0.0890 s]
+****[MAX] Best move selected (IDS): (3,4) -2 [depth: 8] [0.0537 s]
+****[MIN] Best move selected (IDS): (4,3) 0 [depth: 8] [0.0470 s]
+****[MAX] Best move selected (IDS): (3,2) -2 [depth: 8] [0.0217 s]
+****[MIN] Best move selected (IDS): (2,1) 0 [depth: 8] [0.0371 s]
+****[MAX] Best move selected (IDS): (3,1) -2 [depth: 8] [0.0651 s]
+****[MIN] Best move selected (IDS): (2,2) 1 [depth: 8] [0.0142 s]
+****[MAX] Best move selected (IDS): (2,3) -859 [depth: 8] [0.0235 s]
+****[MIN] Best move selected (IDS): (1,3) -856 [depth: 8] [0.0137 s]
+****[MAX] Best move selected (IDS): (0,4) -857 [depth: 8] [0.0107 s]
+****[MIN] Best move selected (IDS): (0,5) -858 [depth: 8] [0.0066 s]
+****[MAX] Best move selected (IDS): (1,4) -859 [depth: 8] [0.0019 s]
+****[MIN] Best move selected (IDS): (1,5) -1000 [depth: 8] [0.0041 s]
+****[MAX] Best move selected (IDS): (2,6) -1000 [depth: 8] [0.0010 s]
+****[MIN] Best move selected (IDS): (3,5) -1000 [depth: 8] [0.0017 s]
+****[MAX] Best move selected (IDS): (4,6) -1000 [depth: 8] [0.0000 s]
+****[MIN] Best move selected (IDS): (3,6) -1000 [depth: 8] [0.0006 s]
+****[MAX] Best move selected (IDS): (2,5) -1000 [depth: 8] [0.0000 s]
+****[MIN] Best move selected (IDS): (1,6) -1000 [depth: 8] [0.0000 s]
+****[MAX] Best move selected (IDS): (0,6) -1000 [depth: 8] [0.0000 s]
+Rounds : (26)
+=== Ordering Quality (P1/MAX AI) ===
+[order] MAX-to-move nodes=12298 cutoffs=8232 avgCutIdx=0.1799 firstChildCut=87.8158%
+[order] MIN-to-move nodes=15029 cutoffs=8629 avgCutIdx=0.1436 firstChildCut=91.0302%
+=== Ordering Quality (P2/MIN AI) ===
+[order] MAX-to-move nodes=14866 cutoffs=8110 avgCutIdx=0.1364 firstChildCut=91.2330%
+[order] MIN-to-move nodes=13486 cutoffs=9515 avgCutIdx=0.1510 firstChildCut=90.4992%
+[Visited] lookups=114695 hits=6017 inserts=108909 hit_rate=5.2461%
+Vitória do Jogador 2!
+
+tempo jogo: 1.1413
+
+Vitórias AI 1: 0
+Vitórias AI 2: 1
+tempo total: 1.1413

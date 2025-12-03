@@ -1,0 +1,39 @@
+Modo teste2
+ - Board: 5x5
+[Ordering] MAX=Deterministic, MIN=Deterministic
+ - Jogo: 1
+[Quiescence] MAX=off, MIN=off
+****[MAX] Best move selected (IDS): (2,2) 44 [depth: 15] [0.5000 s]
+****[MIN] Best move selected (IDS): (1,2) 991 [depth: 23] [0.5000 s]
+****[MAX] Best move selected (IDS): (0,1) 984 [depth: 23] [0.5000 s]
+****[MIN] Best move selected (IDS): (0,0) 985 [depth: 23] [0.1781 s]
+****[MAX] Best move selected (IDS): (1,0) 986 [depth: 23] [0.0607 s]
+****[MIN] Best move selected (IDS): (2,0) 987 [depth: 23] [0.0405 s]
+****[MAX] Best move selected (IDS): (3,0) 988 [depth: 23] [0.0293 s]
+****[MIN] Best move selected (IDS): (2,1) 989 [depth: 23] [0.0157 s]
+****[MAX] Best move selected (IDS): (3,2) 990 [depth: 23] [0.0056 s]
+****[MIN] Best move selected (IDS): (2,3) 991 [depth: 23] [0.0058 s]
+****[MAX] Best move selected (IDS): (3,4) 992 [depth: 23] [0.0024 s]
+****[MIN] Best move selected (IDS): (2,4) 993 [depth: 23] [0.0010 s]
+****[MAX] Best move selected (IDS): (3,3) 994 [depth: 23] [0.0003 s]
+****[MIN] Best move selected (IDS): (4,4) 995 [depth: 23] [0.0005 s]
+****[MAX] Best move selected (IDS): (4,3) 996 [depth: 23] [0.0001 s]
+****[MIN] Best move selected (IDS): (4,2) 997 [depth: 23] [0.0001 s]
+****[MAX] Best move selected (IDS): (3,1) 998 [depth: 23] [0.0001 s]
+****[MIN] Best move selected (IDS): (4,1) 999 [depth: 23] [0.0000 s]
+****[MAX] Immediate win found at root: (4,0) 999 [0.0000 s]
+Rounds : (18)
+=== Ordering Quality (P1/MAX AI) ===
+[order] MAX-to-move nodes=106988 cutoffs=56878 avgCutIdx=0.2762 firstChildCut=82.4308%
+[order] MIN-to-move nodes=120288 cutoffs=75794 avgCutIdx=0.1755 firstChildCut=86.5807%
+=== Ordering Quality (P2/MIN AI) ===
+[order] MAX-to-move nodes=89330 cutoffs=32593 avgCutIdx=0.2241 firstChildCut=86.1504%
+[order] MIN-to-move nodes=104983 cutoffs=79414 avgCutIdx=0.1251 firstChildCut=89.6718%
+[Visited] lookups=674119 hits=69585 inserts=606534 hit_rate=10.3224%
+Vitória do Jogador 1!
+
+tempo jogo: 1.8756
+
+Vitórias AI 1: 1
+Vitórias AI 2: 0
+tempo total: 1.8756

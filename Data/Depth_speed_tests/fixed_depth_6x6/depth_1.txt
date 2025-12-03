@@ -1,0 +1,37 @@
+Modo teste2
+ - Board: 6x6
+[Ordering] MAX=Deterministic, MIN=Deterministic
+ - Jogo: 1
+[Quiescence] MAX=off, MIN=off
+[MAX]First AI controled move : (2, 3) [0.0000 s]
+****[MIN] Best move selected: (1,4) -4 [depth: 1] [0.0001 s]
+****[MAX] Best move selected: (1,3) 38 [depth: 1] [0.0001 s]
+****[MIN] Best move selected: (0,4) -5 [depth: 1] [0.0001 s]
+****[MAX] Best move selected: (0,3) 41 [depth: 1] [0.0000 s]
+****[MIN] Best move selected: (0,2) 41 [depth: 1] [0.0000 s]
+****[MAX] Best move selected: (0,1) 41 [depth: 1] [0.0000 s]
+****[MIN] Best move selected: (0,0) 41 [depth: 1] [0.0000 s]
+****[MAX] Best move selected: (1,0) 42 [depth: 1] [0.0000 s]
+****[MIN] Best move selected: (1,1) 41 [depth: 1] [0.0000 s]
+****[MAX] Best move selected: (2,0) 43 [depth: 1] [0.0000 s]
+****[MIN] Best move selected: (2,1) 42 [depth: 1] [0.0000 s]
+****[MAX] Best move selected: (3,0) 44 [depth: 1] [0.0001 s]
+****[MIN] Best move selected: (3,1) 43 [depth: 1] [0.0000 s]
+****[MAX] Best move selected: (4,0) 45 [depth: 1] [0.0000 s]
+****[MIN] Best move selected: (4,1) 44 [depth: 1] [0.0000 s]
+****[MAX] Immediate win found at root: (5,0) 999 [0.0000 s]
+Rounds : (16)
+=== Ordering Quality (P1/MAX AI) ===
+[order] MAX-to-move nodes=0 cutoffs=0
+[order] MIN-to-move nodes=0 cutoffs=0
+=== Ordering Quality (P2/MIN AI) ===
+[order] MAX-to-move nodes=0 cutoffs=0
+[order] MIN-to-move nodes=0 cutoffs=0
+[Visited] lookups=62 hits=0 inserts=62 hit_rate=0.0000%
+Vitória do Jogador 1!
+
+tempo jogo: 0.0007
+
+Vitórias AI 1: 1
+Vitórias AI 2: 0
+tempo total: 0.0007

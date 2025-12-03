@@ -1,0 +1,43 @@
+Modo teste2
+ - Board: 7x7
+[Ordering] MAX=Deterministic, MIN=Deterministic, shuffle_ties_only=1
+ - Jogo: 1
+[Quiescence] MAX=off, MIN=off
+[MAX]First AI controled move : (2, 3) [0.0000 s]
+****[MIN] Time limit reached during root evaluation [1.0000 s]
+****[MIN] Best move selected (IDS): (1,4) 2147483647 [depth: 14] [1.0000 s]
+****[MAX] Time limit reached during root evaluation [1.0000 s]
+****[MAX] Best move selected (IDS): (1,3) -2147483648 [depth: 14] [1.0000 s]
+****[MIN] Time limit reached during root evaluation [1.0000 s]
+****[MIN] Best move selected (IDS): (0,4) 2147483647 [depth: 14] [1.0000 s]
+****[MAX] Time limit reached during root evaluation [1.0000 s]
+****[MAX] Best move selected (IDS): (0,3) -2147483648 [depth: 14] [1.0000 s]
+****[MIN] Time limit reached during root evaluation [1.0000 s]
+****[MIN] Best move selected (IDS): (1,2) 2147483647 [depth: 14] [1.0000 s]
+****[MAX] Time limit reached during root evaluation [1.0000 s]
+****[MAX] Best move selected (IDS): (2,1) -2147483648 [depth: 14] [1.0000 s]
+****[MIN] Time limit reached during root evaluation [1.0000 s]
+****[MIN] Best move selected (IDS): (1,1) 2147483647 [depth: 14] [1.0000 s]
+****[MAX] Time limit reached during root evaluation [1.0000 s]
+****[MAX] Best move selected (IDS): (0,0) 0 [depth: 14] [1.0000 s]
+****[MIN] Best move selected (IDS): (1,0) 2 [depth: 14] [0.5628 s]
+****[MAX] Time limit reached during root evaluation [1.0000 s]
+****[MAX] Best move selected (IDS): (0,1) -1000 [depth: 14] [1.0000 s]
+****[MIN] Immediate win found at root: (0,2) -999 [0.0000 s]
+Rounds : (11)
+=== Ordering Quality (P1/MAX AI) ===
+[order] MAX-to-move nodes=105106 cutoffs=53584 avgCutIdx=0.1913 firstChildCut=87.6437%
+[order] MIN-to-move nodes=130195 cutoffs=103121 avgCutIdx=0.1306 firstChildCut=91.3771%
+=== Ordering Quality (P2/MIN AI) ===
+[order] MAX-to-move nodes=87438 cutoffs=41818 avgCutIdx=0.1960 firstChildCut=87.2854%
+[order] MIN-to-move nodes=116915 cutoffs=96087 avgCutIdx=0.1133 firstChildCut=92.4121%
+[Visited] lookups=889579 hits=30525 inserts=859569 hit_rate=3.4314%
+Sem jogadas válidas. Fim de jogo!
+
+Vitória do Jogador 2!
+
+tempo jogo: 10.1651
+
+Vitórias AI 1: 0
+Vitórias AI 2: 1
+tempo total: 10.1651

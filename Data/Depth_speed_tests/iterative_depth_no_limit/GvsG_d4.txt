@@ -1,0 +1,55 @@
+Modo teste2
+ - Board: 7x7
+[Ordering] MAX=Deterministic, MIN=Deterministic, shuffle_ties_only=1
+ - Jogo: 1
+[Quiescence] MAX=off, MIN=off
+[MAX]First AI controled move : (3, 3) [0.0000 s]
+****[MIN] Best move selected (IDS): (4,2) 2 [depth: 4] [0.0081 s]
+****[MAX] Best move selected (IDS): (4,1) -1 [depth: 4] [0.0058 s]
+****[MIN] Best move selected (IDS): (3,2) 1 [depth: 4] [0.0034 s]
+****[MAX] Best move selected (IDS): (3,1) -2 [depth: 4] [0.0038 s]
+****[MIN] Best move selected (IDS): (2,2) 0 [depth: 4] [0.0024 s]
+****[MAX] Best move selected (IDS): (2,1) -2 [depth: 4] [0.0033 s]
+****[MIN] Best move selected (IDS): (1,0) 0 [depth: 4] [0.0018 s]
+****[MAX] Best move selected (IDS): (2,0) -2 [depth: 4] [0.0012 s]
+****[MIN] Best move selected (IDS): (1,1) -2 [depth: 4] [0.0004 s]
+****[MAX] Best move selected (IDS): (0,0) -4 [depth: 4] [0.0012 s]
+****[MIN] Best move selected (IDS): (0,1) -2 [depth: 4] [0.0003 s]
+****[MAX] Best move selected (IDS): (0,2) -4 [depth: 4] [0.0009 s]
+****[MIN] Best move selected (IDS): (1,3) -4 [depth: 4] [0.0011 s]
+****[MAX] Best move selected (IDS): (1,4) -5 [depth: 4] [0.0018 s]
+****[MIN] Best move selected (IDS): (2,3) -2 [depth: 4] [0.0020 s]
+****[MAX] Best move selected (IDS): (3,4) -4 [depth: 4] [0.0006 s]
+****[MIN] Best move selected (IDS): (2,5) 0 [depth: 4] [0.0031 s]
+****[MAX] Best move selected (IDS): (3,5) -1 [depth: 4] [0.0013 s]
+****[MIN] Best move selected (IDS): (4,6) 1 [depth: 4] [0.0021 s]
+****[MAX] Best move selected (IDS): (5,6) 0 [depth: 4] [0.0015 s]
+****[MIN] Best move selected (IDS): (6,6) 2 [depth: 4] [0.0017 s]
+****[MAX] Best move selected (IDS): (6,5) 1 [depth: 4] [0.0009 s]
+****[MIN] Best move selected (IDS): (6,4) 3 [depth: 4] [0.0017 s]
+****[MAX] Best move selected (IDS): (5,3) 1 [depth: 4] [0.0018 s]
+****[MIN] Best move selected (IDS): (5,4) 896 [depth: 4] [0.0017 s]
+****[MAX] Best move selected (IDS): (5,5) 897 [depth: 4] [0.0007 s]
+****[MIN] Best move selected (IDS): (4,5) 898 [depth: 4] [0.0002 s]
+****[MAX] Best move selected (IDS): (4,4) 897 [depth: 4] [0.0001 s]
+****[MIN] Best move selected (IDS): (4,3) 898 [depth: 4] [0.0001 s]
+****[MAX] Best move selected (IDS): (5,2) 899 [depth: 4] [0.0002 s]
+****[MIN] Best move selected (IDS): (6,3) 1000 [depth: 4] [0.0002 s]
+****[MAX] Best move selected (IDS): (6,2) 1000 [depth: 4] [0.0001 s]
+****[MIN] Best move selected (IDS): (6,1) 1000 [depth: 4] [0.0000 s]
+****[MAX] Immediate win found at root: (6,0) 999 [0.0000 s]
+Rounds : (34)
+=== Ordering Quality (P1/MAX AI) ===
+[order] MAX-to-move nodes=468 cutoffs=320 avgCutIdx=0.0406 firstChildCut=96.2500%
+[order] MIN-to-move nodes=587 cutoffs=192 avgCutIdx=0.0208 firstChildCut=97.9167%
+=== Ordering Quality (P2/MIN AI) ===
+[order] MAX-to-move nodes=668 cutoffs=209 avgCutIdx=0.0335 firstChildCut=97.6077%
+[order] MIN-to-move nodes=528 cutoffs=367 avgCutIdx=0.1008 firstChildCut=92.9155%
+[Visited] lookups=6075 hits=329 inserts=5805 hit_rate=5.4156%
+Vitória do Jogador 1!
+
+tempo jogo: 0.0575
+
+Vitórias AI 1: 1
+Vitórias AI 2: 0
+tempo total: 0.0575

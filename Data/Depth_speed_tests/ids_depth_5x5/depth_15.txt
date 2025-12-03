@@ -1,0 +1,37 @@
+Modo teste2
+ - Board: 5x5
+[Ordering] MAX=Deterministic, MIN=Deterministic
+ - Jogo: 1
+[Quiescence] MAX=off, MIN=off
+****[MAX] Best move selected (IDS): (2,2) 44 [depth: 15] [0.5000 s]
+****[MIN] Best move selected (IDS): (1,2) 987 [depth: 15] [0.5000 s]
+****[MAX] Best move selected (IDS): (2,3) 988 [depth: 15] [0.2337 s]
+****[MIN] Best move selected (IDS): (1,4) 989 [depth: 15] [0.1242 s]
+****[MAX] Best move selected (IDS): (2,4) 990 [depth: 15] [0.0386 s]
+****[MIN] Best move selected (IDS): (3,4) 991 [depth: 15] [0.0338 s]
+****[MAX] Best move selected (IDS): (4,4) 992 [depth: 15] [0.0637 s]
+****[MIN] Best move selected (IDS): (3,3) 993 [depth: 15] [0.0256 s]
+****[MAX] Best move selected (IDS): (3,2) 994 [depth: 15] [0.0150 s]
+****[MIN] Best move selected (IDS): (2,1) 995 [depth: 15] [0.0120 s]
+****[MAX] Best move selected (IDS): (3,0) 996 [depth: 15] [0.0047 s]
+****[MIN] Best move selected (IDS): (2,0) 997 [depth: 15] [0.0009 s]
+****[MAX] Best move selected (IDS): (3,1) 998 [depth: 15] [0.0008 s]
+****[MIN] Best move selected (IDS): (4,2) 999 [depth: 15] [0.0001 s]
+****[MAX] Immediate win found at root: (4,3) 999 [0.0000 s]
+Rounds : (14)
+=== Ordering Quality (P1/MAX AI) ===
+[order] MAX-to-move nodes=65703 cutoffs=35038 avgCutIdx=0.3010 firstChildCut=81.3060%
+[order] MIN-to-move nodes=69672 cutoffs=43072 avgCutIdx=0.1807 firstChildCut=86.5179%
+=== Ordering Quality (P2/MIN AI) ===
+[order] MAX-to-move nodes=55910 cutoffs=21378 avgCutIdx=0.2906 firstChildCut=83.4175%
+[order] MIN-to-move nodes=65021 cutoffs=48210 avgCutIdx=0.1224 firstChildCut=90.4169%
+[Visited] lookups=434114 hits=40797 inserts=394526 hit_rate=9.3978%
+Sem jogadas válidas. Fim de jogo!
+
+Vitória do Jogador 1!
+
+tempo jogo: 1.5920
+
+Vitórias AI 1: 1
+Vitórias AI 2: 0
+tempo total: 1.5921

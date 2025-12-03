@@ -1,0 +1,48 @@
+Modo teste2
+ - Board: 7x7
+[Ordering] MAX=Deterministic, MIN=Deterministic, shuffle_ties_only=1
+ - Jogo: 1
+[Quiescence] MAX=off, MIN=off
+[MAX]First AI controled move : (2, 3) [0.0000 s]
+****[MIN] Best move selected (IDS): (3,2) -2 [depth: 13] [18.2250 s]
+****[MAX] Best move selected (IDS): (4,1) 0 [depth: 13] [12.4308 s]
+****[MIN] Best move selected (IDS): (3,1) -2 [depth: 13] [5.4561 s]
+****[MAX] Best move selected (IDS): (4,2) 1 [depth: 13] [2.8225 s]
+****[MIN] Best move selected (IDS): (5,3) -2 [depth: 13] [2.3737 s]
+****[MAX] Best move selected (IDS): (5,2) 1 [depth: 13] [2.8846 s]
+****[MIN] Best move selected (IDS): (4,3) -3 [depth: 13] [0.4561 s]
+****[MAX] Best move selected (IDS): (5,4) -1 [depth: 13] [0.8239 s]
+****[MIN] Best move selected (IDS): (4,4) -7 [depth: 13] [0.4843 s]
+****[MAX] Best move selected (IDS): (4,5) -1 [depth: 13] [0.3981 s]
+****[MIN] Best move selected (IDS): (3,4) -8 [depth: 13] [0.3267 s]
+****[MAX] Best move selected (IDS): (3,3) 8 [depth: 13] [0.0304 s]
+****[MIN] Best move selected (IDS): (2,2) -8 [depth: 13] [0.0337 s]
+****[MAX] Best move selected (IDS): (2,1) 8 [depth: 13] [0.0812 s]
+****[MIN] Best move selected (IDS): (1,0) -857 [depth: 13] [0.0372 s]
+****[MAX] Best move selected (IDS): (0,0) -858 [depth: 13] [0.0512 s]
+****[MIN] Best move selected (IDS): (0,1) -1000 [depth: 13] [0.0226 s]
+****[MAX] Best move selected (IDS): (1,1) -1000 [depth: 13] [0.0125 s]
+****[MIN] Best move selected (IDS): (1,2) -1000 [depth: 13] [0.0002 s]
+****[MAX] Best move selected (IDS): (0,2) -1000 [depth: 13] [0.0001 s]
+****[MIN] Best move selected (IDS): (1,3) -1000 [depth: 13] [0.0000 s]
+****[MAX] Best move selected (IDS): (0,3) -1000 [depth: 13] [0.0001 s]
+****[MIN] Best move selected (IDS): (0,4) -1000 [depth: 13] [0.0001 s]
+****[MAX] Best move selected (IDS): (1,4) -1000 [depth: 13] [0.0001 s]
+****[MIN] Best move selected (IDS): (0,5) -1000 [depth: 13] [0.0063 s]
+****[MAX] Best move selected (IDS): (1,5) -1000 [depth: 13] [0.0001 s]
+****[MIN] Immediate win found at root: (0,6) -999 [0.0000 s]
+Rounds : (27)
+=== Ordering Quality (P1/MAX AI) ===
+[order] MAX-to-move nodes=544935 cutoffs=360428 avgCutIdx=0.1694 firstChildCut=88.9135%
+[order] MIN-to-move nodes=472256 cutoffs=308147 avgCutIdx=0.2267 firstChildCut=85.2736%
+=== Ordering Quality (P2/MIN AI) ===
+[order] MAX-to-move nodes=590500 cutoffs=371996 avgCutIdx=0.2106 firstChildCut=86.2480%
+[order] MIN-to-move nodes=747070 cutoffs=522442 avgCutIdx=0.1626 firstChildCut=89.7451%
+[Visited] lookups=4499894 hits=249358 inserts=4255067 hit_rate=5.5414%
+Vitória do Jogador 2!
+
+tempo jogo: 50.0172
+
+Vitórias AI 1: 0
+Vitórias AI 2: 1
+tempo total: 50.0172

@@ -1,0 +1,40 @@
+Modo teste2
+ - Board: 7x7
+[Ordering] MAX=Deterministic, MIN=Deterministic, shuffle_ties_only=1
+ - Jogo: 1
+[Quiescence] MAX=off, MIN=off
+[MAX]First AI controled move : (3, 5) [0.0000 s]
+****[MIN] Best move selected (IDS): (2,5) 0 [depth: 9] [0.4948 s]
+****[MAX] Best move selected (IDS): (3,4) 2 [depth: 9] [0.1171 s]
+****[MIN] Best move selected (IDS): (4,3) 0 [depth: 9] [0.3920 s]
+****[MAX] Best move selected (IDS): (5,3) 1 [depth: 9] [0.3991 s]
+****[MIN] Best move selected (IDS): (5,2) -1 [depth: 9] [0.1505 s]
+****[MAX] Best move selected (IDS): (6,3) 1 [depth: 9] [0.2303 s]
+****[MIN] Best move selected (IDS): (6,4) -5 [depth: 9] [0.0256 s]
+****[MAX] Best move selected (IDS): (5,5) -5 [depth: 9] [0.0281 s]
+****[MIN] Best move selected (IDS): (5,4) -6 [depth: 9] [0.0455 s]
+****[MAX] Best move selected (IDS): (6,5) -5 [depth: 9] [0.0041 s]
+****[MIN] Best move selected (IDS): (6,6) -1000 [depth: 9] [0.0012 s]
+****[MAX] Best move selected (IDS): (5,6) -1000 [depth: 9] [0.0010 s]
+****[MIN] Best move selected (IDS): (4,6) -1000 [depth: 9] [0.0052 s]
+****[MAX] Best move selected (IDS): (4,5) -1000 [depth: 9] [0.0000 s]
+****[MIN] Best move selected (IDS): (3,6) -1000 [depth: 9] [0.0255 s]
+****[MAX] Best move selected (IDS): (2,6) -1000 [depth: 9] [0.0000 s]
+****[MIN] Best move selected (IDS): (1,6) -1000 [depth: 9] [0.0370 s]
+****[MAX] Best move selected (IDS): (1,5) -1000 [depth: 9] [0.0001 s]
+****[MIN] Immediate win found at root: (0,6) -999 [0.0000 s]
+Rounds : (19)
+=== Ordering Quality (P1/MAX AI) ===
+[order] MAX-to-move nodes=20449 cutoffs=12515 avgCutIdx=0.1700 firstChildCut=89.8122%
+[order] MIN-to-move nodes=16458 cutoffs=10589 avgCutIdx=0.1895 firstChildCut=87.6664%
+=== Ordering Quality (P2/MIN AI) ===
+[order] MAX-to-move nodes=22396 cutoffs=13233 avgCutIdx=0.1913 firstChildCut=87.2365%
+[order] MIN-to-move nodes=29959 cutoffs=20596 avgCutIdx=0.1161 firstChildCut=92.6248%
+[Visited] lookups=183895 hits=8422 inserts=175726 hit_rate=4.5798%
+Vitória do Jogador 2!
+
+tempo jogo: 2.0710
+
+Vitórias AI 1: 0
+Vitórias AI 2: 1
+tempo total: 2.0710

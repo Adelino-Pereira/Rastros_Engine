@@ -1,0 +1,45 @@
+Modo teste2
+ - Board: 7x7
+[Ordering] MAX=Deterministic, MIN=Deterministic, shuffle_ties_only=1
+ - Jogo: 1
+[Quiescence] MAX=off, MIN=off
+[MAX]First AI controled move : (3, 4) [0.0000 s]
+****[MIN] Best move selected (IDS): (2,5) -4 [depth: 1] [0.0001 s]
+****[MAX] Best move selected (IDS): (3,5) -2 [depth: 1] [0.0001 s]
+****[MIN] Best move selected (IDS): (2,6) -5 [depth: 1] [0.0001 s]
+****[MAX] Best move selected (IDS): (3,6) 1 [depth: 1] [0.0000 s]
+****[MIN] Best move selected (IDS): (4,5) 1 [depth: 1] [0.0000 s]
+****[MAX] Best move selected (IDS): (5,4) 2 [depth: 1] [0.0001 s]
+****[MIN] Best move selected (IDS): (4,4) 1 [depth: 1] [0.0001 s]
+****[MAX] Best move selected (IDS): (5,3) 3 [depth: 1] [0.0001 s]
+****[MIN] Best move selected (IDS): (4,3) 2 [depth: 1] [0.0001 s]
+****[MAX] Best move selected (IDS): (5,2) 4 [depth: 1] [0.0001 s]
+****[MIN] Best move selected (IDS): (4,2) 3 [depth: 1] [0.0001 s]
+****[MAX] Best move selected (IDS): (5,1) 5 [depth: 1] [0.0001 s]
+****[MIN] Best move selected (IDS): (4,1) -37 [depth: 1] [0.0001 s]
+****[MAX] Best move selected (IDS): (5,0) 6 [depth: 1] [0.0001 s]
+****[MIN] Best move selected (IDS): (4,0) -934 [depth: 1] [0.0000 s]
+****[MAX] Best move selected (IDS): (3,0) -934 [depth: 1] [0.0000 s]
+****[MIN] Best move selected (IDS): (3,1) -935 [depth: 1] [0.0000 s]
+****[MAX] Best move selected (IDS): (2,0) -934 [depth: 1] [0.0000 s]
+****[MIN] Best move selected (IDS): (1,1) -935 [depth: 1] [0.0000 s]
+****[MAX] Best move selected (IDS): (1,0) -934 [depth: 1] [0.0001 s]
+****[MIN] Best move selected (IDS): (0,1) -935 [depth: 1] [0.0000 s]
+****[MAX] Immediate win found at root: (0,0) 999 [0.0000 s]
+Rounds : (22)
+=== Ordering Quality (P1/MAX AI) ===
+[order] MAX-to-move nodes=0 cutoffs=0
+[order] MIN-to-move nodes=0 cutoffs=0
+=== Ordering Quality (P2/MIN AI) ===
+[order] MAX-to-move nodes=0 cutoffs=0
+[order] MIN-to-move nodes=0 cutoffs=0
+[Visited] lookups=96 hits=0 inserts=96 hit_rate=0.0000%
+Sem jogadas válidas. Fim de jogo!
+
+Vitória do Jogador 1!
+
+tempo jogo: 0.0013
+
+Vitórias AI 1: 1
+Vitórias AI 2: 0
+tempo total: 0.0013
